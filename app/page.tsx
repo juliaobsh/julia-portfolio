@@ -99,6 +99,46 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Experience */}
+        <section id="experience" className="mb-16">
+          <h2 className="text-2xl font-semibold text-slate-900 md:text-3xl">
+            Experience
+          </h2>
+          <p className="mt-2 text-sm text-slate-600">
+            Hands-on industry and academic experience.
+          </p>
+
+          <div className="mt-4 space-y-4">
+            <article className="rounded-2xl bg-white/80 p-5 shadow-sm shadow-slate-200 backdrop-blur-sm">
+              <div className="flex flex-col justify-between gap-1 md:flex-row md:items-baseline">
+                <h3 className="text-sm font-semibold text-slate-900">
+                  Business Analyst / Developer Co-op
+                </h3>
+                <p className="text-xs text-slate-500">
+                  Hydro One · 2025 (8–12 month co-op)
+                </p>
+              </div>
+              <p className="mt-1 text-xs font-medium uppercase tracking-wide text-violet-500">
+                Automation · Internal Tools · Reporting
+              </p>
+              <ul className="mt-3 space-y-1 text-sm text-slate-700 list-disc list-inside">
+                <li>
+                  Built automation and analysis tools using Python, Excel, and
+                  internal platforms to simplify recurring reporting tasks.
+                </li>
+                <li>
+                  Documented workflows, created playbooks, and helped improve
+                  usability of internal tools for non-technical stakeholders.
+                </li>
+                <li>
+                  Collaborated with developers and analysts to debug issues and
+                  validate data quality in production-like environments.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
         {/* About / Skills */}
         <section id="about" className="mb-16">
           <h2 className="text-2xl font-semibold text-slate-900 md:text-3xl">
