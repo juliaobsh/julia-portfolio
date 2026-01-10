@@ -12,7 +12,7 @@ export default function Home() {
             Hi, I&apos;m <span className="text-violet-600">Julia</span>.
           </h1>
           <p className="mt-4 max-w-xl text-base text-slate-700 md:text-lg">
-            I&apos;m a Computer Science student who loves building cozy game
+            I&apos;m a Computer Science student who loves building cozy games
             experiences, aesthetic tools, and practical automation scripts.
           </p>
           <p className="mt-2 max-w-xl text-sm text-slate-600">
