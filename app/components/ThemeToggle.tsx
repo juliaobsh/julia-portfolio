@@ -17,7 +17,7 @@ export default function ThemeToggle() {
       <button
         onClick={() => setTheme("system")}
         className={`rounded-full px-3 py-1 text-xs font-bold font-mono transition
-          ${theme === "system" ? "bg-[#A468DA] text-white" : "text-slate-700 dark:text-slate-200"}`}
+          ${theme === "system" ? "bg-[#42778C] dark:bg-[#edf2d8] dark:text-slate-900 text-white" : "text-slate-700 dark:text-slate-200"}`}
         title={`System (${resolvedTheme})`}
       >
         System
@@ -25,14 +25,14 @@ export default function ThemeToggle() {
       <button
         onClick={() => setTheme("light")}
         className={`rounded-full px-3 py-1 text-xs font-bold font-mono transition
-          ${theme === "light" ? "bg-[#A468DA] text-white" : "text-slate-700 dark:text-slate-200"}`}
+          ${theme === "light" ? "bg-[#42778C] dark:bg-[#edf2d8] dark:text-slate-900 text-white" : "text-slate-700 dark:text-slate-200"}`}
       >
         Light
       </button>
       <button
         onClick={() => setTheme("dark")}
         className={`rounded-full px-3 py-1 text-xs font-bold font-mono transition
-          ${theme === "dark" ? "bg-[#A468DA] text-white" : "text-slate-700 dark:text-slate-200"}`}
+          ${theme === "dark" ? "bg-[#42778C] dark:bg-[#edf2d8] dark:text-slate-900 text-white" : "text-slate-700 dark:text-slate-200"}`}
       >
         Dark
       </button>
