@@ -14,8 +14,8 @@ export const site = {
 export const socialLinks = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/yuliaobshansky",
-    handle: "linkedin.com/in/yuliaobshansky",
+    href: "https://www.linkedin.com/in/yulia-obshansky/",
+    handle: "linkedin.com/in/yulia-obshansky",
   },
   {
     label: "GitHub",
