@@ -51,22 +51,31 @@ export function Experience() {
                       {role.title}
                     </p>
                     <p className="mb-5 font-mono text-xs text-muted">
-                      {role.period}
+                      {role.period} · {role.location}
                     </p>
 
-                    <ul className="grid gap-2 sm:grid-cols-2">
-                      {role.highlights.map((highlight) => (
-                        <li key={highlight} className="flex items-start gap-2.5">
-                          <span
-                            aria-hidden="true"
-                            className="mt-2 size-1 shrink-0 rounded-full bg-teal"
-                          />
-                          <span className="text-sm leading-relaxed text-muted">
-                            {highlight}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                    {role.narrative ? (
+                      <p className="text-sm leading-relaxed text-muted">
+                        {role.narrative}
+                      </p>
+                    ) : (
+                      <ul className="grid gap-2 sm:grid-cols-2">
+                        {role.highlights.map((highlight) => (
+                          <li
+                            key={highlight}
+                            className="flex items-start gap-2.5"
+                          >
+                            <span
+                              aria-hidden="true"
+                              className="mt-2 size-1 shrink-0 rounded-full bg-teal"
+                            />
+                            <span className="text-sm leading-relaxed text-muted">
+                              {highlight}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </li>
               ))}

@@ -80,7 +80,7 @@ export function Navbar() {
             {site.name}
           </Link>
 
-          <div className="hidden items-center gap-7 md:flex">
+          <div className="hidden items-center gap-6 lg:flex">
             {navigation.map((item) => {
               const isActive = isHome && activeSection === item.id;
               return (
@@ -112,7 +112,7 @@ export function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
-            className="flex size-11 items-center justify-center rounded-lg transition-colors hover:bg-line md:hidden"
+            className="flex size-11 items-center justify-center rounded-lg transition-colors hover:bg-line lg:hidden"
           >
             <span className="flex w-5 flex-col gap-1.5">
               <span
@@ -142,7 +142,7 @@ export function Navbar() {
         id="mobile-menu"
         ref={menuRef}
         hidden={!open}
-        className="border-t border-line bg-paper md:hidden"
+        className="border-t border-line bg-paper lg:hidden"
       >
         <ul className="flex flex-col px-6 py-4">
           {navigation.map((item) => (

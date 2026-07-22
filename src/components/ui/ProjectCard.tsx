@@ -4,14 +4,18 @@ import { accentStyle } from "@/lib/utils";
 import { ProjectVisual } from "@/components/visuals/ProjectVisual";
 import { ArrowIcon } from "./icons";
 
-export function ProjectCard({ project }: { project: Project }) {
+type Props = { project: Project; featured?: boolean };
+
+export function ProjectCard({ project, featured = false }: Props) {
   return (
     <article
       style={accentStyle(project.accent)}
-      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface shadow-[0_2px_8px_rgb(28_25_23/0.04)] transition duration-300 focus-within:border-[var(--accent)] hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-[0_16px_40px_rgb(28_25_23/0.12)] motion-reduce:hover:translate-y-0"
+      className={`group relative flex h-full overflow-hidden rounded-3xl border border-line bg-surface shadow-[0_2px_8px_rgb(28_25_23/0.04)] transition duration-300 focus-within:border-[var(--accent)] hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-[0_16px_40px_rgb(28_25_23/0.12)] motion-reduce:hover:translate-y-0 ${
+        featured ? "flex-col lg:flex-row" : "flex-col"
+      }`}
     >
       <div
-        className="h-52 p-4"
+        className={featured ? "shrink-0 p-5 lg:w-80 xl:w-96" : "h-52 p-4"}
         style={{
           background: "color-mix(in srgb, var(--accent) 5%, transparent)",
         }}
@@ -19,12 +23,16 @@ export function ProjectCard({ project }: { project: Project }) {
         <ProjectVisual visual={project.visual} />
       </div>
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className={`flex flex-1 flex-col ${featured ? "p-7" : "p-6"}`}>
         <p className="mb-2 font-mono text-[10px] uppercase tracking-widest text-muted">
           {project.category}
         </p>
 
-        <h3 className="mb-2.5 font-display text-lg font-bold text-ink transition-colors group-hover:text-[var(--accent)]">
+        <h3
+          className={`mb-2.5 font-display font-bold text-ink transition-colors group-hover:text-[var(--accent)] ${
+            featured ? "text-xl" : "text-lg"
+          }`}
+        >
           {/* Stretched link keeps the whole card clickable without a clickable div. */}
           <Link
             href={`/projects/${project.slug}`}
@@ -34,9 +42,19 @@ export function ProjectCard({ project }: { project: Project }) {
           </Link>
         </h3>
 
-        <p className="mb-4 line-clamp-3 text-sm leading-relaxed text-muted">
+        <p
+          className={`mb-4 text-sm leading-relaxed text-muted ${
+            featured ? "" : "line-clamp-3"
+          }`}
+        >
           {project.summary}
         </p>
+
+        {project.evidence ? (
+          <p className="mb-4 inline-flex w-fit items-center rounded-lg border border-line bg-paper px-2.5 py-1.5 font-mono text-[10px] text-ink">
+            {project.evidence}
+          </p>
+        ) : null}
 
         <ul className="mb-5 flex flex-wrap gap-1.5">
           {project.tags.map((tag) => (

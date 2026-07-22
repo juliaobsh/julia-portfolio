@@ -4,32 +4,24 @@ import { Reveal } from "@/components/ui/Reveal";
 const highlights = [
   {
     symbol: "◈",
-    label: "Computer Science",
-    description: "Specialized Honours Co-op at York University",
+    label: "Enterprise Power BI",
+    description: "Report enhancements built, tested, and deployed to production",
   },
   {
     symbol: "◎",
-    label: "Data Visualization",
-    description: "Power BI dashboards for senior stakeholders",
+    label: "Validation",
+    description: "Checking outputs against source data before anything ships",
   },
   {
     symbol: "◆",
-    label: "Business Analysis",
-    description: "Requirements, traceability, and documentation",
+    label: "Requirements",
+    description: "Leading discovery across more than a dozen lines of business",
   },
   {
     symbol: "◉",
-    label: "Process Automation",
-    description: "Excel VBA and Python workflow automation",
+    label: "Computer Science",
+    description: "Specialized Honours Co-op at York University",
   },
-];
-
-const interests = [
-  "Understanding stakeholder needs before writing a line of code",
-  "Investigating data discrepancies until the root cause is clear",
-  "Designing dashboards that are actually useful to the people reading them",
-  "Automating repetitive processes so teams can focus on what matters",
-  "Making technical information easier to understand for everyone",
 ];
 
 export function About() {
@@ -41,36 +33,37 @@ export function About() {
             <div>
               <Eyebrow className="mb-4">About</Eyebrow>
               <h2 className="mb-6 font-display text-[clamp(1.75rem,3vw,2.5rem)] font-bold leading-tight text-ink text-balance">
-                Technical enough to build it.{" "}
-                <span className="text-accent">Analytical enough</span> to
-                explain it.
+                I like inheriting systems{" "}
+                <span className="text-accent">I didn&apos;t build.</span>
               </h2>
 
               <p className="mb-4 leading-relaxed text-muted">
-                I&apos;m completing a Specialized Honours Computer Science Co-op
-                degree at York University, with hands-on enterprise experience
-                as a Business Data Analyst at Hydro One.
+                Most of my Power BI work hasn&apos;t started with a blank
+                canvas. It started with a report that already existed, already
+                had users, and already had decisions baked into it — aggregation
+                levels, filter defaults, grading rules, metric definitions that
+                someone chose for a reason. Before I change anything, I want to
+                know what those reasons were.
               </p>
-              <p className="mb-7 leading-relaxed text-muted">
-                My work spans reporting, dashboard development, business
-                analysis, workflow automation, documentation, and stakeholder
-                collaboration. I&apos;m drawn to the intersection of technical
-                systems and the people who use them.
+              <p className="mb-4 leading-relaxed text-muted">
+                That&apos;s usually where the interesting part is. &ldquo;Add a
+                distinct count of agents&rdquo; sounds like a small request
+                until you ask what it should do at the interval, day, week, and
+                month level, or what happens to it when someone filters to a
+                single queue. Distinct counts don&apos;t add up the way totals
+                do, and a column that quietly means something different from
+                what the person asked for is worse than no column at all.
               </p>
-
-              <ul className="space-y-2.5">
-                {interests.map((interest) => (
-                  <li key={interest} className="flex items-start gap-3">
-                    <span
-                      aria-hidden="true"
-                      className="mt-2 size-1.5 shrink-0 rounded-full bg-teal"
-                    />
-                    <span className="text-sm leading-relaxed text-muted">
-                      {interest}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <p className="leading-relaxed text-muted">
+                My Computer Science background shows up less in writing code
+                than in how I read systems — following a value from a source
+                table through a semantic model into a visual, and staying
+                sceptical of a number until I&apos;ve seen where it came from.
+                The other half of the job is the opposite skill: most requests
+                arrive as one sentence, and turning that sentence into defined
+                behaviour — in a report, or in a requirements list — is where
+                most of the work actually is.
+              </p>
             </div>
 
             <ul className="grid gap-4 sm:grid-cols-2">

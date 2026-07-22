@@ -1,11 +1,10 @@
 import { site, socialLinks } from "@/data/site";
 import { Container } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { HeroDashboard } from "@/components/visuals/HeroDashboard";
+import { HeroReconciliation } from "@/components/visuals/HeroReconciliation";
 import { GithubIcon, PinIcon } from "@/components/ui/icons";
 
 const github = socialLinks.find((link) => link.label === "GitHub");
-const linkedin = socialLinks.find((link) => link.label === "LinkedIn");
 
 export function Hero() {
   return (
@@ -22,18 +21,20 @@ export function Hero() {
       <Container className="relative grid min-h-[calc(100svh-4rem)] items-center gap-12 py-20 lg:grid-cols-2 xl:gap-20">
         <div className="animate-rise">
           <p className="mb-6 font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
-            Data analysis × technology × design
+            Power BI · Enterprise reporting · Requirements
           </p>
 
           <h1 className="mb-6 font-display text-[clamp(2.1rem,4.5vw,3.6rem)] font-bold leading-[1.05] text-ink text-balance">
-            Turning complex data into{" "}
-            <span className="text-accent">clear, useful</span> experiences.
+            I make careful changes to reports people{" "}
+            <span className="text-accent">rely on</span> every day.
           </h1>
 
-          <p className="mb-8 max-w-[44ch] text-[1.05rem] leading-relaxed text-muted">
-            I&apos;m Yulia, a Computer Science co-op student and Business Data
-            Analyst who enjoys building dashboards, improving workflows, and
-            translating stakeholder needs into practical solutions.
+          <p className="mb-8 max-w-[46ch] text-[1.05rem] leading-relaxed text-muted">
+            Business Data Analyst and Computer Science co-op student. I deliver
+            Power BI enhancements into an enterprise Microsoft Fabric
+            environment — from interpreting the request through to deploying the
+            approved change to production — and lead the requirements work
+            behind an enterprise platform migration.
           </p>
 
           <div className="mb-9 flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -51,12 +52,12 @@ export function Hero() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <ButtonLink href="#work">View my work</ButtonLink>
-            {linkedin ? (
-              <ButtonLink href={linkedin.href} variant="secondary">
-                Connect on LinkedIn
-              </ButtonLink>
-            ) : null}
+            <ButtonLink href="/projects/enterprise-reporting-suite">
+              Read the reporting case study
+            </ButtonLink>
+            <ButtonLink href={site.resumePath} variant="secondary" download>
+              Download résumé
+            </ButtonLink>
             {github ? (
               <a
                 href={github.href}
@@ -72,7 +73,7 @@ export function Hero() {
         </div>
 
         <div className="animate-rise [animation-delay:150ms]">
-          <HeroDashboard />
+          <HeroReconciliation />
         </div>
       </Container>
     </section>

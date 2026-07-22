@@ -31,12 +31,12 @@ export function Contact() {
               Get in touch
             </p>
             <h2 className="mb-6 font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-tight text-white text-balance">
-              Let&apos;s turn data into something useful.
+              Let&apos;s talk about reporting that needs to be right.
             </h2>
             <p className="mb-10 leading-relaxed text-[#a8a29e]">
-              I&apos;m interested in opportunities involving data analysis,
-              business intelligence, dashboard development, and technical
-              business analysis.
+              I&apos;m looking for roles in business intelligence, data
+              analysis, and technical business analysis — particularly on
+              reporting that people depend on operationally.
             </p>
 
             <div className="mb-10 flex flex-col items-center justify-center gap-3 sm:flex-row">

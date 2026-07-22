@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getAdjacentProjects, getProject, projects } from "@/data/projects";
 import { buildMetadata } from "@/lib/metadata";
 import { accentStyle } from "@/lib/utils";
+import type { CaseStudySection, DeliveryStatus } from "@/types/project";
 import { Container } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { ArrowIcon, GithubIcon } from "@/components/ui/icons";
@@ -28,9 +29,164 @@ export async function generateMetadata({ params }: PageProps) {
 
   return buildMetadata({
     title: project.title,
-    description: project.summary,
+    description: project.oneLiner,
     path: `/projects/${project.slug}`,
   });
+}
+
+const statusStyles: Record<DeliveryStatus, string> = {
+  Released: "bg-teal/10 text-teal border-teal/25",
+  "In testing": "bg-accent-soft text-accent border-accent/25",
+  Paused: "bg-ember/10 text-ember border-ember/25",
+};
+
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="mb-3 font-mono text-[11px] font-medium uppercase tracking-widest text-ink">
+      {children}
+    </h2>
+  );
+}
+
+function Section({ section }: { section: CaseStudySection }) {
+  switch (section.kind) {
+    case "prose":
+      return (
+        <section>
+          <SectionHeading>{section.heading}</SectionHeading>
+          <div className="space-y-4">
+            {section.body.map((paragraph) => (
+              <p key={paragraph} className="leading-relaxed text-muted">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </section>
+      );
+
+    case "list":
+      return (
+        <section>
+          <SectionHeading>{section.heading}</SectionHeading>
+          <ul className="space-y-3">
+            {section.items.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span
+                  aria-hidden="true"
+                  className="mt-2.5 size-1.5 shrink-0 rounded-full bg-[var(--accent)]"
+                />
+                <span className="text-sm leading-relaxed text-muted">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      );
+
+    case "steps":
+      return (
+        <section>
+          <SectionHeading>{section.heading}</SectionHeading>
+          <ol className="space-y-4">
+            {section.items.map((item, index) => (
+              <li key={item} className="flex gap-4">
+                <span
+                  aria-hidden="true"
+                  className="flex size-7 shrink-0 items-center justify-center rounded-full font-mono text-xs text-[var(--accent)]"
+                  style={{
+                    background:
+                      "color-mix(in srgb, var(--accent) 10%, transparent)",
+                  }}
+                >
+                  {index + 1}
+                </span>
+                <p className="pt-1 text-sm leading-relaxed text-muted">
+                  {item}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      );
+
+    case "tiers":
+      return (
+        <section>
+          <SectionHeading>{section.heading}</SectionHeading>
+          <div className="space-y-5">
+            {section.tiers.map((tier) => (
+              <div key={tier.label}>
+                <p className="mb-2.5 text-sm font-semibold text-ink">
+                  {tier.label}
+                </p>
+                <ul className="flex flex-wrap gap-2">
+                  {tier.items.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-lg border border-line bg-paper px-3 py-1.5 text-xs font-medium text-muted"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+      );
+
+    case "note":
+      return (
+        <section className="rounded-2xl border border-line bg-paper p-6">
+          <SectionHeading>{section.heading}</SectionHeading>
+          <p className="text-xs leading-relaxed text-muted">{section.body}</p>
+        </section>
+      );
+
+    case "enhancements":
+      return (
+        <section>
+          <SectionHeading>{section.heading}</SectionHeading>
+          {section.intro ? (
+            <p className="mb-6 text-sm leading-relaxed text-muted">
+              {section.intro}
+            </p>
+          ) : null}
+          <div className="space-y-5">
+            {section.items.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl border border-line bg-paper p-6"
+              >
+                <div className="mb-5 flex flex-wrap items-start justify-between gap-3">
+                  <h3 className="font-display text-base font-bold leading-snug text-ink">
+                    {item.title}
+                  </h3>
+                  <span
+                    className={`shrink-0 rounded-full border px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider ${statusStyles[item.status]}`}
+                  >
+                    {item.status}
+                  </span>
+                </div>
+                <dl className="space-y-4">
+                  {item.blocks.map((block) => (
+                    <div key={block.label}>
+                      <dt className="mb-1 font-mono text-[10px] uppercase tracking-widest text-muted">
+                        {block.label}
+                      </dt>
+                      <dd className="text-sm leading-relaxed text-muted">
+                        {block.body}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </article>
+            ))}
+          </div>
+        </section>
+      );
+  }
 }
 
 export default async function ProjectPage({ params }: PageProps) {
@@ -40,17 +196,8 @@ export default async function ProjectPage({ params }: PageProps) {
   if (!project) notFound();
 
   const { previous, next } = getAdjacentProjects(project.slug);
-
-  const narrative = [
-    { heading: "Overview", body: project.overview },
-    { heading: "Problem", body: project.problem },
-    { heading: "My role", body: project.role },
-  ];
-
-  const results = [
-    { heading: "Outcome", body: project.outcome },
-    { heading: "What I learned", body: project.learned },
-  ];
+  const asideSections = project.sections.filter((s) => s.kind === "note");
+  const mainSections = project.sections.filter((s) => s.kind !== "note");
 
   return (
     <article style={accentStyle(project.accent)}>
@@ -73,7 +220,7 @@ export default async function ProjectPage({ params }: PageProps) {
             {project.title}
           </h1>
           <p className="mb-7 max-w-2xl leading-relaxed text-muted">
-            {project.summary}
+            {project.oneLiner}
           </p>
 
           <ul className="flex flex-wrap gap-2">
@@ -108,49 +255,10 @@ export default async function ProjectPage({ params }: PageProps) {
       </header>
 
       <div className="bg-surface py-16">
-        <Container className="grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:items-start lg:gap-16">
-          <div className="space-y-10">
-            {narrative.map((block) => (
-              <section key={block.heading}>
-                <h2 className="mb-3 font-mono text-[11px] font-medium uppercase tracking-widest text-ink">
-                  {block.heading}
-                </h2>
-                <p className="leading-relaxed text-muted">{block.body}</p>
-              </section>
-            ))}
-
-            <section>
-              <h2 className="mb-4 font-mono text-[11px] font-medium uppercase tracking-widest text-ink">
-                Process
-              </h2>
-              <ol className="space-y-4">
-                {project.process.map((step, index) => (
-                  <li key={step} className="flex gap-4">
-                    <span
-                      aria-hidden="true"
-                      className="flex size-7 shrink-0 items-center justify-center rounded-full font-mono text-xs text-[var(--accent)]"
-                      style={{
-                        background:
-                          "color-mix(in srgb, var(--accent) 10%, transparent)",
-                      }}
-                    >
-                      {index + 1}
-                    </span>
-                    <p className="pt-1 text-sm leading-relaxed text-muted">
-                      {step}
-                    </p>
-                  </li>
-                ))}
-              </ol>
-            </section>
-
-            {results.map((block) => (
-              <section key={block.heading}>
-                <h2 className="mb-3 font-mono text-[11px] font-medium uppercase tracking-widest text-ink">
-                  {block.heading}
-                </h2>
-                <p className="leading-relaxed text-muted">{block.body}</p>
-              </section>
+        <Container className="grid gap-12 lg:grid-cols-[1.35fr_1fr] lg:items-start lg:gap-16">
+          <div className="space-y-12">
+            {mainSections.map((section, index) => (
+              <Section key={index} section={section} />
             ))}
           </div>
 
@@ -170,27 +278,9 @@ export default async function ProjectPage({ params }: PageProps) {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-line bg-paper p-6">
-              <h2 className="mb-4 font-mono text-[11px] font-medium uppercase tracking-widest text-ink">
-                Tools used
-              </h2>
-              <ul className="flex flex-wrap gap-2">
-                {project.tools.map((tool) => (
-                  <li
-                    key={tool}
-                    className="rounded-lg border border-line bg-surface px-3 py-1.5 text-xs font-medium text-ink"
-                  >
-                    {tool}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <p className="rounded-3xl border border-line bg-paper p-6 text-xs leading-relaxed text-muted">
-              This case study describes enterprise work and is anonymized. Data,
-              figures, and visuals shown here are illustrative and contain no
-              proprietary or confidential information.
-            </p>
+            {asideSections.map((section, index) => (
+              <Section key={index} section={section} />
+            ))}
           </aside>
         </Container>
       </div>

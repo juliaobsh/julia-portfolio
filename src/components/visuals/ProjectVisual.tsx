@@ -1,60 +1,119 @@
 import type { ProjectVisual as VisualKey } from "@/types/project";
-import { BarChart, LineChart } from "./charts";
 
 /**
  * Illustrative visuals for each case study. Real screenshots of enterprise work
- * cannot be shown, so each card gets a diagram that conveys the shape of the
- * work without exposing anything proprietary. All figures are invented.
+ * cannot be shown, so each card gets a diagram conveying the shape of the work
+ * without exposing anything proprietary. Values are synthetic except where a
+ * figure is explicitly non-sensitive (survey inventory counts).
  */
 
-function KpiVisual() {
-  const tiles = [
-    { label: "Uptime", value: "99.7%", color: "var(--color-accent)" },
-    { label: "Reports", value: "24", color: "var(--color-teal)" },
-    { label: "Alerts", value: "3", color: "var(--color-ember)" },
-    { label: "Latency", value: "42ms", color: "var(--color-violet)" },
-  ];
+/** A report table gaining columns — the queue enhancement work. */
+function ReportingVisual() {
+  const existing = ["Queue", "Offered", "Answered"];
+  const added = ["Forecast", "Variance"];
 
   return (
-    <div className="flex h-full flex-col gap-3">
-      <div className="grid grid-cols-2 gap-2">
-        {tiles.map((tile) => (
-          <div
-            key={tile.label}
-            className="rounded-xl border border-line bg-surface/70 p-2.5 text-center"
-          >
-            <p className="font-mono text-[9px] text-muted">{tile.label}</p>
-            <p
-              className="mt-0.5 font-display text-sm font-bold"
-              style={{ color: tile.color }}
+    <div className="flex h-full flex-col justify-center gap-3">
+      <div className="overflow-hidden rounded-xl border border-line bg-surface">
+        <div className="flex">
+          {existing.map((column) => (
+            <div key={column} className="flex-1 border-r border-line last:border-r-0">
+              <p className="border-b border-line px-2 py-1.5 font-mono text-[9px] uppercase tracking-wider text-muted">
+                {column}
+              </p>
+              {[0, 1, 2].map((row) => (
+                <div key={row} className="px-2 py-1.5">
+                  <span className="block h-1.5 w-full rounded-full bg-line" />
+                </div>
+              ))}
+            </div>
+          ))}
+          {added.map((column) => (
+            <div
+              key={column}
+              className="flex-1 border-r border-accent/30 bg-accent/5 last:border-r-0"
             >
-              {tile.value}
-            </p>
-          </div>
-        ))}
+              <p className="border-b border-accent/30 px-2 py-1.5 font-mono text-[9px] uppercase tracking-wider text-accent">
+                {column}
+              </p>
+              {[0, 1, 2].map((row) => (
+                <div key={row} className="px-2 py-1.5">
+                  <span className="block h-1.5 w-full rounded-full bg-accent/40" />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
-      <LineChart
-        values={[38, 52, 47, 66, 84]}
-        height={54}
-        gradientId="kpi-fade"
-      />
-      <BarChart
-        groups={[
-          { label: "Q1", primary: 24, secondary: 17 },
-          { label: "Q2", primary: 31, secondary: 22 },
-          { label: "Q3", primary: 28, secondary: 20 },
-          { label: "Q4", primary: 38, secondary: 27 },
-        ]}
-        height={38}
-      />
+      <p className="text-center">
+        <span className="rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 font-mono text-[10px] text-accent">
+          + measures added at report level
+        </span>
+      </p>
     </div>
   );
 }
 
+/** Survey estate breakdown — real inventory counts, no identifying detail. */
+function InventoryVisual() {
+  const segments = [
+    { label: "Active", count: 97, color: "var(--color-violet)" },
+    { label: "Archived", count: 82, color: "var(--color-line)" },
+    { label: "Draft", count: 9, color: "var(--color-teal)" },
+  ];
+  const total = segments.reduce((sum, s) => sum + s.count, 0);
+
+  return (
+    <div className="flex h-full flex-col justify-center gap-4">
+      <div>
+        <div className="mb-2 flex items-baseline justify-between">
+          <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
+            Survey inventory
+          </p>
+          <p className="font-display text-lg font-bold text-ink">{total}</p>
+        </div>
+        <div className="flex h-3 w-full overflow-hidden rounded-full">
+          {segments.map((segment) => (
+            <span
+              key={segment.label}
+              className="block h-full"
+              style={{
+                width: `${(segment.count / total) * 100}%`,
+                background: segment.color,
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      <ul className="space-y-1.5">
+        {segments.map((segment) => (
+          <li key={segment.label} className="flex items-center gap-2.5">
+            <span
+              aria-hidden="true"
+              className="size-2 shrink-0 rounded-full"
+              style={{ background: segment.color }}
+            />
+            <span className="flex-1 text-xs text-muted">{segment.label}</span>
+            <span className="font-mono text-xs text-ink tabular-nums">
+              {segment.count}
+            </span>
+          </li>
+        ))}
+      </ul>
+
+      <p className="rounded-lg bg-surface/70 px-2.5 py-1.5 font-mono text-[10px] leading-relaxed text-muted">
+        Across 12+ lines of business
+      </p>
+    </div>
+  );
+}
+
+/** Manual-to-automated pipeline — the vulnerability triage work. */
 function WorkflowVisual() {
   const steps = [
     {
-      label: "14,000+ vulnerabilities",
+      label: "14,000+ records",
       sub: "Weekly raw feed",
       bg: "var(--color-paper)",
       fg: "var(--color-ink)",
@@ -90,10 +149,7 @@ function WorkflowVisual() {
           <p className="text-xs font-semibold" style={{ color: step.fg }}>
             {step.label}
           </p>
-          <p
-            className="mt-0.5 text-[10px] opacity-70"
-            style={{ color: step.fg }}
-          >
+          <p className="mt-0.5 text-[10px] opacity-70" style={{ color: step.fg }}>
             {step.sub}
           </p>
         </div>
@@ -107,95 +163,48 @@ function WorkflowVisual() {
   );
 }
 
-function SurveyVisual() {
-  const nodes = [
-    { label: "Stakeholder discovery", color: "var(--color-accent)" },
-    { label: "Requirements doc", color: "var(--color-violet)" },
-    { label: "188 surveys reviewed", color: "var(--color-teal)" },
-    { label: "Migration plan", color: "var(--color-ink)" },
-  ];
-
-  return (
-    <div className="flex h-full flex-col justify-center gap-3">
-      <div className="grid grid-cols-2 gap-2">
-        {nodes.map((node) => (
-          <div
-            key={node.label}
-            className="rounded-xl p-3 text-center text-[11px] font-semibold leading-tight text-white"
-            style={{ background: node.color }}
-          >
-            {node.label}
-          </div>
-        ))}
-      </div>
-      <div className="rounded-xl border border-line bg-paper p-3">
-        <p className="mb-2 font-mono text-[10px] text-muted">RTM coverage</p>
-        <div className="flex flex-wrap gap-1">
-          {Array.from({ length: 10 }).map((_, index) => (
-            <span
-              key={index}
-              className="h-4 w-5 rounded-sm"
-              style={{
-                background:
-                  index < 9 ? "var(--color-violet)" : "var(--color-line)",
-              }}
-            />
-          ))}
-        </div>
-        <p className="mt-1.5 font-mono text-[10px] text-muted">
-          188 surveys catalogued
-        </p>
-      </div>
-    </div>
-  );
-}
-
+/** Topic and phrase library structure — no invented match percentages. */
 function AnalyticsVisual() {
   const topics = [
-    { label: "Billing enquiries", pct: 68, color: "var(--color-teal)" },
-    { label: "Technical support", pct: 52, color: "var(--color-muted)" },
-    { label: "Account changes", pct: 41, color: "var(--color-teal)" },
-    { label: "Complaints", pct: 18, color: "var(--color-ember)" },
+    { label: "Billing", phrases: ["invoice", "charge", "balance"] },
+    { label: "Support", phrases: ["outage", "restore", "technician"] },
+    { label: "Account", phrases: ["transfer", "move", "close"] },
   ];
 
   return (
     <div className="flex h-full flex-col justify-center gap-2.5">
+      <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
+        Topic and phrase library
+      </p>
       {topics.map((topic) => (
-        <div key={topic.label} className="flex items-center gap-3">
-          <span className="w-28 shrink-0 font-mono text-[10px] leading-tight text-muted">
-            {topic.label}
-          </span>
-          <span className="h-2 flex-1 overflow-hidden rounded-full bg-line">
-            <span
-              className="block h-full rounded-full"
-              style={{ width: `${topic.pct}%`, background: topic.color }}
-            />
-          </span>
-          <span className="w-8 text-right font-mono text-[10px] text-muted">
-            {topic.pct}%
-          </span>
+        <div
+          key={topic.label}
+          className="rounded-xl border border-line bg-surface/70 px-3 py-2"
+        >
+          <p className="mb-1.5 text-xs font-semibold text-ink">{topic.label}</p>
+          <div className="flex flex-wrap gap-1.5">
+            {topic.phrases.map((phrase) => (
+              <span
+                key={phrase}
+                className="rounded-full bg-ember/10 px-2 py-0.5 font-mono text-[9px] text-ember"
+              >
+                {phrase}
+              </span>
+            ))}
+          </div>
         </div>
       ))}
-      <div className="mt-1 flex flex-wrap gap-1.5">
-        {["billing", "support", "account", "resolve", "callback"].map(
-          (keyword) => (
-            <span
-              key={keyword}
-              className="rounded-full bg-accent-soft px-2 py-0.5 font-mono text-[9px] text-accent"
-            >
-              {keyword}
-            </span>
-          ),
-        )}
-      </div>
+      <p className="font-mono text-[10px] text-muted">
+        Illustrative — not actual configuration
+      </p>
     </div>
   );
 }
 
 const visuals: Record<VisualKey, () => React.ReactElement> = {
-  kpi: KpiVisual,
+  reporting: ReportingVisual,
+  inventory: InventoryVisual,
   workflow: WorkflowVisual,
-  survey: SurveyVisual,
   analytics: AnalyticsVisual,
 };
 

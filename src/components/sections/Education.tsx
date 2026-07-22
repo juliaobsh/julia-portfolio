@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Education() {
   return (
-    <section className="bg-surface py-24">
+    <section className="bg-paper py-24">
       <Container>
         <Reveal>
           <SectionHeading eyebrow="Education" className="mb-10">
@@ -13,7 +13,7 @@ export function Education() {
           </SectionHeading>
 
           <div className="grid items-start gap-6 lg:grid-cols-2">
-            <div className="rounded-2xl border border-line bg-paper p-7">
+            <div className="rounded-2xl border border-line bg-surface p-7">
               <div className="mb-5 flex items-start justify-between gap-4">
                 <div>
                   <h3 className="font-display text-lg font-bold leading-tight text-ink">
@@ -46,7 +46,7 @@ export function Education() {
                   <li
                     key={item.label}
                     style={accentStyle(item.accent)}
-                    className="flex items-center gap-4 rounded-xl border border-line bg-paper px-5 py-4 transition-colors hover:border-[var(--accent)]"
+                    className="flex items-center gap-4 rounded-xl border border-line bg-surface px-5 py-4 transition-colors hover:border-[var(--accent)]"
                   >
                     <span
                       aria-hidden="true"
