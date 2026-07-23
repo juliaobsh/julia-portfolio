@@ -2,7 +2,7 @@ export const site = {
   name: "Yulia Obshansky",
   role: "Business Data Analyst",
   location: "Vaughan, Ontario",
-  availability: "Open to BI, data analyst, and technical BA internships, co-ops, and entry-level roles",
+  availability: "Open to BI, data analyst, and technical BA internships, co-ops, and entry-level opportunities",
   email: "yuliaobs@gmail.com",
   /** Update if a custom domain is added later — used for canonical + OG URLs. */
   url: "https://julia-portfolio-nine.vercel.app",
