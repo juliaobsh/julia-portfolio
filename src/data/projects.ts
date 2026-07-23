@@ -10,10 +10,10 @@ export const projects: Project[] = [
     title: "Enhancing an Enterprise Contact-Centre Reporting Suite",
     category: "Enterprise Power BI · Sustainment & Enhancement",
     summary:
-      "Stakeholders raised reporting changes as tickets; I worked out what each one actually required inside an existing report, wrote or modified the DAX behind it, tested the result, and deployed approved changes from non-production to production. The suite covered queue performance, daily operations, IVR, and monthly agent and team scorecards used to run a contact centre.",
-    evidence: "27 reports in the suite · 5–6 enhancements delivered",
+      "Stakeholders raised reporting changes as tickets; I worked out what each one actually required inside an existing report, wrote or modified the DAX behind it, tested the result, and deployed reviewed changes from non-production to production. The suite covered queue performance, daily operations, IVR, and monthly agent and team scorecards used to run a contact centre.",
+    evidence: "27-report suite · 8–9 reports worked in · 4 enhancements detailed",
     oneLiner:
-      "Ticket-driven Power BI enhancements to a 27-report operational suite — investigated, built, tested, and deployed from non-production to production.",
+      "Ticket-driven Power BI enhancements inside a 27-report operational suite — investigated, built, tested, and deployed from non-production to production.",
     tags: [
       "Power BI",
       "DAX",
@@ -30,49 +30,64 @@ export const projects: Project[] = [
         kind: "prose",
         heading: "Overview",
         body: [
-          "I spent much of my co-op working inside an established enterprise reporting environment built on Microsoft Fabric and Power BI, supporting a suite of 27 operational and performance reports used to run a contact-centre operation.",
-          "The work was sustainment and enhancement rather than greenfield development. Business stakeholders raised requests as tickets; I investigated what each one required, implemented it in the non-production environment, tested the result, and — once the change was reviewed and confirmed — deployed it to production through the team's deployment pipeline. I delivered five to six enhancements this way.",
+          "I spent much of my co-op working inside an established enterprise reporting environment built on Microsoft Fabric and Power BI. The suite contained 27 operational and performance reports used to run a contact-centre operation; I worked directly in eight or nine of them.",
+          "The work was sustainment and enhancement rather than greenfield development. Business stakeholders raised requests as tickets; I investigated what each one required, implemented it in the non-production environment, tested the result, and — once the change had been reviewed and confirmed — deployed it to production through the team's deployment pipeline.",
         ],
       },
       {
         kind: "prose",
-        heading: "Business context",
+        heading: "Context",
         body: [
-          "These reports were the operating picture for the contact centre: queue volumes and service levels, abandon rates, handle-time and occupancy measures, IVR containment, and monthly performance scorecards used by team managers and coaches to review individual and team results.",
-          "That context shaped how I worked. When someone makes a staffing decision or has a coaching conversation based on a number in a report, a metric that aggregates incorrectly or a filter that silently drops people doesn't get caught — it gets trusted. Most of my care went into the parts users would never see.",
+          "These reports were the operating picture for the contact centre: queue volumes and service levels, abandon rates, handle-time and occupancy measures, IVR containment, and monthly performance scorecards used by team managers and coaches to review individual and team results. When someone makes a staffing decision or has a coaching conversation based on a number in a report, a metric that aggregates incorrectly doesn't get caught — it gets trusted.",
+          "The platform itself was established before I joined and maintained by a dedicated team. Data was ingested and transformed through layered lakehouse stages by data engineers, and the reporting layer consumed a curated gold layer through a shared semantic model powering most reports in the suite. Non-production and production environments were separated, changes moved between them through deployment pipelines, and end users accessed reports through published applications with role-based access.",
+          "I worked in the reporting layer — report files, pages, visuals, filters, and report-level measures — using both Power BI Desktop and the Power BI Service.",
         ],
       },
       {
         kind: "prose",
-        heading: "The reporting environment",
+        heading: "How the work reached me",
         body: [
-          "The platform was established before I joined and maintained by a dedicated team. Raw contact-centre data was ingested and transformed through layered lakehouse stages by data engineers, and the reporting layer consumed a curated gold layer through a shared semantic model powering most reports in the suite.",
-          "Non-production and production reporting environments were separated, changes moved between them through deployment pipelines, and end users accessed reports through published applications with access managed by role-based audiences. I worked in the reporting layer — report files, pages, visuals, filters, and report-level measures — using both Power BI Desktop and the Power BI Service.",
+          "Tickets in this area were formally assigned to a senior analyst on the team. In practice, she would hand me a request and expect me to investigate it, work out how to implement it, and come back with results. I reported completed work and deployment status back to her, and she took it forward to the wider stakeholder group.",
         ],
       },
       {
-        kind: "prose",
-        heading: "My role",
-        body: [
-          "Tickets in this area were formally assigned to a senior analyst on the team. In practice, she would hand me a request and expect me to investigate it, work out how to implement it, and come back with results.",
-          "I interpreted each request against the report as it actually behaved, located where the change belonged, and wrote new DAX measures where a metric didn't exist yet, modified existing measures where one did, or configured visuals against measures already in the model where that was the right answer. I built and published the change in the non-production workspace, tested the output against what the result was supposed to be, and once it had been reviewed and confirmed, deployed it to the production workspace through the deployment pipeline.",
-        ],
-      },
-      {
-        kind: "list",
-        heading: "Where my ownership ended",
-        items: [
-          "I did not modify the shared semantic model. My measures lived at the report level. In this environment that distinction matters — a semantic model change propagates to every report built on it, and ownership of the model sat elsewhere. Knowing which side of that line a change falls on was part of doing the work correctly.",
-          "Formal requirements documentation for this work sat with another business analyst.",
-          "The architecture, security model, deployment process, and runbook were all established before I arrived. I learned to work within them rather than owning them.",
-          "Validation artifacts attached to tickets were assembled at the senior level. I tested changes against the expected results the senior analyst set out — confirming counts, layout, and behaviour matched — and reported back.",
+        kind: "tiers",
+        heading: "Scope of my role",
+        variant: "list",
+        tiers: [
+          {
+            label: "I owned",
+            items: [
+              "Investigating assigned requests and working out how they should behave in the report",
+              "Writing new DAX measures, modifying existing ones, and configuring visuals against measures already in the model",
+              "Building and publishing changes in the non-production workspace",
+              "Testing output against expected results, and deploying reviewed changes to production",
+            ],
+          },
+          {
+            label: "I collaborated on",
+            items: [
+              "QA cycles with testers, revising implementations across multiple rounds of feedback",
+              "Release readiness and coordination with the senior analyst who owned the tickets",
+              "Validation, testing against the expected results she set out — the formal validation artifacts attached to tickets were assembled at her level",
+            ],
+          },
+          {
+            label: "Outside my scope",
+            items: [
+              "The shared semantic model. My measures lived at report level; a model change propagates to every report built on it, and ownership sat elsewhere. Knowing which side of that line a change falls on was part of doing the work correctly",
+              "Data engineering pipelines and lakehouse architecture",
+              "Platform architecture, the access model, and the deployment runbook",
+              "Formal requirements documentation for this work, which sat with another business analyst",
+            ],
+          },
         ],
       },
       {
         kind: "enhancements",
         heading: "Representative enhancements",
         intro:
-          "Four examples from a larger set of tickets. Details are generalized and report names replaced.",
+          "Four examples from the tickets I implemented. Details are generalized and report names replaced.",
         items: [
           {
             title: "Forecast and variance measures on a queue report",
@@ -85,10 +100,6 @@ export const projects: Project[] = [
               {
                 label: "What I had to work out",
                 body: "Where columns belong in a table already wide enough to scroll, and how variance should read at a glance — volume as a percentage against forecast, handle time as a signed difference — so someone scanning a row could tell direction without doing arithmetic. Each column had to sit next to the measure it modified rather than being appended at the end.",
-              },
-              {
-                label: "What I did",
-                body: "Added the new measures and columns in the specified positions on both pages, matching existing formatting conventions.",
               },
               {
                 label: "Outcome",
@@ -107,10 +118,6 @@ export const projects: Project[] = [
               {
                 label: "What I had to work out",
                 body: "Distinct counts don't roll up. The distinct agents in a week aren't the sum of the distinct agents across its days, and agents work across multiple queues, so the same person can't be double-counted at the overall level. The measure had to recompute inside whatever filter context the user landed in rather than aggregating a stored value. I also needed to be sure the count meant what was intended: how many distinct people were attached to that queue in that period, not how many interactions they handled.",
-              },
-              {
-                label: "What I did",
-                body: "Wrote the measure and implemented the column on both pages so it responded correctly to the report's aggregation and queue filters.",
               },
               {
                 label: "What I checked",
@@ -136,7 +143,7 @@ export const projects: Project[] = [
               },
               {
                 label: "People move between teams",
-                body: "When an agent changes teams, their historical months no longer match their current manager and coach combination — so filtering by manager could silently drop part of a person's history. I recommended clearing the manager and coach filters and filtering on agent name directly when looking across months, and flagged it as behaviour users needed to be told about rather than discover.",
+                body: "When an agent changes teams, their historical months no longer match their current manager and coach combination — so filtering by manager could silently drop part of a person's history. I recommended clearing those filters and filtering on agent name directly when looking across months, and flagged it as behaviour users needed to be told about rather than discover.",
               },
               {
                 label: "Invisible filters",
@@ -144,7 +151,7 @@ export const projects: Project[] = [
               },
               {
                 label: "Outcome",
-                body: "Passed QA. The tester confirmed the filters worked well and asked that defaults be set to include all values, so the report opens in a complete state and anyone narrowing it does so deliberately. Applied, and deployed to production.",
+                body: "Passed QA. The tester asked that defaults be set to include all values, so the report opens in a complete state and anyone narrowing it does so deliberately. Applied, and deployed to production.",
               },
             ],
           },
@@ -154,19 +161,11 @@ export const projects: Project[] = [
             blocks: [
               {
                 label: "The request",
-                body: "Show percentages alongside raw counts for containment and outage figures across the day, month, and year pages, matching how an existing report presented the same idea.",
+                body: "Show percentages alongside raw counts for containment and outage figures across three pages, matching how an existing report presented the same idea. The constraint was consistency: two reports showing the same concept differently is how people stop trusting both.",
               },
               {
-                label: "What I had to work out",
-                body: "Mainly consistency. Two reports showing the same concept differently is how people stop trusting both, so the presentation had to match the existing report rather than be designed fresh.",
-              },
-              {
-                label: "What came back",
-                body: "The reviewer asked for two changes — move one category to the bottom of the chart on every page, and add thousands separators to the counts for readability. Both applied, re-published, reviewed again, approved, and deployed.",
-              },
-              {
-                label: "Why it's here",
-                body: "It's the most ordinary of the four, and it's what most of the work actually looked like: implement, test, publish, get told something specific, fix it, ship it.",
+                label: "The loop",
+                body: "Implemented and published; the reviewer asked for one category to move to the bottom of the chart on every page and thousands separators added for readability; both applied, re-published, approved, deployed. It's the most ordinary of the four, and it's what most of the work looked like.",
               },
             ],
           },
@@ -225,23 +224,12 @@ export const projects: Project[] = [
       },
       {
         kind: "list",
-        heading: "Challenges and decisions",
-        items: [
-          "Non-current QA data. Some counts couldn't be proven in the QA environment, so I validated against production and made clear what had and hadn't been verified rather than implying more confidence than the environment supported.",
-          "Usability against implementation speed. The filter-pane exclusion would have been quicker. The visible filter was better for users who don't think about filter state. I took the slower one.",
-          "Historical movement in the data. Team changes over time break naive filtering. Understanding that before implementing avoided shipping a filter that looked correct and quietly hid history.",
-          "Requirements outliving their data source. One scorecard enhancement was paused when the upstream analytics feed behind the requested metric was retired — identified by another team member. In a sustainment environment, a ticket's assumptions can expire before the ticket does.",
-        ],
-      },
-      {
-        kind: "list",
         heading: "Outcomes",
         items: [
-          "Five to six report enhancements delivered, most deployed to production",
-          "Forecast and variance measures added to queue reporting, giving managers forecast-to-actual comparison in the report itself",
-          "Distinct agent counts implemented at each aggregation level, correct under the report's filter context",
+          "Forecast and variance measures released to queue reporting, giving managers forecast-to-actual comparison in the report itself",
           "Agent-level exclusion filtering released on a team scorecard, with defaults set so the report opens complete",
-          "Percentage measures added consistently across three pages of a daily summary report",
+          "Percentage measures released across three pages of a daily summary report, consistent with an existing report's presentation",
+          "Distinct agent counts implemented and in testing, correct under the report's filter context at every aggregation level",
           "Changes reviewable by stakeholders in non-production before any deployment decision",
         ],
       },
@@ -263,13 +251,13 @@ export const projects: Project[] = [
   },
   {
     slug: "survey-platform-migration",
-    title: "Leading Discovery for an Enterprise Survey Platform Migration",
+    title: "Discovery for an Enterprise Survey Platform Migration",
     category: "Business Analysis · Requirements",
     summary:
-      "Before a replacement platform can be chosen, someone has to establish what's on the current one and what each team actually needs. I built the inventory of all 188 surveys, ran outreach across more than a dozen lines of business, gathered and confirmed requirements, and consolidated the findings — including one team's formal case against migrating at all.",
-    evidence: "188 surveys inventoried · 97 active",
+      "Before a replacement platform can be chosen, someone has to establish what's on the current one and what each team actually needs. I built the survey inventory, ran outreach across the organization, and gathered and consolidated requirements — surfacing a gap between what different groups need that shapes the whole decision.",
+    evidence: "188 surveys inventoried across the organization",
     oneLiner:
-      "A 188-survey inventory, outreach across more than a dozen lines of business, and a consolidated requirements list — the discovery work that determines what a replacement platform has to do.",
+      "Inventory, stakeholder outreach, and a consolidated requirements list — the discovery work that determines what a replacement platform has to do.",
     tags: [
       "Requirements Gathering",
       "Stakeholder Analysis",
@@ -284,16 +272,8 @@ export const projects: Project[] = [
         kind: "prose",
         heading: "Overview",
         body: [
-          "A funded enterprise project is replacing an aging survey platform that hosts both internal and public-facing forms across the organization. Before any platform can be chosen, someone has to answer three questions: what's actually on there, who owns it, and what each line of business genuinely needs.",
-          "I lead that discovery work — the inventory, the outreach, the requirements gathering, and the documentation.",
-        ],
-      },
-      {
-        kind: "prose",
-        heading: "My role",
-        body: [
-          "I'm the day-to-day lead on outreach and inventory, working with a manager sponsoring the project and a business analyst supporting the team. Platform selection and architecture assessment sit with others and haven't started yet; my work is what those decisions will be based on.",
-          "Unlike my reporting work, this project's requirements documentation is mine. I gather it, structure it, confirm it back with stakeholders, and consolidate it.",
+          "A funded enterprise project is replacing an aging survey platform hosting both internal and public-facing forms. Before any platform can be chosen, someone has to answer three questions: what's actually on there, who owns it, and what each line of business genuinely needs.",
+          "I lead the day-to-day discovery work — inventory, outreach, requirements gathering, and documentation — working with a manager sponsoring the project and a business analyst supporting the team. Platform selection and architecture assessment sit with others and haven't started; my work is what those decisions will be based on. Unlike my reporting work, the requirements documentation here is mine: I gather it, structure it, confirm it back with stakeholders, and consolidate it.",
         ],
       },
       {
@@ -306,11 +286,7 @@ export const projects: Project[] = [
             blocks: [
               {
                 label: "The work",
-                body: "I compiled a complete inventory of every survey on the platform — 188 in total, across more than a dozen organizational folders — capturing each one's owner, creation date, status, permissions, last response activity, and lifetime response volume. The breakdown came out at 97 active, 82 archived, and 9 draft.",
-              },
-              {
-                label: "Why it mattered",
-                body: "No structured view of the estate existed before this. The spreadsheet became the foundation for every conversation that followed.",
+                body: "I compiled a complete inventory of every survey on the platform — 188 in total, spread across the organization — capturing each one's owner, creation date, status, permissions, last response activity, and lifetime response volume. No structured view of the estate existed before this, and the spreadsheet became the foundation for every conversation that followed.",
               },
             ],
           },
@@ -323,40 +299,22 @@ export const projects: Project[] = [
                 body: "Rather than sending one generic request, I sent each team a tailored view of their own surveys with core details pre-filled and specific columns for them to complete — whether historical response data needed retaining, whether a form was internal or customer-facing, and how structurally complex it was.",
               },
               {
-                label: "What I learned from it",
+                label: "Why it worked",
                 body: "Framing it as \u201chere is your list, please confirm\u201d rather than \u201cplease tell us what you have\u201d is why I got responses. Teams corrected my data, added forms I didn't have, and updated statuses — which improved the inventory as a side effect.",
               },
             ],
           },
           {
-            title: "Gathered requirements two ways",
+            title: "Gathered and consolidated requirements",
             status: "Released",
             blocks: [
               {
-                label: "Meeting-based",
-                body: "Teams with substantial or complex form estates got a meeting, with requirements captured and sent back in writing for confirmation.",
-              },
-              {
-                label: "Written and async",
-                body: "Teams with lighter usage got a structured written request asking what they rely on, what would be disruptive to lose, what's on their wish list, and what concerns them about migrating.",
-              },
-              {
-                label: "Outcome",
-                body: "Both paths ended in the same place: a documented, confirmed list rather than a recollection of a conversation.",
-              },
-            ],
-          },
-          {
-            title: "Consolidated and documented",
-            status: "Released",
-            blocks: [
-              {
-                label: "The work",
-                body: "Requirements from every line of business went into a single consolidated list, along with the themes that emerged across them.",
+                label: "Two routes",
+                body: "Teams with substantial or complex form estates got a meeting, with requirements captured and sent back in writing for confirmation. Teams with lighter usage got a structured written request asking what they rely on, what would be disruptive to lose, and what concerns them about migrating. Both ended in the same place: a documented, confirmed list rather than a recollection of a conversation.",
               },
               {
                 label: "Handoff",
-                body: "I wrote the context document that lets the next person pick this up — current status, who's involved, what's been done, where each stakeholder stands, what's outstanding, and which deadlines are time-sensitive.",
+                body: "Requirements from every line of business went into a single consolidated list, and I wrote the context document that lets the next person pick this up — status, stakeholders, what's done, what's outstanding, and which deadlines are time-sensitive.",
               },
             ],
           },
@@ -364,33 +322,19 @@ export const projects: Project[] = [
       },
       {
         kind: "list",
-        heading: "What the inventory surfaced",
+        heading: "What discovery surfaced",
         items: [
-          "Roughly 44% of the surveys were archived, so a substantial share of the estate is cleanup rather than migration — which changes the size of the problem.",
+          "A substantial share of the estate was already archived, so a meaningful part of the project is cleanup rather than migration — which changes the size of the problem.",
           "Survey ownership was heavily concentrated. A small number of creators account for most of the estate, while a long tail of forms have owners who barely use the platform. That determines who actually needs to be consulted.",
-          "Several public-facing forms carry tens of thousands of lifetime submissions and are in active customer use. These aren't surveys — they're operational intake, and migrating them is a materially different exercise from migrating an internal feedback form.",
+          "Some public-facing forms carry very high lifetime submission volumes and are in active customer use. These aren't surveys — they're operational intake, and migrating them is a materially different exercise from migrating an internal feedback form.",
         ],
       },
       {
         kind: "prose",
         heading: "The finding that matters",
         body: [
-          "The requirements work surfaced a genuine tension. One line of business, which owns the largest share of public-facing forms, took the formal position that the platform should be upgraded in place rather than migrated at all — their concern being continuity of existing form URLs and the risk to customers. Their requirement list was effectively the platform's full feature set: custom validation rules, branded style sheets, custom URLs, bulk export, and a hard data-residency requirement.",
-          "Other teams wanted much simpler things: scheduled open and close dates, results in Excel, ranked selection questions, conditional question logic, and a confirmation email to the respondent.",
-          "That gap is the finding. A replacement platform that satisfies the simple requirements would fail the complex ones, and the project's real decision isn't \u201cwhich tool\u201d — it's whether one tool can serve both, or whether the estate should be split. Recording the strength of one team's opposition accurately, rather than smoothing it into a neutral summary, matters more to that decision than a tidy consolidated list would.",
-        ],
-      },
-      {
-        kind: "list",
-        heading: "Themes across all feedback",
-        items: [
-          "Easy for basic use; advanced settings and export configuration consistently described as unintuitive",
-          "Limited formatting and customization for customer-facing forms",
-          "Recurring need for structured input types — matrix questions, ranked selections",
-          "Automation expected as standard: scheduling, reopening, confirmation emails",
-          "Conditional logic required for many business use cases",
-          "Performance degradation at very high response volumes, requiring outreach to be batched",
-          "A data-integrity risk in the current platform, where deleting a question removes its collected responses — driving workarounds that leave forms cluttered and hard to manage",
+          "Requirements gathering surfaced materially different needs between teams. Groups running simple internal forms wanted straightforward things: scheduled open and close dates, results in Excel, ranked selection questions, conditional logic, a confirmation email to the respondent. Groups operating high-volume public intake processes needed considerably more — extensive form customization, branded styling, bulk export, and continuity guarantees for forms customers already use.",
+          "That gap is the finding. A platform satisfying the simpler requirements could fail the complex ones, which raises the real question ahead of the project: whether one replacement can serve the full range of use cases, or whether the estate should be treated as more than one problem. Documenting the distance between those positions accurately, rather than flattening them into a single neutral list, is what makes the eventual decision an informed one.",
         ],
       },
       {
@@ -398,9 +342,8 @@ export const projects: Project[] = [
         heading: "Outcomes",
         items: [
           "A complete, structured inventory of 188 surveys where none existed before, usable for both migration planning and cleanup",
-          "Confirmed requirements captured from every responsive line of business, consolidated into a single list",
+          "Confirmed requirements captured from every responsive line of business and consolidated into a single list",
           "Clear identification of which forms are high-volume, customer-facing, and require the most careful migration planning",
-          "Documented positions and concerns from each stakeholder group, including one team's formal opposition to migration",
           "Handoff documentation covering status, ownership, outstanding tasks, and time-sensitive deadlines",
         ],
       },
@@ -408,9 +351,9 @@ export const projects: Project[] = [
         kind: "list",
         heading: "What I learned",
         items: [
-          "Send people their own data, not a blank form. Response rates went up sharply when stakeholders were asked to confirm and correct a list rather than build one.",
-          "Disagreement is a finding, not a problem. The most useful thing I documented was that two groups of stakeholders want incompatible things.",
-          "An inventory is an argument. Knowing that a large share of the estate is archived, and that a handful of forms carry most of the real customer traffic, reframes the whole project.",
+          "Send people their own data, not a blank form. Response rates went up sharply when stakeholders were asked to confirm and correct a list rather than build one from memory.",
+          "Where stakeholders want incompatible things, that difference is worth documenting carefully rather than resolving too early. It was the most useful thing to come out of the requirements work.",
+          "Knowing how much of the estate is dormant, and which handful of forms carry most of the real traffic, changes what the project is actually about.",
         ],
       },
       {
@@ -479,12 +422,7 @@ export const projects: Project[] = [
       "Analytics output is only as good as the phrase libraries behind it. I reviewed topic categories against how they were actually being used, expanded and refined phrase libraries to improve transcription matching, and documented configuration decisions so the setup stayed maintainable after handover.",
     oneLiner:
       "Configuration and maintenance of speech and text analytics topics to improve the quality of contact-centre insight.",
-    tags: [
-      "Speech Analytics",
-      "Text Analytics",
-      "Configuration",
-      "Reporting",
-    ],
+    tags: ["Speech Analytics", "Text Analytics", "Configuration", "Reporting"],
     accent: "ember",
     visual: "analytics",
     sections: [

@@ -110,31 +110,46 @@ function Section({ section }: { section: CaseStudySection }) {
         </section>
       );
 
-    case "tiers":
+    case "tiers": {
+      const asList = section.variant === "list";
       return (
         <section>
           <SectionHeading>{section.heading}</SectionHeading>
-          <div className="space-y-5">
+          <div className={asList ? "space-y-6" : "space-y-5"}>
             {section.tiers.map((tier) => (
               <div key={tier.label}>
                 <p className="mb-2.5 text-sm font-semibold text-ink">
                   {tier.label}
                 </p>
-                <ul className="flex flex-wrap gap-2">
-                  {tier.items.map((item) => (
-                    <li
-                      key={item}
-                      className="rounded-lg border border-line bg-paper px-3 py-1.5 text-xs font-medium text-muted"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                {asList ? (
+                  <ul className="space-y-2.5 border-l-2 border-[var(--accent)]/25 pl-4">
+                    {tier.items.map((item) => (
+                      <li
+                        key={item}
+                        className="text-sm leading-relaxed text-muted"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <ul className="flex flex-wrap gap-2">
+                    {tier.items.map((item) => (
+                      <li
+                        key={item}
+                        className="rounded-lg border border-line bg-paper px-3 py-1.5 text-xs font-medium text-muted"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
         </section>
       );
+    }
 
     case "note":
       return (

@@ -15,7 +15,7 @@ const highlights = [
   {
     symbol: "◆",
     label: "Requirements",
-    description: "Leading discovery across more than a dozen lines of business",
+    description: "Discovery and stakeholder work across the organization",
   },
   {
     symbol: "◉",

@@ -14,9 +14,9 @@ export default function HomePage() {
       <About />
       <Work />
       <Experience />
+      <Approach />
       <Skills />
       <Education />
-      <Approach />
       <Contact />
     </>
   );

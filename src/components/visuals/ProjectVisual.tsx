@@ -54,14 +54,13 @@ function ReportingVisual() {
   );
 }
 
-/** Survey estate breakdown — real inventory counts, no identifying detail. */
+/** Survey estate composition. Total is non-sensitive; splits shown proportionally. */
 function InventoryVisual() {
   const segments = [
-    { label: "Active", count: 97, color: "var(--color-violet)" },
-    { label: "Archived", count: 82, color: "var(--color-line)" },
-    { label: "Draft", count: 9, color: "var(--color-teal)" },
+    { label: "Active", share: 52, color: "var(--color-violet)" },
+    { label: "Archived", share: 43, color: "var(--color-line)" },
+    { label: "Draft", share: 5, color: "var(--color-teal)" },
   ];
-  const total = segments.reduce((sum, s) => sum + s.count, 0);
 
   return (
     <div className="flex h-full flex-col justify-center gap-4">
@@ -70,17 +69,14 @@ function InventoryVisual() {
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
             Survey inventory
           </p>
-          <p className="font-display text-lg font-bold text-ink">{total}</p>
+          <p className="font-display text-lg font-bold text-ink">188</p>
         </div>
         <div className="flex h-3 w-full overflow-hidden rounded-full">
           {segments.map((segment) => (
             <span
               key={segment.label}
               className="block h-full"
-              style={{
-                width: `${(segment.count / total) * 100}%`,
-                background: segment.color,
-              }}
+              style={{ width: `${segment.share}%`, background: segment.color }}
             />
           ))}
         </div>
@@ -94,16 +90,13 @@ function InventoryVisual() {
               className="size-2 shrink-0 rounded-full"
               style={{ background: segment.color }}
             />
-            <span className="flex-1 text-xs text-muted">{segment.label}</span>
-            <span className="font-mono text-xs text-ink tabular-nums">
-              {segment.count}
-            </span>
+            <span className="text-xs text-muted">{segment.label}</span>
           </li>
         ))}
       </ul>
 
       <p className="rounded-lg bg-surface/70 px-2.5 py-1.5 font-mono text-[10px] leading-relaxed text-muted">
-        Across 12+ lines of business
+        Composition shown proportionally
       </p>
     </div>
   );

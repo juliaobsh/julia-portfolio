@@ -30,11 +30,11 @@ export function Hero() {
           </h1>
 
           <p className="mb-8 max-w-[46ch] text-[1.05rem] leading-relaxed text-muted">
-            Business Data Analyst and Computer Science co-op student. I deliver
-            Power BI enhancements into an enterprise Microsoft Fabric
-            environment — from interpreting the request through to deploying the
-            approved change to production — and lead the requirements work
-            behind an enterprise platform migration.
+            Business Data Analyst and Computer Science co-op student. I work
+            inside an enterprise Microsoft Fabric and Power BI environment,
+            taking reporting requests from investigation through
+            implementation, validation, and QA, to deploying the approved
+            change to production.
           </p>
 
           <div className="mb-9 flex flex-wrap items-center gap-x-4 gap-y-2">

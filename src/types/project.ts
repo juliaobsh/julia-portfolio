@@ -19,6 +19,8 @@ export type CaseStudySection =
   | {
       kind: "tiers";
       heading: string;
+      /** "chips" for short tool names, "list" for explanatory phrases. */
+      variant?: "chips" | "list";
       tiers: { label: string; items: string[] }[];
     }
   | { kind: "note"; heading: string; body: string }
