@@ -1,5 +1,9 @@
 /** Identifier for the generated SVG visual rendered with a case study. */
-export type ProjectVisual = "reporting" | "inventory" | "workflow" | "analytics";
+export type ProjectVisual =
+  | "reporting"
+  | "inventory"
+  | "workflow"
+  | "product";
 
 /** Named accent used to differentiate case studies across cards and pages. */
 export type AccentName = "accent" | "teal" | "violet" | "ember";

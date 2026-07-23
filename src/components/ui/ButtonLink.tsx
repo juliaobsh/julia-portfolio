@@ -31,15 +31,20 @@ export function ButtonLink({
   download,
 }: Props) {
   const classes = cn(base, variants[variant], className);
-  const isExternal = href.startsWith("http") || href.startsWith("mailto:");
+  // mailto: and tel: hand off to another application, so they must not open
+  // a blank tab — only true web links get target="_blank".
+  const isHttpExternal = href.startsWith("http");
+  const isProtocolLink = href.startsWith("mailto:") || href.startsWith("tel:");
 
-  if (isExternal || download) {
+  if (isHttpExternal || isProtocolLink || download) {
     return (
       <a
         href={href}
         className={classes}
         download={download}
-        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        {...(isHttpExternal
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
       >
         {children}
       </a>

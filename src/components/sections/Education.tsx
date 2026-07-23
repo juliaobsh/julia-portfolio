@@ -34,7 +34,23 @@ export function Education() {
                 {education.degree}
               </p>
               <p className="mb-1 text-sm text-muted">{education.program}</p>
-              <p className="font-mono text-xs text-muted">{education.period}</p>
+              <p className="mb-5 font-mono text-xs text-muted">
+                {education.period}
+              </p>
+
+              <p className="mb-2 font-mono text-[10px] uppercase tracking-widest text-muted">
+                Selected coursework
+              </p>
+              <ul className="flex flex-wrap gap-1.5">
+                {education.coursework.map((course) => (
+                  <li
+                    key={course}
+                    className="rounded-full bg-surface px-2.5 py-1 text-xs font-medium text-muted"
+                  >
+                    {course}
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div>

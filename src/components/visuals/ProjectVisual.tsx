@@ -54,13 +54,14 @@ function ReportingVisual() {
   );
 }
 
-/** Survey estate composition. Total is non-sensitive; splits shown proportionally. */
+/** Survey estate composition, shown without figures to limit identifying detail. */
 function InventoryVisual() {
   const segments = [
-    { label: "Active", share: 52, color: "var(--color-violet)" },
-    { label: "Archived", share: 43, color: "var(--color-line)" },
-    { label: "Draft", share: 5, color: "var(--color-teal)" },
+    { label: "Active", weight: 5, color: "var(--color-violet)" },
+    { label: "Archived", weight: 4, color: "var(--color-line)" },
+    { label: "Draft", weight: 1, color: "var(--color-teal)" },
   ];
+  const total = segments.reduce((sum, s) => sum + s.weight, 0);
 
   return (
     <div className="flex h-full flex-col justify-center gap-4">
@@ -76,7 +77,10 @@ function InventoryVisual() {
             <span
               key={segment.label}
               className="block h-full"
-              style={{ width: `${segment.share}%`, background: segment.color }}
+              style={{
+                width: `${(segment.weight / total) * 100}%`,
+                background: segment.color,
+              }}
             />
           ))}
         </div>
@@ -96,7 +100,7 @@ function InventoryVisual() {
       </ul>
 
       <p className="rounded-lg bg-surface/70 px-2.5 py-1.5 font-mono text-[10px] leading-relaxed text-muted">
-        Composition shown proportionally
+        Categories shown without figures
       </p>
     </div>
   );
@@ -156,39 +160,69 @@ function WorkflowVisual() {
   );
 }
 
-/** Topic and phrase library structure — no invented match percentages. */
-function AnalyticsVisual() {
-  const topics = [
-    { label: "Billing", phrases: ["invoice", "charge", "balance"] },
-    { label: "Support", phrases: ["outage", "restore", "technician"] },
-    { label: "Account", phrases: ["transfer", "move", "close"] },
+/** Vehicle spec card — echoes the marketplace's instrument-cluster design language. */
+function ProductVisual() {
+  const specs = [
+    { label: "Range", value: "512 km" },
+    { label: "0–100", value: "3.8s" },
+    { label: "Drive", value: "AWD" },
   ];
 
   return (
-    <div className="flex h-full flex-col justify-center gap-2.5">
-      <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
-        Topic and phrase library
-      </p>
-      {topics.map((topic) => (
-        <div
-          key={topic.label}
-          className="rounded-xl border border-line bg-surface/70 px-3 py-2"
-        >
-          <p className="mb-1.5 text-xs font-semibold text-ink">{topic.label}</p>
-          <div className="flex flex-wrap gap-1.5">
-            {topic.phrases.map((phrase) => (
-              <span
-                key={phrase}
-                className="rounded-full bg-ember/10 px-2 py-0.5 font-mono text-[9px] text-ember"
-              >
-                {phrase}
-              </span>
-            ))}
+    <div className="flex h-full flex-col justify-center gap-3">
+      <div className="overflow-hidden rounded-2xl border border-line bg-[#12161C] p-4">
+        <div className="mb-3 flex items-start justify-between">
+          <div>
+            <p className="font-mono text-[9px] uppercase tracking-widest text-white/40">
+              Electric · 2026
+            </p>
+            <p className="mt-0.5 font-display text-sm font-bold text-white">
+              Sample Vehicle
+            </p>
           </div>
+          <span className="rounded-md bg-[#0E63FF] px-2 py-0.5 font-mono text-[9px] text-white">
+            Compare
+          </span>
         </div>
-      ))}
-      <p className="font-mono text-[10px] text-muted">
-        Illustrative — not actual configuration
+
+        {/* Range arc — the prototype's signature gauge motif. */}
+        <svg viewBox="0 0 120 42" className="mb-3 w-full" aria-hidden="true">
+          <path
+            d="M10 38 A 50 50 0 0 1 110 38"
+            fill="none"
+            stroke="rgb(255 255 255 / 0.12)"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+          <path
+            d="M10 38 A 50 50 0 0 1 110 38"
+            fill="none"
+            stroke="#0E63FF"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeDasharray="157"
+            strokeDashoffset="47"
+          />
+        </svg>
+
+        <div className="flex gap-2">
+          {specs.map((spec) => (
+            <div
+              key={spec.label}
+              className="flex-1 rounded-lg bg-white/5 px-2 py-1.5 text-center"
+            >
+              <p className="font-mono text-[8px] uppercase tracking-wider text-white/40">
+                {spec.label}
+              </p>
+              <p className="mt-0.5 font-mono text-[11px] font-medium text-white">
+                {spec.value}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <p className="text-center font-mono text-[10px] text-muted">
+        Illustrative — synthetic vehicle
       </p>
     </div>
   );
@@ -198,7 +232,7 @@ const visuals: Record<VisualKey, () => React.ReactElement> = {
   reporting: ReportingVisual,
   inventory: InventoryVisual,
   workflow: WorkflowVisual,
-  analytics: AnalyticsVisual,
+  product: ProductVisual,
 };
 
 export function ProjectVisual({ visual }: { visual: VisualKey }) {

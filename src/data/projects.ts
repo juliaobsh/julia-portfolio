@@ -47,7 +47,7 @@ export const projects: Project[] = [
         kind: "prose",
         heading: "How the work reached me",
         body: [
-          "Tickets in this area were formally assigned to a senior analyst on the team. In practice, she would hand me a request and expect me to investigate it, work out how to implement it, and come back with results. I reported completed work and deployment status back to her, and she took it forward to the wider stakeholder group.",
+          "Many requests were formally owned by a senior analyst, who assigned me the investigation and implementation. I worked through the report behaviour independently, built and tested the change, and reported results and release status back for stakeholder follow-up.",
         ],
       },
       {
@@ -69,7 +69,7 @@ export const projects: Project[] = [
             items: [
               "QA cycles with testers, revising implementations across multiple rounds of feedback",
               "Release readiness and coordination with the senior analyst who owned the tickets",
-              "Validation, testing against the expected results she set out — the formal validation artifacts attached to tickets were assembled at her level",
+              "Validation. I tested changes against expected results and source data; formal validation documentation and final stakeholder sign-off were owned by the senior analyst",
             ],
           },
           {
@@ -415,42 +415,126 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "speech-analytics-configuration",
-    title: "Contact-Centre Speech and Text Analytics Configuration",
-    category: "Analytics Operations",
+    slug: "apexauto-ev-marketplace",
+    title: "ApexAuto — Electric Vehicle Marketplace",
+    category: "Product Design · Frontend · Quality Assurance",
     summary:
-      "Analytics output is only as good as the phrase libraries behind it. I reviewed topic categories against how they were actually being used, expanded and refined phrase libraries to improve transcription matching, and documented configuration decisions so the setup stayed maintainable after handover.",
+      "A full-stack e-commerce application for browsing, comparing, financing, and purchasing electric vehicles, built by a four-person team. I established the visual direction and prototype, implemented selected frontend pages, and tested user journeys to find functional and usability defects.",
+    evidence:
+      "4-person team · Original UI direction · React frontend · End-to-end testing",
     oneLiner:
-      "Configuration and maintenance of speech and text analytics topics to improve the quality of contact-centre insight.",
-    tags: ["Speech Analytics", "Text Analytics", "Configuration", "Reporting"],
+      "A team-built EV marketplace where I owned the design direction and prototype, implemented frontend pages, and did the testing that caught real defects.",
+    tags: [
+      "React",
+      "TypeScript",
+      "UI/UX Design",
+      "Prototyping",
+      "Functional Testing",
+      "Spring Boot",
+    ],
     accent: "ember",
-    visual: "analytics",
+    visual: "product",
     sections: [
       {
         kind: "prose",
         heading: "Overview",
         body: [
-          "Speech and text analytics tooling categorizes contact-centre conversations by matching them against configured topics and phrase libraries. If those libraries are incomplete or stale, the reporting built on top of them looks confident and means very little.",
+          "ApexAuto was a team project for a fourth-year Building E-Commerce Systems course. The goal was a full-stack marketplace where users could browse and compare electric vehicles, save favourites, configure financing, complete checkout, and review past orders — a React and TypeScript frontend against a Spring Boot REST backend and a relational data layer.",
+          "I'm including it because it shows things my reporting work can't: interface design, prototyping, frontend implementation, and working through defects inside a team.",
+        ],
+      },
+      {
+        kind: "tiers",
+        heading: "My contribution",
+        variant: "list",
+        tiers: [
+          {
+            label: "I owned",
+            items: [
+              "The product's visual direction and interactive prototype, including the interface style, page structure, and how the core customer journeys were laid out",
+              "A build guide translating the prototype into a component and design-token system the team could work from",
+            ],
+          },
+          {
+            label: "I contributed",
+            items: [
+              "Selected React and TypeScript pages built from the prototype, including the landing page and the vehicle catalogue with its search, category filtering, price range, and sort controls",
+              "Testing across completed features, reproducing issues and communicating what needed correcting",
+            ],
+          },
+          {
+            label: "Built by the team",
+            items: [
+              "The backend services, REST API, and data layer, and the remaining frontend pages",
+              "ApexAuto was a four-person project — this page describes my part of it, not the whole application",
+            ],
+          },
         ],
       },
       {
         kind: "prose",
-        heading: "What I did",
+        heading: "Design direction",
         body: [
-          "I reviewed existing topic categories against how they were actually being used operationally, rather than against how they were originally defined. Where coverage was thin, I expanded and refined phrase libraries to improve matching accuracy, and documented the reasoning behind configuration decisions so the setup could be maintained by whoever inherited it.",
+          "I wanted the marketplace to feel more like a modern automotive product than a university e-commerce assignment, so I built the interface around a digital instrument cluster: a dark navy ground, a single electric blue accent for actions, and technical typography for specifications and figures.",
+          "That gave the catalogue a consistent language for the things buyers actually compare — range, acceleration, drivetrain — with a range gauge as a recurring visual motif rather than another row of text. Establishing the system as a prototype first, before anyone wrote production components, meant the team had something concrete to build against instead of resolving styling decisions page by page.",
+        ],
+      },
+      {
+        kind: "enhancements",
+        heading: "Testing, and two defects worth describing",
+        intro:
+          "I tested complete journeys rather than individual pages — browsing the catalogue, comparing vehicles, adding and removing cart items, configuring financing, checking out, and moving through authenticated and unauthenticated states.",
+        items: [
+          {
+            title: "Category filtering returned nothing",
+            status: "Released",
+            blocks: [
+              {
+                label: "Symptom",
+                body: "Selecting a category in the catalogue filtered the list down to zero results, even for categories that visibly had vehicles in them.",
+              },
+              {
+                label: "Cause",
+                body: "The frontend was filtering on a category field the backend's vehicle entity didn't have, so every comparison failed. The filter wasn't broken — it was matching against something that didn't exist.",
+              },
+              {
+                label: "Fix",
+                body: "Rather than block on a backend schema change late in the project, I derived categories on the frontend by mapping vehicle models to their segment, which kept the filter working against the data the API actually returned.",
+              },
+            ],
+          },
+          {
+            title: "Add-to-cart failed silently",
+            status: "Released",
+            blocks: [
+              {
+                label: "Symptom",
+                body: "Adding a vehicle to the cart appeared to succeed but nothing arrived in the cart, with no error surfaced to the user.",
+              },
+              {
+                label: "Cause",
+                body: "Tracing the request showed the cart-creation endpoint returning a bare success status rather than a created status with the cart object in the body. The frontend had no cart ID to attach the item to, so the follow-up call had nothing to reference.",
+              },
+              {
+                label: "Why it's here",
+                body: "It's a good example of why testing journeys beats testing pages. Both the cart page and the vehicle page worked correctly in isolation; the defect only existed in the handoff between them, and only reproducing the full sequence surfaced it.",
+              },
+            ],
+          },
         ],
       },
       {
         kind: "prose",
-        heading: "What I learned",
+        heading: "What I took from it",
         body: [
-          "Analytics configuration is iterative. The first pass rarely captures the full range of relevant phrasing, because real conversations don't use the vocabulary you expect. Building in a feedback loop with the people who hear those conversations improves quality far faster than reasoning about it from a spreadsheet.",
+          "Translating a prototype into a working team product involves more negotiation than I expected. Some design decisions didn't survive contact with the API, and deciding which ones to defend and which to adapt was most of the frontend work.",
+          "It also changed how I think about testing. Treating it as part of building — reproducing an issue, working out what was actually happening, and describing it precisely enough for someone else to fix — turned out to be more useful than checking pages at the end.",
         ],
       },
       {
         kind: "note",
-        heading: "Confidentiality",
-        body: "Platform configuration details, topic definitions, and conversation data are omitted. Only the nature of the work is described.",
+        heading: "About this project",
+        body: "ApexAuto was an academic team project. This page describes my own contribution; the application was built by four people, and the backend and remaining frontend pages were the work of teammates.",
       },
     ],
   },
