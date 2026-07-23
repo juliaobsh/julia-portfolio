@@ -71,4 +71,4 @@ export const environmentGroup: SkillGroup = {
   ],
 };
 
-export const languages = ["English", "Hebrew", "Russian", "French"];
+export const languages = ["English", "Hebrew", "Russian"];
