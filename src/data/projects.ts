@@ -439,7 +439,7 @@ export const projects: Project[] = [
         kind: "prose",
         heading: "Overview",
         body: [
-          "ApexAuto was a team project for a fourth-year Building E-Commerce Systems course. The goal was a full-stack marketplace where users could browse and compare electric vehicles, save favourites, configure financing, complete checkout, and review past orders — a React and TypeScript frontend against a Spring Boot REST backend and a relational data layer.",
+          "ApexAuto is a team project for a fourth-year Building E-Commerce Systems course. The goal was a full-stack marketplace where users could browse and compare electric vehicles, save favourites, configure financing, complete checkout, and review past orders — a React and TypeScript frontend against a Spring Boot REST backend and a relational data layer.",
           "I'm including it because it shows things my reporting work can't: interface design, prototyping, frontend implementation, and working through defects inside a team.",
         ],
       },

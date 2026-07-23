@@ -21,6 +21,7 @@ export const roles: Role[] = [
       "Authored and modified DAX measures at the report level, and configured visuals against measures already present in the shared semantic model",
       "Built and tested changes in a non-production Fabric workspace, supported QA cycles with testers, and deployed reviewed changes to production through the deployment pipeline",
       "Lead the discovery work for an enterprise survey platform migration: a 188-survey inventory, stakeholder outreach across the organization, and consolidated requirements documentation",
+      "Served as business analysis bridge between Hydro One and an external vendor on a ServiceNow integration, supporting cross-organizational requirements alignment across three organizations",
       "Automated weekly triage of 14,000–16,000 cybersecurity vulnerabilities using Excel VBA and CMDB enrichment, assigning solution owners and maintaining the tracker",
       "Maintained a monthly small-projects financial tracker by ingesting and reconciling SAP actuals, documenting the process for handover",
       "Configured contact-centre speech and text analytics topics and phrase libraries, and produced monthly application performance reporting for senior stakeholders",
@@ -45,16 +46,24 @@ export const education = {
   period: "2022 – 2027",
   /** Kept short and positioning-relevant — not a transcript. */
   coursework: [
-    "Building E-Commerce Systems",
-    "User Interfaces",
-    "Software Design",
-    "Database Systems",
+    "Introduction to Database Systems",
+    "Applied Linear Algebra",
+    "Elementary Probability",
     "Design & Analysis of Algorithms",
+    "Software Design",
+    "User Interfaces",
+  ],
+  upcoming: [
+    "Big Data Systems",
+    "Database Management Systems",
+    "Building E-Commerce Systems",
+    "Advanced Data Structures",
+    "Human-Computer Interaction",
   ],
 };
 
 export const recognition = [
-  { label: "Best UI/UX Award", accent: "accent" },
+  { label: "Best UI/UX Award - CS Hub Local Hack Day", accent: "accent" },
   { label: "York University Entrance Scholarship", accent: "violet" },
   { label: "Lassonde Entrance Scholarship", accent: "teal" },
 ] as const;

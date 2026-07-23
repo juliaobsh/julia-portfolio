@@ -51,6 +51,20 @@ export function Education() {
                   </li>
                 ))}
               </ul>
+
+              <p className="mt-4 mb-2 font-mono text-[10px] uppercase tracking-widest text-muted">
+                In progress
+              </p>
+              <ul className="flex flex-wrap gap-1.5">
+                {education.upcoming.map((course) => (
+                  <li
+                    key={course}
+                    className="rounded-full border border-line px-2.5 py-1 text-xs font-medium text-muted"
+                  > 
+                    {course}
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div>
