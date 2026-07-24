@@ -33,9 +33,9 @@ Supported discovery and analysis for the migration of an enterprise survey ecosy
 
 Automated recurring vulnerability-processing tasks using Excel VBA and CMDB enrichment to support the weekly handling of large security datasets.
 
-### Speech and Text Analytics Configuration
+### ApexAuto - Electric Vehicle Marketplace
 
-Configured organization-specific topics and phrase libraries to improve the identification of business terminology and interaction intent.
+Created the original UI/UX direction and prototype for a full-stack electric-vehicle marketplace, implemented selected React and TypeScript frontend functionality, and conducted functional and usability testing across key user journeys.
 
 ## Tech stack
 
