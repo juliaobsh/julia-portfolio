@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yulia Obshansky - Business Data Analyst Portfolio
 
-## Getting Started
+Personal portfolio website showcasing my experience in enterprise business intelligence, Power BI reporting, data validation, workflow automation, and technical business analysis.
 
-First, run the development server:
+**Live site:** [julia-portfolio-nine.vercel.app](https://julia-portfolio-nine.vercel.app/)
+
+## About the portfolio
+
+This portfolio is designed to show more than finished dashboards. It documents how I approach real analytical work: understanding an existing reporting environment, investigating ambiguous requests, implementing careful changes, validating results, supporting QA, and communicating findings clearly.
+
+The featured case studies cover work involving:
+
+- Enterprise Power BI report enhancements
+- DAX, filter context, and report validation
+- Microsoft Fabric reporting workflows
+- Cybersecurity vulnerability triage automation
+- Enterprise survey-platform discovery
+- Contact-centre speech and text analytics
+
+Because much of this work was completed in an enterprise environment, company-sensitive details, internal identifiers, employee information, and production data have been removed or reconstructed.
+
+## Featured case studies
+
+### Enterprise Contact-Centre Reporting Suite
+
+Implemented and validated ticket-driven Power BI enhancements across operational and performance reports within a larger enterprise reporting environment.
+
+### Enterprise Survey Platform Migration
+
+Supported discovery and analysis for the migration of an enterprise survey ecosystem, including inventory review, stakeholder outreach, and requirements consolidation.
+
+### Cybersecurity Vulnerability Triage Automation
+
+Automated recurring vulnerability-processing tasks using Excel VBA and CMDB enrichment to support the weekly handling of large security datasets.
+
+### Speech and Text Analytics Configuration
+
+Configured organization-specific topics and phrase libraries to improve the identification of business terminology and interaction intent.
+
+## Tech stack
+
+- **Framework:** Next.js 16 using the App Router
+- **Frontend:** React 19 and TypeScript
+- **Styling:** Tailwind CSS 4
+- **Fonts:** Sora, Manrope, and DM Mono through `next/font`
+- **Analytics:** Vercel Analytics and Speed Insights
+- **Deployment:** Vercel
+
+## Key features
+
+- Responsive, accessible single-page portfolio
+- Dynamically generated case-study routes
+- Data-driven project content stored separately from presentation components
+- Custom project visuals built with React and CSS
+- Scroll-based reveal animations with reduced-motion support
+- SEO metadata, canonical URLs, and social metadata
+- Downloadable résumé and direct contact links
+- Clear distinction between work I owned directly, work I collaborated on, and systems maintained by other teams
+
+## Project structure
+
+```text
+src/
+├── app/
+│   ├── projects/[slug]/    # Dynamically generated case-study pages
+│   ├── globals.css         # Design tokens, typography, and animation styles
+│   ├── layout.tsx          # Global metadata, fonts, navigation, and analytics
+│   └── page.tsx            # Homepage composition
+├── components/
+│   ├── layout/             # Navbar and footer
+│   ├── sections/           # Homepage sections
+│   ├── ui/                 # Reusable interface components
+│   └── visuals/            # Custom portfolio and project visuals
+├── data/
+│   ├── approach.ts
+│   ├── experience.ts
+│   ├── projects.ts
+│   ├── site.ts
+│   └── skills.ts
+├── lib/                    # Metadata and utility helpers
+└── types/                  # Shared TypeScript definitions
+```
+
+## Running the project locally
+
+### Prerequisites
+
+- Node.js 20 or later
+- npm
+
+### Installation
+
+```bash
+git clone https://github.com/juliaobsh/julia-portfolio.git
+cd julia-portfolio
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Quality checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
 
-## Learn More
+### Production preview
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run `npm run build` before starting the production server.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Editing portfolio content
 
-## Deploy on Vercel
+Most portfolio copy is separated from the UI components so that it can be updated without restructuring the pages:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `src/data/site.ts` - name, role, contact details, links, and navigation
+- `src/data/projects.ts` - project cards and complete case-study content
+- `src/data/experience.ts` - professional experience
+- `src/data/skills.ts` - technical skills and tools
+- `src/data/approach.ts` - working principles
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The résumé displayed on the website is stored at `public/resume.pdf`.
+
+## Confidentiality
+
+The case studies are based on real professional experience, but public-facing content is intentionally anonymized. Visuals may use reconstructed layouts or representative data to demonstrate the analytical process without exposing confidential company information, system identifiers, credentials, or operational records.
+
+## Contact
+
+- [Portfolio](https://julia-portfolio-nine.vercel.app/)
+- [LinkedIn](https://www.linkedin.com/in/yulia-obshansky/)
+- [GitHub](https://github.com/juliaobsh)
+- [Email](mailto:yuliaobs@gmail.com)
+
+---
+
+Built and maintained by **Yulia Obshansky**.
