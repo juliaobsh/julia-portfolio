@@ -35,9 +35,21 @@ export function Experience() {
                     />
                   </span>
 
-                  <div className="rounded-2xl border border-line bg-paper p-6">
+                  <div
+                    className={
+                      role.narrative
+                        ? "rounded-2xl border border-line bg-paper/60 p-5"
+                        : "rounded-2xl border border-line bg-paper p-6"
+                    }
+                  >
                     <div className="mb-1 flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
-                      <h3 className="font-display text-lg font-bold text-ink">
+                      <h3
+                        className={
+                          role.narrative
+                            ? "font-display text-base font-semibold text-muted"
+                            : "font-display text-lg font-bold text-ink"
+                        }
+                      >
                         {role.org}
                       </h3>
                       {role.current ? (
@@ -55,7 +67,7 @@ export function Experience() {
                     </p>
 
                     {role.narrative ? (
-                      <p className="text-sm leading-relaxed text-muted">
+                      <p className="text-[13px] leading-relaxed text-muted">
                         {role.narrative}
                       </p>
                     ) : (

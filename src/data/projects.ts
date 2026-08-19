@@ -11,7 +11,7 @@ export const projects: Project[] = [
     category: "Enterprise Power BI · Sustainment & Enhancement",
     summary:
       "Stakeholders raised reporting changes as tickets; I worked out what each one actually required inside an existing report, wrote or modified the DAX behind it, tested the result, and deployed reviewed changes from non-production to production. The suite covered queue performance, daily operations, IVR, and monthly agent and team scorecards used to run a contact centre.",
-    evidence: "27-report suite · 8–9 reports worked in · 4 enhancements detailed",
+    evidence: "27-report suite · 8–9 reports worked in · 6 delivered, 4 detailed",
     oneLiner:
       "Ticket-driven Power BI enhancements inside a 27-report operational suite — investigated, built, tested, and deployed from non-production to production.",
     tags: [
@@ -87,7 +87,7 @@ export const projects: Project[] = [
         kind: "enhancements",
         heading: "Representative enhancements",
         intro:
-          "Four examples from the tickets I implemented. Details are generalized and report names replaced.",
+          "Four of the six enhancements I delivered. Details are generalized and report names replaced.",
         items: [
           {
             title: "Forecast and variance measures on a queue report",
@@ -170,6 +170,20 @@ export const projects: Project[] = [
             ],
           },
         ],
+      },
+      {
+        kind: "diagram",
+        heading: "Why the agent count was the hard part",
+        intro:
+          "The distinct-count request looked small. The reason it wasn't: distinct counts don't roll up the way totals do.",
+        diagram: "distinct-count",
+      },
+      {
+        kind: "diagram",
+        heading: "Where I put the scorecard filter, and why",
+        intro:
+          "The exclusion filter could live in the filter pane or on the report canvas. Both work; only one keeps the filter state visible to the person reading the scorecard.",
+        diagram: "filter-visibility",
       },
       {
         kind: "steps",
@@ -338,6 +352,11 @@ export const projects: Project[] = [
         ],
       },
       {
+        kind: "diagram",
+        heading: "Two populations under one word",
+        diagram: "survey-fork",
+      },
+      {
         kind: "list",
         heading: "Outcomes",
         items: [
@@ -368,11 +387,11 @@ export const projects: Project[] = [
     title: "Cybersecurity Vulnerability Triage Automation",
     category: "Automation · Data Operations",
     summary:
-      "Weekly vulnerability data arrived at a volume nobody could sort by hand — 14,000 to 16,000 records. I mapped the manual process step by step, worked out which operations were purely mechanical, and built Excel VBA automation for import, CMDB enrichment, and ownership assignment, producing structured output that fed the tracker.",
-    evidence: "14,000–16,000 records processed weekly",
+      "Every week, 14,000–16,000 vulnerability records had to be enriched with system ownership and assigned to the right remediation owner before a Tuesday review. I mapped the manual process, automated the mechanical parts with Excel VBA and reference lookups, and built a tiered assignment path so only the genuinely ambiguous records needed a person.",
+    evidence: "14,000–16,000 records weekly · Monday-to-Tuesday turnaround",
     oneLiner:
-      "An automated triage pipeline for weekly vulnerability data at a volume that couldn't be handled manually.",
-    tags: ["Excel VBA", "Process Automation", "CMDB", "Data Processing"],
+      "A weekly triage pipeline that enriches and assigns thousands of vulnerability records, leaving only the ambiguous ones for a person.",
+    tags: ["Excel VBA", "Process Automation", "CMDB Lookup", "Data Processing"],
     accent: "teal",
     visual: "workflow",
     sections: [
@@ -380,37 +399,55 @@ export const projects: Project[] = [
         kind: "prose",
         heading: "Overview",
         body: [
-          "Each week the vulnerability tracking process received between 14,000 and 16,000 records that had to be sorted, enriched, and assigned to owners before anything could be acted on. Done by hand it was slow and error-prone, and the volume meant mistakes were easy to miss.",
+          "Once a week, a security vulnerability export landed for the team to work through — 14,000 to 16,000 records — and each one had to be tied to the system it affected, the application that owned that system, and the person or group responsible for fixing it. The raw data arrived Monday; the assigned result was due Tuesday for a review call.",
+          "The work is recurring and mostly mechanical, but not entirely — and the interesting part turned out to be telling those two things apart.",
         ],
       },
       {
         kind: "prose",
-        heading: "My approach",
+        heading: "What the process actually is",
         body: [
-          "I started by mapping the manual workflow step by step rather than automating what I assumed it was. That distinction mattered: several steps that looked mechanical turned out to involve judgment, and several that looked like judgment were entirely rule-based once written down.",
-          "I then built VBA procedures covering the genuinely mechanical parts — data import, matching records against CMDB data to enrich them with ownership information, and formatting structured output that fed directly into the tracker.",
+          "The bulk of it is enrichment and matching. Records come in keyed to machine names, which have to be reduced to a clean server name, looked up against a configuration reference to find the owning application, and then looked up again to find that application's owner. A large share of each week's vulnerabilities are the same ones carried over from the week before, already assigned — so the highest-leverage step is matching this week's records against last week's assignments by their unique ID and carrying the owner forward automatically.",
+          "I automated that with reference-table lookups and a small custom Excel function that matched each record against the prior week's assigned owners. That alone resolved most of the volume without anyone touching it.",
+        ],
+      },
+      {
+        kind: "diagram",
+        heading: "Automated pass, then a tiered exception path",
+        intro:
+          "The value wasn't only in automating the bulk match — it was in working out that what looked like one messy manual task was actually three tiers, only the last of which needs judgment.",
+        diagram: "triage-flow",
+      },
+      {
+        kind: "prose",
+        heading: "The part that needed judgment",
+        body: [
+          "After the automated match, a set of records are left unassigned. Working out how to handle those was the real analysis, and it broke into three tiers.",
+          "The first two are rules I could encode: a handful of end-of-life applications always resolve to the same owner regardless of the finding, and a larger set matches against an ordered lookup of plugin, port, and output signatures — order-sensitive, but deterministic. What looked like judgment was actually a rule once written down.",
+          "The last tier is the genuine judgment call. A record with no match anywhere has to be compared against similar findings from previous weeks — checking the port, the operating system, the application, and the server — to decide whether it's really the same vulnerability and can inherit the same owner. That comparison is a human decision, and keeping it explicitly separate from the automated tiers is what made the whole process trustworthy: the machine does the parts that are safe to automate, and flags the rest rather than guessing.",
         ],
       },
       {
         kind: "list",
         heading: "Outcomes",
         items: [
-          "Turned a weekly job of sorting 14,000–16,000 records by hand — impractical at that volume and easy to get wrong — into a repeatable automated pass",
-          "Structured output fed ownership assignment and remediation tracking directly, instead of needing rework before anyone could act on it",
-          "The process was documented and survived handover to the next person",
+          "Turned a weekly job of enriching and assigning 14,000–16,000 records by hand — impractical at that volume and easy to get wrong — into a mostly-automated pass finished inside the Monday-to-Tuesday window",
+          "The carry-forward match resolved the majority of records automatically, since most repeat week to week",
+          "A tiered exception path meant rule-based cases were handled deterministically and only genuinely ambiguous records reached a person",
+          "The whole procedure was documented step by step and handed over, so it didn't depend on me to run",
         ],
       },
       {
         kind: "prose",
         heading: "What I learned",
         body: [
-          "Automation is most effective when the underlying process is understood first. The time spent mapping the manual workflow before writing any code made the result more robust and much easier to maintain than if I'd started from the spreadsheet.",
+          "The value wasn't the automation itself — it was mapping the manual process closely enough to see its structure. Two steps that felt like judgment were strict rules hiding in a spreadsheet, and one step that looked routine was the only place real judgment belonged. Getting that boundary right is what let me automate aggressively without automating a decision that shouldn't be.",
         ],
       },
       {
         kind: "note",
         heading: "Confidentiality",
-        body: "Vulnerability data, system identifiers, and ownership details are omitted entirely. Only the volume and the shape of the process are described.",
+        body: "This describes an internal security process in general terms only. Vulnerability data, system and application names, ownership details, reference-file locations, and the organization's naming are all omitted. Volumes and the shape of the workflow are the only specifics given.",
       },
     ],
   },

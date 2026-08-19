@@ -52,13 +52,10 @@ export function About() {
                 know what those reasons were.
               </p>
               <p className="mb-4 leading-relaxed text-muted">
-                That&apos;s usually where the interesting part is. &ldquo;Add a
-                distinct count of agents&rdquo; sounds like a small request
-                until you ask what it should do at the interval, day, week, and
-                month level, or what happens to it when someone filters to a
-                single queue. Distinct counts don&apos;t add up the way totals
-                do, and a column that quietly means something different from
-                what the person asked for is worse than no column at all.
+                That&apos;s usually where the interesting part is. The
+                one-sentence requests — &ldquo;add a distinct count of
+                agents&rdquo; — are the ones that turn out to have a real
+                question hiding inside them.
               </p>
               <p className="leading-relaxed text-muted">
                 My Computer Science background shows up less in writing code

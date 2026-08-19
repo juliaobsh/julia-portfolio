@@ -9,60 +9,33 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    category: "Reporting and visualization",
+    category: "Reporting & data",
     accent: "accent",
-    items: [
-      "Power BI Desktop",
-      "Power BI Service",
-      "DAX",
-      "Report-level measures",
-      "Report and visual-level filters",
-      "Operational report design",
-      "Scorecard reporting",
-    ],
+    items: ["Power BI", "DAX", "SQL", "Excel", "Microsoft Fabric"],
   },
   {
-    category: "Analysis and validation",
+    category: "Analysis & delivery",
     accent: "teal",
     items: [
-      "Source-to-report reconciliation",
-      "Calculation testing",
-      "Discrepancy investigation",
-      "Filter context analysis",
-      "Excel",
-      "PivotTables",
-      "SQL",
-    ],
-  },
-  {
-    category: "Business analysis and delivery",
-    accent: "violet",
-    items: [
-      "Requirements gathering",
-      "Stakeholder outreach and analysis",
-      "Inventory and data-retention analysis",
-      "Process documentation",
+      "Requirements",
+      "Data validation",
+      "Process analysis",
+      "QA / UAT",
       "Jira",
-      "Sprint-based delivery",
-      "QA and UAT support",
     ],
   },
   {
-    category: "Programming and automation",
-    accent: "ember",
-    items: ["Python", "Excel VBA", "Workflow automation"],
+    category: "Development & automation",
+    accent: "violet",
+    items: ["Python", "Excel VBA", "React", "TypeScript"],
   },
 ];
 
 export const environmentGroup: SkillGroup = {
   category: "Enterprise environments",
   accent: "accent",
-  note: "Worked within; platform maintained by others",
+  note: "Worked within; platforms maintained by others",
   items: [
-    "Microsoft Fabric workspaces",
-    "Shared semantic models",
-    "Deployment pipelines",
-    "Non-production and production environments",
     "Genesys Cloud",
     "ServiceNow",
     "SAP",

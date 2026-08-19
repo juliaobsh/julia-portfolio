@@ -33,6 +33,17 @@ export type CaseStudySection =
       intro?: string;
       images: { src: string; alt: string; caption: string; wide?: boolean }[];
     }
+  | {
+      kind: "diagram";
+      heading: string;
+      intro?: string;
+      diagram:
+        | "distinct-count"
+        | "filter-visibility"
+        | "survey-fork"
+        | "triage-flow";
+      caption?: string;
+    }
   | { kind: "note"; heading: string; body: string }
   | {
       kind: "enhancements";

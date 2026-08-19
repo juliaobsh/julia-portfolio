@@ -9,6 +9,7 @@ import { Container } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { ArrowIcon, GithubIcon } from "@/components/ui/icons";
 import { ProjectVisual } from "@/components/visuals/ProjectVisual";
+import { CaseStudyDiagram } from "@/components/visuals/CaseStudyDiagram";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -183,6 +184,24 @@ function Section({ section }: { section: CaseStudySection }) {
               </figure>
             ))}
           </div>
+        </section>
+      );
+
+    case "diagram":
+      return (
+        <section>
+          <SectionHeading>{section.heading}</SectionHeading>
+          {section.intro ? (
+            <p className="mb-6 text-sm leading-relaxed text-muted">
+              {section.intro}
+            </p>
+          ) : null}
+          <CaseStudyDiagram diagram={section.diagram} />
+          {section.caption ? (
+            <p className="mt-3 text-center font-mono text-[11px] text-muted">
+              {section.caption}
+            </p>
+          ) : null}
         </section>
       );
 
