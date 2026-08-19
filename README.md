@@ -81,57 +81,6 @@ src/
 └── types/                  # Shared TypeScript definitions
 ```
 
-## Running the project locally
-
-### Prerequisites
-
-- Node.js 20 or later
-- npm
-
-### Installation
-
-```bash
-git clone https://github.com/juliaobsh/julia-portfolio.git
-cd julia-portfolio
-npm install
-```
-
-### Development
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Quality checks
-
-```bash
-npm run lint
-npm run typecheck
-npm run build
-```
-
-### Production preview
-
-```bash
-npm run start
-```
-
-Run `npm run build` before starting the production server.
-
-## Editing portfolio content
-
-Most portfolio copy is separated from the UI components so that it can be updated without restructuring the pages:
-
-- `src/data/site.ts` - name, role, contact details, links, and navigation
-- `src/data/projects.ts` - project cards and complete case-study content
-- `src/data/experience.ts` - professional experience
-- `src/data/skills.ts` - technical skills and tools
-- `src/data/approach.ts` - working principles
-
-The résumé displayed on the website is stored at `public/resume.pdf`.
-
 ## Confidentiality
 
 The case studies are based on real professional experience, but public-facing content is intentionally anonymized. Visuals may use reconstructed layouts or representative data to demonstrate the analytical process without exposing confidential company information, system identifiers, credentials, or operational records.
