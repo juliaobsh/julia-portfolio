@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAdjacentProjects, getProject, projects } from "@/data/projects";
@@ -150,6 +151,40 @@ function Section({ section }: { section: CaseStudySection }) {
         </section>
       );
     }
+
+    case "gallery":
+      return (
+        <section>
+          <SectionHeading>{section.heading}</SectionHeading>
+          {section.intro ? (
+            <p className="mb-6 text-sm leading-relaxed text-muted">
+              {section.intro}
+            </p>
+          ) : null}
+          <div className="grid gap-4 sm:grid-cols-2">
+            {section.images.map((image) => (
+              <figure
+                key={image.src}
+                className={`overflow-hidden rounded-2xl border border-line bg-paper ${
+                  image.wide ? "sm:col-span-2" : ""
+                }`}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={1600}
+                  height={1200}
+                  className="h-auto w-full"
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                />
+                <figcaption className="border-t border-line px-4 py-2.5 font-mono text-[11px] text-muted">
+                  {image.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      );
 
     case "note":
       return (

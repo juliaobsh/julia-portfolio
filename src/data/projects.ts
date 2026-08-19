@@ -421,19 +421,20 @@ export const projects: Project[] = [
     summary:
       "A full-stack e-commerce application for browsing, comparing, financing, and purchasing electric vehicles, built by a four-person team. I established the visual direction and prototype, implemented selected frontend pages, and tested user journeys to find functional and usability defects.",
     evidence:
-      "4-person team · Original UI direction · React frontend · End-to-end testing",
+      "4-person team · Original UI direction · React frontend · Live demo",
     oneLiner:
       "A team-built EV marketplace where I owned the design direction and prototype, implemented frontend pages, and did the testing that caught real defects.",
     tags: [
+      "UI/UX Design",
       "React",
       "TypeScript",
-      "UI/UX Design",
       "Prototyping",
       "Functional Testing",
       "Spring Boot",
     ],
     accent: "ember",
     visual: "product",
+    liveUrl: "https://apexauto-beta.vercel.app/",
     sections: [
       {
         kind: "prose",
@@ -477,6 +478,46 @@ export const projects: Project[] = [
         body: [
           "I wanted the marketplace to feel more like a modern automotive product than a university e-commerce assignment, so I built the interface around a digital instrument cluster: a dark navy ground, a single electric blue accent for actions, and technical typography for specifications and figures.",
           "That gave the catalogue a consistent language for the things buyers actually compare — range, acceleration, drivetrain — with a range gauge as a recurring visual motif rather than another row of text. Establishing the system as a prototype first, before anyone wrote production components, meant the team had something concrete to build against instead of resolving styling decisions page by page.",
+        ],
+      },
+      {
+        kind: "gallery",
+        heading: "The interface",
+        intro:
+          "Screens from the live application. The range gauge — the circular arc showing each vehicle's range at a glance — recurs from the hero through the catalogue and detail pages as the product's signature element.",
+        images: [
+          {
+            src: "/apexauto/landing-hero.webp",
+            alt: "ApexAuto landing page: bold headline, a featured Vantage Aero vehicle card with a circular range gauge, key statistics, and a browse-by-category row.",
+            caption: "Landing — featured vehicle card with the range-gauge motif",
+            wide: true,
+          },
+          {
+            src: "/apexauto/catalogue.webp",
+            alt: "Vehicle catalogue with a left filter rail for category, price, and sort, and a grid of vehicle cards each showing a range gauge, emissions, fuel use, seats, and price.",
+            caption: "Catalogue — filters, sort, and the vehicle grid I built",
+            wide: true,
+          },
+          {
+            src: "/apexauto/finance.webp",
+            alt: "Finance Your Vehicle page with down payment, loan term, and APR sliders on the left and a live payment summary on the right showing an estimated monthly payment.",
+            caption: "Financing — every control recomputes the payment live",
+          },
+          {
+            src: "/apexauto/compare.webp",
+            alt: "Side-by-side comparison table of three vehicles across price, range, emissions, fuel usage, and stock, with the best value in each row highlighted.",
+            caption: "Compare — best value marked per row",
+          },
+          {
+            src: "/apexauto/featured-and-steps.webp",
+            alt: "Featured vehicles row of three cards above a three-step 'How it works' explainer.",
+            caption: "Featured vehicles and the three-step explainer",
+          },
+          {
+            src: "/apexauto/chatbot.webp",
+            alt: "EV assistant chatbot section showing a scoped assistant that answers questions about the site but explicitly cannot access accounts, carts, or payments.",
+            caption: "Amp — a deliberately scoped assistant",
+          },
         ],
       },
       {
@@ -534,7 +575,7 @@ export const projects: Project[] = [
       {
         kind: "note",
         heading: "About this project",
-        body: "ApexAuto was an academic team project. This page describes my own contribution; the application was built by four people, and the backend and remaining frontend pages were the work of teammates.",
+        body: "ApexAuto is an academic team project of four people, and this page describes my own contribution — the design direction, the front-end pages noted above, and the testing. The backend and the remaining pages were built by teammates. Inventory, financing, checkout, and payments are simulated; the live demo is safe to click through and takes no real payment details.",
       },
     ],
   },

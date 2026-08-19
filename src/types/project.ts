@@ -27,6 +27,12 @@ export type CaseStudySection =
       variant?: "chips" | "list";
       tiers: { label: string; items: string[] }[];
     }
+  | {
+      kind: "gallery";
+      heading: string;
+      intro?: string;
+      images: { src: string; alt: string; caption: string; wide?: boolean }[];
+    }
   | { kind: "note"; heading: string; body: string }
   | {
       kind: "enhancements";
