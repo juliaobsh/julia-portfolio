@@ -110,3 +110,49 @@ export function ArrowIcon({ className, size = 14 }: IconProps) {
     </svg>
   );
 }
+
+/** Compact line icons for the About capability cards — replacing decorative glyphs. */
+export function ChartIcon({ className, size = 20 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"
+      strokeLinejoin="round" aria-hidden="true" className={className}>
+      <path d="M4 20V4M4 20h16" />
+      <rect x="8" y="12" width="3" height="5" rx="0.5" />
+      <rect x="14" y="8" width="3" height="9" rx="0.5" />
+    </svg>
+  );
+}
+
+export function CheckShieldIcon({ className, size = 20 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"
+      strokeLinejoin="round" aria-hidden="true" className={className}>
+      <path d="M12 3l7 3v5c0 4.2-2.9 7.5-7 8.5C7.9 18.5 5 15.2 5 11V6l7-3Z" />
+      <path d="m9 11 2 2 4-4" />
+    </svg>
+  );
+}
+
+export function ListIcon({ className, size = 20 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"
+      strokeLinejoin="round" aria-hidden="true" className={className}>
+      <path d="M8 6h12M8 12h12M8 18h12" />
+      <path d="M3.5 6h.01M3.5 12h.01M3.5 18h.01" />
+    </svg>
+  );
+}
+
+export function TerminalIcon({ className, size = 20 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"
+      strokeLinejoin="round" aria-hidden="true" className={className}>
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <path d="m7 9 3 3-3 3M13 15h4" />
+    </svg>
+  );
+}

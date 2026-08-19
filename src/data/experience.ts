@@ -20,7 +20,7 @@ export const roles: Role[] = [
       "Delivered six enhancements to an enterprise Power BI reporting suite, working directly in eight to nine of its 27 operational and performance reports",
       "Authored and modified DAX measures at the report level, and configured visuals against measures already present in the shared semantic model",
       "Built and tested changes in a non-production Fabric workspace, supported QA cycles with testers, and deployed reviewed changes to production through the deployment pipeline",
-      "Lead the discovery work for an enterprise survey platform migration: a 188-survey inventory, stakeholder outreach across the organization, and consolidated requirements documentation",
+      "Led the discovery work for an enterprise survey platform migration: a 188-survey inventory, stakeholder outreach across the organization, and consolidated requirements documentation",
       "Served as business analysis bridge between Hydro One and an external vendor on a ServiceNow integration, supporting cross-organizational requirements alignment across three organizations",
       "Automated weekly triage of 14,000–16,000 cybersecurity vulnerabilities using Excel VBA and CMDB enrichment, assigning solution owners and maintaining the tracker",
       "Maintained a monthly small-projects financial tracker by ingesting and reconciling SAP actuals, documenting the process for handover",

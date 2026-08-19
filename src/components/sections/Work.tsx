@@ -11,7 +11,7 @@ export function Work() {
           <Eyebrow className="mb-3">Selected work</Eyebrow>
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <h2 className="font-display text-[clamp(1.75rem,3vw,2.5rem)] font-bold leading-tight text-ink">
-              Selected work and impact
+              Selected work
             </h2>
             <p className="max-w-sm rounded-xl border border-line bg-surface px-3 py-2 text-xs leading-relaxed text-muted">
               All examples are anonymized. No proprietary data, internal system

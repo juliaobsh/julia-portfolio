@@ -1,24 +1,30 @@
 import { Container, Eyebrow } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
+import {
+  ChartIcon,
+  CheckShieldIcon,
+  ListIcon,
+  TerminalIcon,
+} from "@/components/ui/icons";
 
 const highlights = [
   {
-    symbol: "◈",
+    Icon: ChartIcon,
     label: "Enterprise Power BI",
     description: "Report enhancements built, tested, and deployed to production",
   },
   {
-    symbol: "◎",
+    Icon: CheckShieldIcon,
     label: "Validation",
     description: "Checking outputs against source data before anything ships",
   },
   {
-    symbol: "◆",
+    Icon: ListIcon,
     label: "Requirements",
     description: "Discovery and stakeholder work across the organization",
   },
   {
-    symbol: "◉",
+    Icon: TerminalIcon,
     label: "Computer Science",
     description: "Specialized Honours Co-op at York University",
   },
@@ -72,12 +78,7 @@ export function About() {
                   key={highlight.label}
                   className="rounded-2xl border border-line bg-paper p-6 transition duration-300 hover:border-accent hover:shadow-md"
                 >
-                  <p
-                    aria-hidden="true"
-                    className="mb-3 font-mono text-2xl text-accent"
-                  >
-                    {highlight.symbol}
-                  </p>
+                  <highlight.Icon className="mb-3 text-accent" />
                   <h3 className="mb-1.5 font-display text-sm font-semibold text-ink">
                     {highlight.label}
                   </h3>

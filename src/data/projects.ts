@@ -226,11 +226,11 @@ export const projects: Project[] = [
         kind: "list",
         heading: "Outcomes",
         items: [
-          "Forecast and variance measures released to queue reporting, giving managers forecast-to-actual comparison in the report itself",
-          "Agent-level exclusion filtering released on a team scorecard, with defaults set so the report opens complete",
-          "Percentage measures released across three pages of a daily summary report, consistent with an existing report's presentation",
-          "Distinct agent counts implemented and in testing, correct under the report's filter context at every aggregation level",
-          "Changes reviewable by stakeholders in non-production before any deployment decision",
+          "Managers can now compare forecast to actual inside the queue report, where the comparison previously meant leaving the report to line the two figures up by hand",
+          "The distinct-agent measure answers a staffing question the report couldn't answer before — how many people actually covered a queue in a period — correct at every aggregation level",
+          "Team-scorecard filtering lets a manager exclude specific agents for a fair comparison, and opens showing everyone so nobody reads a pre-filtered view by accident",
+          "Two reports now present the same percentages the same way, removing a source of the \u201cwhich number is right\u201d confusion that erodes trust in both",
+          "Because these figures feed staffing and coaching decisions, a wrong aggregation gets trusted rather than caught — so the validation behind each change mattered as much as the change itself",
         ],
       },
       {
@@ -395,9 +395,9 @@ export const projects: Project[] = [
         kind: "list",
         heading: "Outcomes",
         items: [
-          "Weekly triage of 14,000–16,000 records handled through a repeatable process rather than manual sorting",
-          "Structured output that made ownership assignment and remediation tracking straightforward",
-          "A documented process that survived handover",
+          "Turned a weekly job of sorting 14,000–16,000 records by hand — impractical at that volume and easy to get wrong — into a repeatable automated pass",
+          "Structured output fed ownership assignment and remediation tracking directly, instead of needing rework before anyone could act on it",
+          "The process was documented and survived handover to the next person",
         ],
       },
       {

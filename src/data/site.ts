@@ -16,11 +16,13 @@ export const socialLinks = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/yulia-obshansky/",
     handle: "linkedin.com/in/yulia-obshansky",
+    display: "LinkedIn",
   },
   {
     label: "GitHub",
     href: "https://github.com/juliaobsh",
     handle: "github.com/juliaobsh",
+    display: "GitHub",
   },
 ] as const;
 

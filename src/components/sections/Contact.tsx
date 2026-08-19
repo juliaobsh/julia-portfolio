@@ -69,7 +69,7 @@ export function Contact() {
                     className="flex items-center gap-2 transition-colors hover:text-[#a8a29e]"
                   >
                     <GithubIcon size={15} />
-                    {github.handle}
+                    {github.display}
                   </a>
                 </li>
               ) : null}
