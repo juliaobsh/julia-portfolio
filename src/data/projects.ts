@@ -13,7 +13,7 @@ export const projects: Project[] = [
       "Stakeholders raised reporting changes as tickets; I worked out what each one actually required inside an existing report, wrote or modified the DAX behind it, tested the result, and deployed reviewed changes from non-production to production. The suite covered queue performance, daily operations, IVR, and monthly agent and team scorecards used to run a contact centre.",
     evidence: "27-report suite · 8–9 reports worked in · 6 delivered, 4 detailed",
     oneLiner:
-      "Ticket-driven Power BI enhancements inside a 27-report operational suite — investigated, built, tested, and deployed from non-production to production.",
+      "Ticket-driven Power BI enhancements inside a 27-report operational suite - investigated, built, tested, and deployed from non-production to production.",
     tags: [
       "Power BI",
       "DAX",
@@ -31,16 +31,16 @@ export const projects: Project[] = [
         heading: "Overview",
         body: [
           "I spent much of my co-op working inside an established enterprise reporting environment built on Microsoft Fabric and Power BI. The suite contained 27 operational and performance reports used to run a contact-centre operation; I worked directly in eight or nine of them.",
-          "The work was sustainment and enhancement rather than greenfield development. Business stakeholders raised requests as tickets; I investigated what each one required, implemented it in the non-production environment, tested the result, and — once the change had been reviewed and confirmed — deployed it to production through the team's deployment pipeline.",
+          "The work was sustainment and enhancement rather than greenfield development. Business stakeholders raised requests as tickets; I investigated what each one required, implemented it in the non-production environment, tested the result, and - once the change had been reviewed and confirmed - deployed it to production through the team's deployment pipeline.",
         ],
       },
       {
         kind: "prose",
         heading: "Context",
         body: [
-          "These reports were the operating picture for the contact centre: queue volumes and service levels, abandon rates, handle-time and occupancy measures, IVR containment, and monthly performance scorecards used by team managers and coaches to review individual and team results. When someone makes a staffing decision or has a coaching conversation based on a number in a report, a metric that aggregates incorrectly doesn't get caught — it gets trusted.",
+          "These reports were the operating picture for the contact centre: queue volumes and service levels, abandon rates, handle-time and occupancy measures, IVR containment, and monthly performance scorecards used by team managers and coaches to review individual and team results. When someone makes a staffing decision or has a coaching conversation based on a number in a report, a metric that aggregates incorrectly doesn't get caught - it gets trusted.",
           "The platform itself was established before I joined and maintained by a dedicated team. Data was ingested and transformed through layered lakehouse stages by data engineers, and the reporting layer consumed a curated gold layer through a shared semantic model powering most reports in the suite. Non-production and production environments were separated, changes moved between them through deployment pipelines, and end users accessed reports through published applications with role-based access.",
-          "I worked in the reporting layer — report files, pages, visuals, filters, and report-level measures — using both Power BI Desktop and the Power BI Service.",
+          "I worked in the reporting layer - report files, pages, visuals, filters, and report-level measures - using both Power BI Desktop and the Power BI Service.",
         ],
       },
       {
@@ -99,7 +99,7 @@ export const projects: Project[] = [
               },
               {
                 label: "What I had to work out",
-                body: "Where columns belong in a table already wide enough to scroll, and how variance should read at a glance — volume as a percentage against forecast, handle time as a signed difference — so someone scanning a row could tell direction without doing arithmetic. Each column had to sit next to the measure it modified rather than being appended at the end.",
+                body: "Where columns belong in a table already wide enough to scroll, and how variance should read at a glance - volume as a percentage against forecast, handle time as a signed difference - so someone scanning a row could tell direction without doing arithmetic. Each column had to sit next to the measure it modified rather than being appended at the end.",
               },
               {
                 label: "Outcome",
@@ -113,7 +113,7 @@ export const projects: Project[] = [
             blocks: [
               {
                 label: "The request",
-                body: "Add a distinct count of agents to two queue reporting pages, at whichever aggregation level the user is viewing — queue or overall, by interval, day, week, or month.",
+                body: "Add a distinct count of agents to two queue reporting pages, at whichever aggregation level the user is viewing - queue or overall, by interval, day, week, or month.",
               },
               {
                 label: "What I had to work out",
@@ -125,7 +125,7 @@ export const projects: Project[] = [
               },
               {
                 label: "Outcome",
-                body: "A reviewer confirmed the layout was correct but couldn't complete validation in the QA environment, because the data there wasn't current — an environment constraint rather than a defect in the change. Saying so plainly was part of the work.",
+                body: "A reviewer confirmed the layout was correct but couldn't complete validation in the QA environment, because the data there wasn't current - an environment constraint rather than a defect in the change. Saying so plainly was part of the work.",
               },
             ],
           },
@@ -143,7 +143,7 @@ export const projects: Project[] = [
               },
               {
                 label: "People move between teams",
-                body: "When an agent changes teams, their historical months no longer match their current manager and coach combination — so filtering by manager could silently drop part of a person's history. I recommended clearing those filters and filtering on agent name directly when looking across months, and flagged it as behaviour users needed to be told about rather than discover.",
+                body: "When an agent changes teams, their historical months no longer match their current manager and coach combination - so filtering by manager could silently drop part of a person's history. I recommended clearing those filters and filtering on agent name directly when looking across months, and flagged it as behaviour users needed to be told about rather than discover.",
               },
               {
                 label: "Invisible filters",
@@ -190,11 +190,11 @@ export const projects: Project[] = [
         heading: "My working process",
         items: [
           "Read the ticket and the report together. The request is one sentence; the report is the real specification.",
-          "Find where the change belongs — which page, which visual, and whether it needs a new measure, a modified one, or a visual configured against a measure that already exists.",
+          "Find where the change belongs - which page, which visual, and whether it needs a new measure, a modified one, or a visual configured against a measure that already exists.",
           "Build it in non-production. Never in production, per the team's standard.",
           "Test the output against what the result is supposed to be, using production data as the reference where non-production data isn't current.",
           "Publish for QA and let testers use it. Reviewers consistently found things the ticket couldn't have predicted.",
-          "Revise on feedback — usually formatting, ordering, or default behaviour.",
+          "Revise on feedback - usually formatting, ordering, or default behaviour.",
           "Deploy to production through the deployment pipeline once the change is confirmed, and report back.",
         ],
       },
@@ -241,10 +241,10 @@ export const projects: Project[] = [
         heading: "Outcomes",
         items: [
           "Managers can now compare forecast to actual inside the queue report, where the comparison previously meant leaving the report to line the two figures up by hand",
-          "The distinct-agent measure answers a staffing question the report couldn't answer before — how many people actually covered a queue in a period — correct at every aggregation level",
+          "The distinct-agent measure answers a staffing question the report couldn't answer before - how many people actually covered a queue in a period - correct at every aggregation level",
           "Team-scorecard filtering lets a manager exclude specific agents for a fair comparison, and opens showing everyone so nobody reads a pre-filtered view by accident",
           "Two reports now present the same percentages the same way, removing a source of the \u201cwhich number is right\u201d confusion that erodes trust in both",
-          "Because these figures feed staffing and coaching decisions, a wrong aggregation gets trusted rather than caught — so the validation behind each change mattered as much as the change itself",
+          "Because these figures feed staffing and coaching decisions, a wrong aggregation gets trusted rather than caught - so the validation behind each change mattered as much as the change itself",
         ],
       },
       {
@@ -253,7 +253,7 @@ export const projects: Project[] = [
         items: [
           "Small requests aren't small. \u201cAdd a column\u201d carried aggregation behaviour, filter interaction, and a definitional question about what was being counted. Writing the measure was the quick part.",
           "Know which layer you're changing. A report-level measure affects one report; a semantic model change affects everything built on it. Understanding that distinction was as important as the DAX itself.",
-          "Reviewers see what you can't. Almost all the feedback I received was about usability rather than correctness — ordering, formatting, defaults. Getting the number right is necessary and not sufficient.",
+          "Reviewers see what you can't. Almost all the feedback I received was about usability rather than correctness - ordering, formatting, defaults. Getting the number right is necessary and not sufficient.",
         ],
       },
       {
@@ -268,10 +268,10 @@ export const projects: Project[] = [
     title: "Discovery for an Enterprise Survey Platform Migration",
     category: "Business Analysis · Requirements",
     summary:
-      "Before a replacement platform can be chosen, someone has to establish what's on the current one and what each team actually needs. I built the survey inventory, ran outreach across the organization, and gathered and consolidated requirements — surfacing a gap between what different groups need that shapes the whole decision.",
+      "Before a replacement platform can be chosen, someone has to establish what's on the current one and what each team actually needs. I built the survey inventory, ran outreach across the organization, and gathered and consolidated requirements - surfacing a gap between what different groups need that shapes the whole decision.",
     evidence: "188 surveys inventoried across the organization",
     oneLiner:
-      "Inventory, stakeholder outreach, and a consolidated requirements list — the discovery work that determines what a replacement platform has to do.",
+      "Inventory, stakeholder outreach, and a consolidated requirements list - the discovery work that determines what a replacement platform has to do.",
     tags: [
       "Requirements Gathering",
       "Stakeholder Analysis",
@@ -287,7 +287,7 @@ export const projects: Project[] = [
         heading: "Overview",
         body: [
           "A funded enterprise project is replacing an aging survey platform hosting both internal and public-facing forms. Before any platform can be chosen, someone has to answer three questions: what's actually on there, who owns it, and what each line of business genuinely needs.",
-          "I lead the day-to-day discovery work — inventory, outreach, requirements gathering, and documentation — working with a manager sponsoring the project and a business analyst supporting the team. Platform selection and architecture assessment sit with others and haven't started; my work is what those decisions will be based on. Unlike my reporting work, the requirements documentation here is mine: I gather it, structure it, confirm it back with stakeholders, and consolidate it.",
+          "I lead the day-to-day discovery work - inventory, outreach, requirements gathering, and documentation - working with a manager sponsoring the project and a business analyst supporting the team. Platform selection and architecture assessment sit with others and haven't started; my work is what those decisions will be based on. Unlike my reporting work, the requirements documentation here is mine: I gather it, structure it, confirm it back with stakeholders, and consolidate it.",
         ],
       },
       {
@@ -300,7 +300,7 @@ export const projects: Project[] = [
             blocks: [
               {
                 label: "The work",
-                body: "I compiled a complete inventory of every survey on the platform — 188 in total, spread across the organization — capturing each one's owner, creation date, status, permissions, last response activity, and lifetime response volume. No structured view of the estate existed before this, and the spreadsheet became the foundation for every conversation that followed.",
+                body: "I compiled a complete inventory of every survey on the platform - 188 in total, spread across the organization - capturing each one's owner, creation date, status, permissions, last response activity, and lifetime response volume. No structured view of the estate existed before this, and the spreadsheet became the foundation for every conversation that followed.",
               },
             ],
           },
@@ -310,11 +310,11 @@ export const projects: Project[] = [
             blocks: [
               {
                 label: "The approach",
-                body: "Rather than sending one generic request, I sent each team a tailored view of their own surveys with core details pre-filled and specific columns for them to complete — whether historical response data needed retaining, whether a form was internal or customer-facing, and how structurally complex it was.",
+                body: "Rather than sending one generic request, I sent each team a tailored view of their own surveys with core details pre-filled and specific columns for them to complete - whether historical response data needed retaining, whether a form was internal or customer-facing, and how structurally complex it was.",
               },
               {
                 label: "Why it worked",
-                body: "Framing it as \u201chere is your list, please confirm\u201d rather than \u201cplease tell us what you have\u201d is why I got responses. Teams corrected my data, added forms I didn't have, and updated statuses — which improved the inventory as a side effect.",
+                body: "Framing it as \u201chere is your list, please confirm\u201d rather than \u201cplease tell us what you have\u201d is why I got responses. Teams corrected my data, added forms I didn't have, and updated statuses - which improved the inventory as a side effect.",
               },
             ],
           },
@@ -328,7 +328,7 @@ export const projects: Project[] = [
               },
               {
                 label: "Handoff",
-                body: "Requirements from every line of business went into a single consolidated list, and I wrote the context document that lets the next person pick this up — status, stakeholders, what's done, what's outstanding, and which deadlines are time-sensitive.",
+                body: "Requirements from every line of business went into a single consolidated list, and I wrote the context document that lets the next person pick this up - status, stakeholders, what's done, what's outstanding, and which deadlines are time-sensitive.",
               },
             ],
           },
@@ -338,16 +338,16 @@ export const projects: Project[] = [
         kind: "list",
         heading: "What discovery surfaced",
         items: [
-          "A substantial share of the estate was already archived, so a meaningful part of the project is cleanup rather than migration — which changes the size of the problem.",
+          "A substantial share of the estate was already archived, so a meaningful part of the project is cleanup rather than migration - which changes the size of the problem.",
           "Survey ownership was heavily concentrated. A small number of creators account for most of the estate, while a long tail of forms have owners who barely use the platform. That determines who actually needs to be consulted.",
-          "Some public-facing forms carry very high lifetime submission volumes and are in active customer use. These aren't surveys — they're operational intake, and migrating them is a materially different exercise from migrating an internal feedback form.",
+          "Some public-facing forms carry very high lifetime submission volumes and are in active customer use. These aren't surveys - they're operational intake, and migrating them is a materially different exercise from migrating an internal feedback form.",
         ],
       },
       {
         kind: "prose",
         heading: "The finding that matters",
         body: [
-          "Requirements gathering surfaced materially different needs between teams. Groups running simple internal forms wanted straightforward things: scheduled open and close dates, results in Excel, ranked selection questions, conditional logic, a confirmation email to the respondent. Groups operating high-volume public intake processes needed considerably more — extensive form customization, branded styling, bulk export, and continuity guarantees for forms customers already use.",
+          "Requirements gathering surfaced materially different needs between teams. Groups running simple internal forms wanted straightforward things: scheduled open and close dates, results in Excel, ranked selection questions, conditional logic, a confirmation email to the respondent. Groups operating high-volume public intake processes needed considerably more - extensive form customization, branded styling, bulk export, and continuity guarantees for forms customers already use.",
           "That gap is the finding. A platform satisfying the simpler requirements could fail the complex ones, which raises the real question ahead of the project: whether one replacement can serve the full range of use cases, or whether the estate should be treated as more than one problem. Documenting the distance between those positions accurately, rather than flattening them into a single neutral list, is what makes the eventual decision an informed one.",
         ],
       },
@@ -399,15 +399,15 @@ export const projects: Project[] = [
         kind: "prose",
         heading: "Overview",
         body: [
-          "Once a week, a security vulnerability export landed for the team to work through — 14,000 to 16,000 records — and each one had to be tied to the system it affected, the application that owned that system, and the person or group responsible for fixing it. The raw data arrived Monday; the assigned result was due Tuesday for a review call.",
-          "The work is recurring and mostly mechanical, but not entirely — and the interesting part turned out to be telling those two things apart.",
+          "Once a week, a security vulnerability export landed for the team to work through - 14,000 to 16,000 records - and each one had to be tied to the system it affected, the application that owned that system, and the person or group responsible for fixing it. The raw data arrived Monday; the assigned result was due Tuesday for a review call.",
+          "The work is recurring and mostly mechanical, but not entirely - and the interesting part turned out to be telling those two things apart.",
         ],
       },
       {
         kind: "prose",
         heading: "What the process actually is",
         body: [
-          "The bulk of it is enrichment and matching. Records come in keyed to machine names, which have to be reduced to a clean server name, looked up against a configuration reference to find the owning application, and then looked up again to find that application's owner. A large share of each week's vulnerabilities are the same ones carried over from the week before, already assigned — so the highest-leverage step is matching this week's records against last week's assignments by their unique ID and carrying the owner forward automatically.",
+          "The bulk of it is enrichment and matching. Records come in keyed to machine names, which have to be reduced to a clean server name, looked up against a configuration reference to find the owning application, and then looked up again to find that application's owner. A large share of each week's vulnerabilities are the same ones carried over from the week before, already assigned - so the highest-leverage step is matching this week's records against last week's assignments by their unique ID and carrying the owner forward automatically.",
           "I automated that with reference-table lookups and a small custom Excel function that matched each record against the prior week's assigned owners. That alone resolved most of the volume without anyone touching it.",
         ],
       },
@@ -415,7 +415,7 @@ export const projects: Project[] = [
         kind: "diagram",
         heading: "Automated pass, then a tiered exception path",
         intro:
-          "The value wasn't only in automating the bulk match — it was in working out that what looked like one messy manual task was actually three tiers, only the last of which needs judgment.",
+          "The value wasn't only in automating the bulk match - it was in working out that what looked like one messy manual task was actually three tiers, only the last of which needs judgment.",
         diagram: "triage-flow",
       },
       {
@@ -423,15 +423,15 @@ export const projects: Project[] = [
         heading: "The part that needed judgment",
         body: [
           "After the automated match, a set of records are left unassigned. Working out how to handle those was the real analysis, and it broke into three tiers.",
-          "The first two are rules I could encode: a handful of end-of-life applications always resolve to the same owner regardless of the finding, and a larger set matches against an ordered lookup of plugin, port, and output signatures — order-sensitive, but deterministic. What looked like judgment was actually a rule once written down.",
-          "The last tier is the genuine judgment call. A record with no match anywhere has to be compared against similar findings from previous weeks — checking the port, the operating system, the application, and the server — to decide whether it's really the same vulnerability and can inherit the same owner. That comparison is a human decision, and keeping it explicitly separate from the automated tiers is what made the whole process trustworthy: the machine does the parts that are safe to automate, and flags the rest rather than guessing.",
+          "The first two are rules I could encode: a handful of end-of-life applications always resolve to the same owner regardless of the finding, and a larger set matches against an ordered lookup of plugin, port, and output signatures - order-sensitive, but deterministic. What looked like judgment was actually a rule once written down.",
+          "The last tier is the genuine judgment call. A record with no match anywhere has to be compared against similar findings from previous weeks - checking the port, the operating system, the application, and the server - to decide whether it's really the same vulnerability and can inherit the same owner. That comparison is a human decision, and keeping it explicitly separate from the automated tiers is what made the whole process trustworthy: the machine does the parts that are safe to automate, and flags the rest rather than guessing.",
         ],
       },
       {
         kind: "list",
         heading: "Outcomes",
         items: [
-          "Turned a weekly job of enriching and assigning 14,000–16,000 records by hand — impractical at that volume and easy to get wrong — into a mostly-automated pass finished inside the Monday-to-Tuesday window",
+          "Turned a weekly job of enriching and assigning 14,000–16,000 records by hand - impractical at that volume and easy to get wrong - into a mostly-automated pass finished inside the Monday-to-Tuesday window",
           "The carry-forward match resolved the majority of records automatically, since most repeat week to week",
           "A tiered exception path meant rule-based cases were handled deterministically and only genuinely ambiguous records reached a person",
           "The whole procedure was documented step by step and handed over, so it didn't depend on me to run",
@@ -441,7 +441,7 @@ export const projects: Project[] = [
         kind: "prose",
         heading: "What I learned",
         body: [
-          "The value wasn't the automation itself — it was mapping the manual process closely enough to see its structure. Two steps that felt like judgment were strict rules hiding in a spreadsheet, and one step that looked routine was the only place real judgment belonged. Getting that boundary right is what let me automate aggressively without automating a decision that shouldn't be.",
+          "The value wasn't the automation itself - it was mapping the manual process closely enough to see its structure. Two steps that felt like judgment were strict rules hiding in a spreadsheet, and one step that looked routine was the only place real judgment belonged. Getting that boundary right is what let me automate aggressively without automating a decision that shouldn't be.",
         ],
       },
       {
@@ -453,7 +453,7 @@ export const projects: Project[] = [
   },
   {
     slug: "apexauto-ev-marketplace",
-    title: "ApexAuto — Electric Vehicle Marketplace",
+    title: "ApexAuto - Electric Vehicle Marketplace",
     category: "Product Design · Frontend · Quality Assurance",
     summary:
       "A full-stack e-commerce application for browsing, comparing, financing, and purchasing electric vehicles, built by a four-person team. I established the visual direction and prototype, implemented selected frontend pages, and tested user journeys to find functional and usability defects.",
@@ -477,7 +477,7 @@ export const projects: Project[] = [
         kind: "prose",
         heading: "Overview",
         body: [
-          "ApexAuto is a team project for a fourth-year Building E-Commerce Systems course. The goal was a full-stack marketplace where users could browse and compare electric vehicles, save favourites, configure financing, complete checkout, and review past orders — a React and TypeScript frontend against a Spring Boot REST backend and a relational data layer.",
+          "ApexAuto is a team project for a fourth-year Building E-Commerce Systems course. The goal was a full-stack marketplace where users could browse and compare electric vehicles, save favourites, configure financing, complete checkout, and review past orders - a React and TypeScript frontend against a Spring Boot REST backend and a relational data layer.",
           "I'm including it because it shows things my reporting work can't: interface design, prototyping, frontend implementation, and working through defects inside a team.",
         ],
       },
@@ -504,7 +504,7 @@ export const projects: Project[] = [
             label: "Built by the team",
             items: [
               "The backend services, REST API, and data layer, and the remaining frontend pages",
-              "ApexAuto was a four-person project — this page describes my part of it, not the whole application",
+              "ApexAuto was a four-person project - this page describes my part of it, not the whole application",
             ],
           },
         ],
@@ -514,36 +514,36 @@ export const projects: Project[] = [
         heading: "Design direction",
         body: [
           "I wanted the marketplace to feel more like a modern automotive product than a university e-commerce assignment, so I built the interface around a digital instrument cluster: a dark navy ground, a single electric blue accent for actions, and technical typography for specifications and figures.",
-          "That gave the catalogue a consistent language for the things buyers actually compare — range, acceleration, drivetrain — with a range gauge as a recurring visual motif rather than another row of text. Establishing the system as a prototype first, before anyone wrote production components, meant the team had something concrete to build against instead of resolving styling decisions page by page.",
+          "That gave the catalogue a consistent language for the things buyers actually compare - range, acceleration, drivetrain - with a range gauge as a recurring visual motif rather than another row of text. Establishing the system as a prototype first, before anyone wrote production components, meant the team had something concrete to build against instead of resolving styling decisions page by page.",
         ],
       },
       {
         kind: "gallery",
         heading: "The interface",
         intro:
-          "Screens from the live application. The range gauge — the circular arc showing each vehicle's range at a glance — recurs from the hero through the catalogue and detail pages as the product's signature element.",
+          "Screens from the live application. The range gauge - the circular arc showing each vehicle's range at a glance - recurs from the hero through the catalogue and detail pages as the product's signature element.",
         images: [
           {
             src: "/apexauto/landing-hero.webp",
             alt: "ApexAuto landing page: bold headline, a featured Vantage Aero vehicle card with a circular range gauge, key statistics, and a browse-by-category row.",
-            caption: "Landing — featured vehicle card with the range-gauge motif",
+            caption: "Landing - featured vehicle card with the range-gauge motif",
             wide: true,
           },
           {
             src: "/apexauto/catalogue.webp",
             alt: "Vehicle catalogue with a left filter rail for category, price, and sort, and a grid of vehicle cards each showing a range gauge, emissions, fuel use, seats, and price.",
-            caption: "Catalogue — filters, sort, and the vehicle grid I built",
+            caption: "Catalogue - filters, sort, and the vehicle grid I built",
             wide: true,
           },
           {
             src: "/apexauto/finance.webp",
             alt: "Finance Your Vehicle page with down payment, loan term, and APR sliders on the left and a live payment summary on the right showing an estimated monthly payment.",
-            caption: "Financing — every control recomputes the payment live",
+            caption: "Financing - every control recomputes the payment live",
           },
           {
             src: "/apexauto/compare.webp",
             alt: "Side-by-side comparison table of three vehicles across price, range, emissions, fuel usage, and stock, with the best value in each row highlighted.",
-            caption: "Compare — best value marked per row",
+            caption: "Compare - best value marked per row",
           },
           {
             src: "/apexauto/featured-and-steps.webp",
@@ -553,7 +553,7 @@ export const projects: Project[] = [
           {
             src: "/apexauto/chatbot.webp",
             alt: "EV assistant chatbot section showing a scoped assistant that answers questions about the site but explicitly cannot access accounts, carts, or payments.",
-            caption: "Amp — a deliberately scoped assistant",
+            caption: "Amp - a deliberately scoped assistant",
           },
         ],
       },
@@ -561,7 +561,7 @@ export const projects: Project[] = [
         kind: "enhancements",
         heading: "Testing, and two defects worth describing",
         intro:
-          "I tested complete journeys rather than individual pages — browsing the catalogue, comparing vehicles, adding and removing cart items, configuring financing, checking out, and moving through authenticated and unauthenticated states.",
+          "I tested complete journeys rather than individual pages - browsing the catalogue, comparing vehicles, adding and removing cart items, configuring financing, checking out, and moving through authenticated and unauthenticated states.",
         items: [
           {
             title: "Category filtering returned nothing",
@@ -573,7 +573,7 @@ export const projects: Project[] = [
               },
               {
                 label: "Cause",
-                body: "The frontend was filtering on a category field the backend's vehicle entity didn't have, so every comparison failed. The filter wasn't broken — it was matching against something that didn't exist.",
+                body: "The frontend was filtering on a category field the backend's vehicle entity didn't have, so every comparison failed. The filter wasn't broken - it was matching against something that didn't exist.",
               },
               {
                 label: "Fix",
@@ -606,13 +606,13 @@ export const projects: Project[] = [
         heading: "What I took from it",
         body: [
           "Translating a prototype into a working team product involves more negotiation than I expected. Some design decisions didn't survive contact with the API, and deciding which ones to defend and which to adapt was most of the frontend work.",
-          "It also changed how I think about testing. Treating it as part of building — reproducing an issue, working out what was actually happening, and describing it precisely enough for someone else to fix — turned out to be more useful than checking pages at the end.",
+          "It also changed how I think about testing. Treating it as part of building - reproducing an issue, working out what was actually happening, and describing it precisely enough for someone else to fix - turned out to be more useful than checking pages at the end.",
         ],
       },
       {
         kind: "note",
         heading: "About this project",
-        body: "ApexAuto is an academic team project of four people, and this page describes my own contribution — the design direction, the front-end pages noted above, and the testing. The backend and the remaining pages were built by teammates. Inventory, financing, checkout, and payments are simulated; the live demo is safe to click through and takes no real payment details.",
+        body: "ApexAuto is an academic team project of four people, and this page describes my own contribution - the design direction, the front-end pages noted above, and the testing. The backend and the remaining pages were built by teammates. Inventory, financing, checkout, and payments are simulated; the live demo is safe to click through and takes no real payment details.",
       },
     ],
   },

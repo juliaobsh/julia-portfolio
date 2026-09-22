@@ -13,7 +13,7 @@ export const roles: Role[] = [
   {
     org: "Hydro One",
     title: "Business Data Analyst Co-op",
-    period: "May 2025 – September 2026",
+    period: "May 2025 - September 2026",
     location: "Markham, ON",
     current: true,
     highlights: [
@@ -22,7 +22,7 @@ export const roles: Role[] = [
       "Built and tested changes in a non-production Fabric workspace, supported QA cycles with testers, and deployed reviewed changes to production through the deployment pipeline",
       "Led the discovery work for an enterprise survey platform migration: a 188-survey inventory, stakeholder outreach across the organization, and consolidated requirements documentation",
       "Served as business analysis bridge between Hydro One and an external vendor on a ServiceNow integration, supporting cross-organizational requirements alignment across three organizations",
-      "Automated weekly triage of 14,000–16,000 cybersecurity vulnerabilities using Excel VBA and CMDB enrichment, assigning solution owners and maintaining the tracker",
+      "Automated weekly triage of 14,000-16,000 cybersecurity vulnerabilities using Excel VBA and CMDB enrichment, assigning solution owners and maintaining the tracker",
       "Maintained a monthly small-projects financial tracker by ingesting and reconciling SAP actuals, documenting the process for handover",
       "Configured contact-centre speech and text analytics topics and phrase libraries, and produced monthly application performance reporting for senior stakeholders",
     ],
@@ -30,11 +30,11 @@ export const roles: Role[] = [
   {
     org: "Me Va Me",
     title: "Customer Service Associate",
-    period: "January 2022 – August 2022",
+    period: "January 2022 - August 2022",
     location: "Maple, ON",
     highlights: [],
     narrative:
-      "Customer-facing operations work in a high-volume environment: handling transactions, coordinating driver scheduling, and resolving issues in real time. Early practice at the part of analyst work that isn't technical — reading what someone actually needs from an incomplete request, and staying accurate under time pressure.",
+      "Customer-facing operations work in a high-volume environment: handling transactions, coordinating driver scheduling, and resolving issues in real time. Early practice at the part of analyst work that isn't technical - reading what someone actually needs from an incomplete request, and staying accurate under time pressure.",
   },
 ];
 
@@ -43,8 +43,8 @@ export const education = {
   university: "York University",
   degree: "Bachelor of Science",
   program: "Specialized Honours Computer Science Co-op",
-  period: "2022 – 2027",
-  /** Kept short and positioning-relevant — not a transcript. */
+  period: "2022 - 2028",
+  /** Kept short and positioning-relevant - not a transcript. */
   coursework: [
     "Introduction to Database Systems",
     "Applied Linear Algebra",

@@ -35,7 +35,7 @@ export function Contact() {
             </h2>
             <p className="mb-10 leading-relaxed text-[#a8a29e]">
               I&apos;m looking for roles in business intelligence, data
-              analysis, and technical business analysis — particularly on
+              analysis, and technical business analysis - particularly on
               reporting that people depend on operationally.
             </p>
 

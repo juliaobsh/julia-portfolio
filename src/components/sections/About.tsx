@@ -46,25 +46,25 @@ export function About() {
               <p className="mb-4 leading-relaxed text-muted">
                 Most of my Power BI work hasn&apos;t started with a blank
                 canvas. It started with a report that already existed, already
-                had users, and already had decisions baked into it — aggregation
+                had users, and already had decisions baked into it, like aggregation
                 levels, filter defaults, grading rules, metric definitions that
                 someone chose for a reason. Before I change anything, I want to
                 know what those reasons were.
               </p>
               <p className="mb-4 leading-relaxed text-muted">
                 That&apos;s usually where the interesting part is. The
-                one-sentence requests — &ldquo;add a distinct count of
-                agents&rdquo; — are the ones that turn out to have a real
+                one-sentence requests, like &ldquo;add a distinct count of
+                agents&rdquo;, are the ones that turn out to have a real
                 question hiding inside them.
               </p>
               <p className="leading-relaxed text-muted">
                 My Computer Science background shows up less in writing code
-                than in how I read systems — following a value from a source
+                than in how I read systems, such as following a value from a source
                 table through a semantic model into a visual, and staying
                 sceptical of a number until I&apos;ve seen where it came from.
                 The other half of the job is the opposite skill: most requests
                 arrive as one sentence, and turning that sentence into defined
-                behaviour — in a report, or in a requirements list — is where
+                behaviour, like in a report, or in a requirements list, which is where
                 most of the work actually is.
               </p>
             </div>
