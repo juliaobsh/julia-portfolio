@@ -13,7 +13,7 @@ export const roles: Role[] = [
   {
     org: "Hydro One",
     title: "Business Data Analyst Co-op",
-    period: "May 2025 – Present",
+    period: "May 2025 – September 2026",
     location: "Markham, ON",
     current: true,
     highlights: [

@@ -52,12 +52,12 @@ export function Experience() {
                       >
                         {role.org}
                       </h3>
-                      {role.current ? (
-                        <p className="inline-flex items-center gap-1.5 self-start rounded-full bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent sm:self-auto">
-                          <span className="size-1.5 animate-blip rounded-full bg-accent" />
-                          Current role
-                        </p>
-                      ) : null}
+                      {/* {role.current ? ( */}
+                         {/* <p className="inline-flex items-center gap-1.5 self-start rounded-full bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent sm:self-auto"> */}
+                           {/* <span className="size-1.5 animate-blip rounded-full bg-accent" /> */}
+                           {/* Current role */}
+                         {/* </p> */}
+                      {/* ) : null} */}
                     </div>
                     <p className="mb-0.5 text-sm font-medium text-muted">
                       {role.title}
