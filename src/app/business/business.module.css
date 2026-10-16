@@ -1,0 +1,65 @@
+/* Styles specific to the /business page. Scoped as a CSS module so they
+   can't leak into the portfolio pages. */
+
+.heroGrid {
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 72% 35%, rgba(37, 99, 235, 0.1), transparent 32%);
+  background-size: 48px 48px, 48px 48px, auto;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 95%);
+}
+
+.footerGrid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black, transparent 75%);
+}
+
+.proofGlow {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(37, 99, 235, 0.16), transparent 35%),
+    radial-gradient(circle at 90% 100%, rgba(124, 58, 237, 0.12), transparent 30%);
+}
+
+.eyebrow {
+  margin-bottom: 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #2563eb;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.sectionTitleLight {
+  color: #f8fafc;
+}
+
+.sectionCopy {
+  margin-top: 1rem;
+  max-width: 36rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+/* FAQ: <details> elements sharing a name act as an accordion. */
+.faq summary {
+  list-style: none;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq[open] .faqPlus {
+  transform: rotate(45deg);
+}
