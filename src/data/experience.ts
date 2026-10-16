@@ -11,11 +11,23 @@ export type Role = {
 
 export const roles: Role[] = [
   {
+    org: "Hodgson Group - Orthotics & Prosthetics",
+    title: "Data Analytics Consultant (Riipen FuturePath)",
+    period: "August 2026 - Present",
+    location: "Remote",
+    current: true,
+    highlights: [
+      "Developed a Python/pandas ETL pipeline consolidating 3,000+ treatment records across six ClickUp workflow stages, automating cleaning and transformation for operational and financial analysis",
+      "Cleaned, standardized, and reconciled a multi-million-dollar treatment and funding dataset, resolving duplicate records, schema inconsistencies, parsing issues, and cross-stage discrepancies",
+      "Validated pipeline outputs against Excel, PivotTables, and Power Query, reconciling treatment volumes, funding streams, stage-level records, and aggregate financial totals",
+      "Designed four prototype Power BI dashboard pages with purpose-built KPI visuals, gathering reporting and workflow requirements from 4+ business stakeholders",
+    ],
+  },
+  {
     org: "Hydro One",
     title: "Business Data Analyst Co-op",
     period: "May 2025 - September 2026",
     location: "Markham, ON",
-    current: true,
     highlights: [
       "Delivered six enhancements to an enterprise Power BI reporting suite, working directly in eight to nine of its 27 operational and performance reports",
       "Authored and modified DAX measures at the report level, and configured visuals against measures already present in the shared semantic model",

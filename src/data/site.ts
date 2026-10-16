@@ -5,9 +5,9 @@ export const site = {
   availability: "Open to BI, data analyst, and technical BA internships, co-ops, and entry-level opportunities",
   email: "yuliaobs@gmail.com",
   /** Update if a custom domain is added later - used for canonical + OG URLs. */
-  url: "https://julia-portfolio-nine.vercel.app",
+  url: "https://yuliaobshansky.com",
   description:
-    "Portfolio of Yulia Obshansky - Business Data Analyst working in enterprise Power BI, Microsoft Fabric reporting, and business requirements analysis.",
+    "Portfolio of Yulia Obshansky - Business Data Analyst working in Power BI, Microsoft Fabric, Python/pandas data pipelines, and business requirements analysis.",
   resumePath: "/resume.pdf",
 } as const;
 

@@ -11,7 +11,7 @@ export const skillGroups: SkillGroup[] = [
   {
     category: "Reporting & data",
     accent: "accent",
-    items: ["Power BI", "DAX", "SQL", "Excel", "Microsoft Fabric"],
+    items: ["Power BI", "DAX", "SQL", "Excel", "Microsoft Fabric", "Power Query"],
   },
   {
     category: "Analysis & delivery",
@@ -27,7 +27,7 @@ export const skillGroups: SkillGroup[] = [
   {
     category: "Development & automation",
     accent: "violet",
-    items: ["Python", "Excel VBA", "React", "TypeScript"],
+    items: ["Python", "pandas", "Excel VBA", "Java", "React", "TypeScript"],
   },
 ];
 
@@ -41,6 +41,8 @@ export const environmentGroup: SkillGroup = {
     "SAP",
     "Dynatrace",
     "Microsoft Entra ID",
+    "ClickUp",
+    "Checkbox",
   ],
 };
 

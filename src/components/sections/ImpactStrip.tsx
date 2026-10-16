@@ -10,7 +10,7 @@ const stats = [
   { value: "27", label: "report enterprise BI suite" },
   { value: "14,000+", label: "records automated weekly" },
   { value: "188", label: "surveys inventoried" },
-  { value: "3 orgs", label: "ServiceNow BA bridge" },
+  { value: "3000+", label: "treatment records consolidated" },
 ];
 
 export function ImpactStrip() {
