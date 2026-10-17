@@ -8,8 +8,7 @@ export const business = {
   bookingUrl: "https://calendly.com/yuliaobs/30min",
   bookingSubject: "20-minute process review",
   initials: "YO",
-  /** Put a square photo in /public (e.g. /public/headshot.jpg) and set this to "/headshot.jpg". Empty shows initials. */
-  headshot: "",
+  headshot: "/headshot.jpg",
   firstName: "Yulia",
   serviceArea: "Vaughan, Thornhill & GTA",
 };
