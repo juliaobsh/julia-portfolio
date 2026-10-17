@@ -7,6 +7,7 @@ import { accentStyle } from "@/lib/utils";
 import type { CaseStudySection, DeliveryStatus } from "@/types/project";
 import { Container } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { ReturnButton } from "@/components/ui/ReturnSpot";
 import { ArrowIcon, GithubIcon } from "@/components/ui/icons";
 import { ProjectVisual } from "@/components/visuals/ProjectVisual";
 import { CaseStudyDiagram } from "@/components/visuals/CaseStudyDiagram";
@@ -274,13 +275,7 @@ export default async function ProjectPage({ params }: PageProps) {
         <div className="pointer-events-none absolute inset-0 bg-grid opacity-40" />
 
         <Container className="relative py-16">
-          <Link
-            href="/#work"
-            className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-accent"
-          >
-            <ArrowIcon className="rotate-180" />
-            All work
-          </Link>
+          <ReturnButton fallbackHref="/#work" fallbackLabel="All work" />
 
           <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
             {project.category}
