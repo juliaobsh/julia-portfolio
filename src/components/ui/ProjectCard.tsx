@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { CaseStudyLink } from "./ReturnSpot";
 import type { Project } from "@/types/project";
 import { accentStyle } from "@/lib/utils";
 import { ProjectVisual } from "@/components/visuals/ProjectVisual";
@@ -34,12 +34,13 @@ export function ProjectCard({ project, featured = false }: Props) {
           }`}
         >
           {/* Stretched link keeps the whole card clickable without a clickable div. */}
-          <Link
+          <CaseStudyLink
             href={`/projects/${project.slug}`}
+            label="Back to where you were"
             className="after:absolute after:inset-0 after:content-['']"
           >
             {project.title}
-          </Link>
+          </CaseStudyLink>
         </h3>
 
         <p
