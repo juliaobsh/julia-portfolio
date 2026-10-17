@@ -225,7 +225,7 @@ export default function BusinessPage() {
               I help local businesses automate manual reporting and turn the data they already have into dashboards they can actually use - without replacing the software they already trust.
             </p>
             <div className={cn(styles.load, "mt-8 flex flex-col gap-3 sm:flex-row")} style={delay(480)}>
-              <BookButton>Book a free 20-minute process review</BookButton>
+              <BookButton>Book a free 30-minute process review</BookButton>
               <a href="#process" className="group inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300">
                 How it works <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-y-0.5">↓</span>
               </a>
@@ -667,7 +667,7 @@ export default function BusinessPage() {
             you&apos;re tired of building.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-slate-400">
-            Twenty minutes on a screen share is usually enough to tell whether it&apos;s worth automating. No cost and no obligation.
+            Thirty minutes on a screen share is usually enough to tell whether it&apos;s worth automating. No cost and no obligation.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <BookButton dark>Book a free process review</BookButton>

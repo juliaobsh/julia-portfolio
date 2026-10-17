@@ -210,7 +210,7 @@ export const proof = [
 ];
 
 export const process = [
-  { title: "Free 20-minute process review", body: "Show me the report or workflow. I'll tell you honestly if it's worth automating." },
+  { title: "Free 30-minute process review", body: "Show me the report or workflow. I'll tell you honestly if it's worth automating." },
   { title: "Written plan and fixed price", body: "A short plan covering what I'd build, what stays the same, and one clear price." },
   { title: "Build and check your numbers", body: "I use real exports and reconcile the results against your existing figures." },
   { title: "Handover and support", body: "A team walkthrough, plain-language documentation, and 30 days of fixes." },
