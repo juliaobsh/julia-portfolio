@@ -1,0 +1,136 @@
+/* Styles specific to the /business page. Scoped as a CSS module so they
+   can't leak into the portfolio pages. */
+
+.heroGrid {
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 72% 35%, rgba(37, 99, 235, 0.1), transparent 32%);
+  background-size: 48px 48px, 48px 48px, auto;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 95%);
+}
+
+.footerGrid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black, transparent 75%);
+}
+
+.proofGlow {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(37, 99, 235, 0.16), transparent 35%),
+    radial-gradient(circle at 90% 100%, rgba(124, 58, 237, 0.12), transparent 30%);
+}
+
+.eyebrow {
+  margin-bottom: 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #2563eb;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.sectionTitleLight {
+  color: #f8fafc;
+}
+
+.sectionCopy {
+  margin-top: 1rem;
+  max-width: 36rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+/* ── Load animations ────────────────────────────────────────────────────
+   Each element sets --d (delay) inline. Reduced-motion users get the final
+   state immediately via the global rule in globals.css. */
+
+.load {
+  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+.loadDown {
+  animation: fadeDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.loadVisual {
+  animation: settle 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+.pop {
+  animation:
+    pop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+    float 6s ease-in-out 1.6s infinite;
+  animation-delay: var(--d, 0ms), calc(var(--d, 0ms) + 0.7s);
+}
+
+/* SVG paths drawn with pathLength="1". */
+.draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-out both;
+  animation-delay: var(--d, 0ms);
+}
+
+.spinIn {
+  animation: spinIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes settle {
+  from { opacity: 0; transform: translateY(40px) rotate(4deg) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: translateY(16px) scale(0.85); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes spinIn {
+  from { opacity: 0; transform: rotate(-120deg) scale(0.8); }
+  to { opacity: 1; transform: none; }
+}
