@@ -120,7 +120,7 @@ export default function BusinessPage() {
         bookingLabel="Free 30-min call"
       />
 
-      {/* Hero and proof snapshot */}
+            {/* Hero and proof snapshot */}
       <section className="relative px-5 pb-14 pt-32 lg:px-8 lg:pt-40">
         <div
           className={cn(styles.heroGrid, "absolute inset-0")}
@@ -128,45 +128,237 @@ export default function BusinessPage() {
         />
 
         <div className="relative mx-auto max-w-7xl">
-          <p className={styles.eyebrow}>
-            Process improvement · automation · reporting
-          </p>
+          <div className="grid items-center gap-14 lg:grid-cols-[1fr_1fr] lg:gap-16">
+            <div>
+              <p className={styles.eyebrow}>
+                Process improvement · automation · reporting
+              </p>
 
-          <h1 className="max-w-4xl text-[clamp(2.7rem,5.5vw,4.8rem)] font-extrabold leading-[1.05] tracking-[-.045em]">
-            Stop losing{" "}
-            <span className="text-blue-600">time and money</span> to
-            inefficient processes.
-          </h1>
+              <h1 className="max-w-2xl text-[clamp(2.7rem,4.8vw,4.5rem)] font-extrabold leading-[1.05] tracking-[-.045em]">
+                Stop losing{" "}
+                <span className="text-blue-600">time and money</span>{" "}
+                to inefficient processes.
+              </h1>
 
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
-            I help GTA businesses uncover operational bottlenecks, find
-            overlooked problems, and simplify the work happening behind
-            the scenes.
-          </p>
+              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-700">
+                I help GTA businesses uncover operational bottlenecks,
+                find overlooked problems, and simplify the work
+                happening behind the scenes.
+              </p>
 
-          <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">
-            Whether it’s disorganized records, financial discrepancies,
-            repetitive administration, or disconnected software, I
-            investigate what’s slowing your business down and build
-            practical solutions using the tools you already have.
-          </p>
+              <p className="mt-3 max-w-xl text-base leading-7 text-slate-600">
+                Whether it’s disorganized records, financial
+                discrepancies, repetitive administration, or
+                disconnected software, I investigate what’s slowing
+                your business down and build practical solutions using
+                the tools you already have.
+              </p>
 
-          <div className="mt-7">
-            <BookButton>{business.ctaLabel}</BookButton>
+              <div className="mt-7">
+                <BookButton>{business.ctaLabel}</BookButton>
+              </div>
+
+              <p className="mt-3 text-xs text-slate-500">
+                {business.ctaNote}
+              </p>
+
+              <p className="mt-6 max-w-xl text-sm font-medium leading-6 text-slate-600">
+                Fixed-price projects · Works with your software ·{" "}
+                {business.serviceArea}
+              </p>
+            </div>
+
+            {/* Original-style dashboard visual */}
+            <figure
+              className={cn(
+                styles.loadVisual,
+                "relative mx-auto hidden w-full max-w-[570px] lg:block",
+              )}
+            >
+              <span className="absolute -top-4 right-6 z-10 rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-[11px] font-bold text-amber-800 shadow-sm">
+                Illustrative · sample business data
+              </span>
+
+              <div className="relative">
+                <div
+                  className="absolute -left-10 top-8 h-36 w-36 rounded-full bg-teal-300/25 blur-3xl"
+                  aria-hidden="true"
+                />
+                <div
+                  className="absolute -right-8 bottom-0 h-48 w-48 rounded-full bg-purple-300/25 blur-3xl"
+                  aria-hidden="true"
+                />
+
+                <div className="relative rotate-[1deg] rounded-[28px] border border-white/80 bg-white/90 p-3 shadow-[0_30px_80px_-28px_rgba(15,23,42,.35)] backdrop-blur">
+                  <div className="flex items-center justify-between border-b border-slate-100 px-3 py-3">
+                    <div>
+                      <p className="text-[10px] font-semibold uppercase tracking-[.16em] text-slate-400">
+                        Weekly operations
+                      </p>
+                      <p className="mt-1 text-sm font-bold text-slate-900">
+                        Business overview
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-[10px] font-semibold text-emerald-700">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                      Updated today
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-3 px-3 pt-3 text-[8px] font-medium text-slate-400">
+                    <span>
+                      Source: job software export + bookkeeping workbook
+                    </span>
+                    <span className="shrink-0">Sample data</span>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 p-3">
+                    {[
+                      ["$48.2k", "Revenue", "+12.4%"],
+                      ["184", "Jobs completed", "+8.1%"],
+                      ["76%", "Team capacity", "+4.2%"],
+                    ].map(([value, label, trend]) => (
+                      <div
+                        key={label}
+                        className="rounded-2xl border border-slate-100 bg-slate-50/70 p-3"
+                      >
+                        <p className="text-[9px] font-medium text-slate-500">
+                          {label}
+                        </p>
+                        <p className="mt-1 text-lg font-bold text-slate-900">
+                          {value}
+                        </p>
+                        <p className="mt-1 text-[9px] font-semibold text-teal-600">
+                          {trend}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="grid grid-cols-[1.45fr_.8fr] gap-2 px-3 pb-3">
+                    <div className="rounded-2xl border border-slate-100 p-4">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-[10px] font-bold text-slate-700">
+                          Revenue by week
+                        </span>
+                        <span className="text-[9px] text-slate-400">
+                          Last 6 weeks
+                        </span>
+                      </div>
+
+                      <svg
+                        viewBox="0 0 330 130"
+                        className="mt-3 w-full overflow-visible"
+                        aria-hidden="true"
+                      >
+                        <defs>
+                          <linearGradient
+                            id="heroRevenueFill"
+                            x1="0"
+                            y1="0"
+                            x2="0"
+                            y2="1"
+                          >
+                            <stop stopColor="#2563eb" />
+                            <stop
+                              offset="1"
+                              stopColor="#2563eb"
+                              stopOpacity="0"
+                            />
+                          </linearGradient>
+                        </defs>
+
+                        {[25, 60, 95].map((y) => (
+                          <line
+                            key={y}
+                            x1="0"
+                            x2="330"
+                            y1={y}
+                            y2={y}
+                            stroke="#e2e8f0"
+                            strokeDasharray="3 5"
+                          />
+                        ))}
+
+                        <path
+                          d="M0 103 C28 91,45 95,68 75 S108 78,135 58 S178 69,205 39 S250 50,275 25 S310 30,330 12 L330 130 L0 130Z"
+                          fill="url(#heroRevenueFill)"
+                          opacity=".18"
+                          className={styles.fadeIn}
+                        />
+                        <path
+                          d="M0 103 C28 91,45 95,68 75 S108 78,135 58 S178 69,205 39 S250 50,275 25 S310 30,330 12"
+                          pathLength={1}
+                          fill="none"
+                          stroke="#2563eb"
+                          strokeWidth="4"
+                          strokeLinecap="round"
+                          className={styles.draw}
+                        />
+                      </svg>
+                    </div>
+
+                    <div className="rounded-2xl border border-slate-100 p-4">
+                      <p className="text-[10px] font-bold text-slate-700">
+                        Job status
+                      </p>
+
+                      <div
+                        className={cn(
+                          styles.spinIn,
+                          "mx-auto mt-4 grid h-24 w-24 place-items-center rounded-full",
+                        )}
+                        style={{
+                          background:
+                            "conic-gradient(#2563eb 0 58%, #14b8a6 58% 82%, #e2e8f0 82%)",
+                        }}
+                      >
+                        <div className="grid h-16 w-16 place-items-center rounded-full bg-white">
+                          <span className="text-lg font-bold">
+                            184
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="mt-4 flex justify-between text-[8px] text-slate-500">
+                        <span>Complete</span>
+                        <span>Open</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute -bottom-6 -left-4 flex items-center gap-3 rounded-2xl border border-white bg-white p-3 shadow-xl">
+                  <span
+                    className="grid h-9 w-9 place-items-center rounded-xl bg-teal-50 font-bold text-teal-600"
+                    aria-hidden="true"
+                  >
+                    ✓
+                  </span>
+                  <div>
+                    <p className="text-[10px] text-slate-400">
+                      Manual steps removed
+                    </p>
+                    <p className="text-sm font-bold text-slate-900">
+                      Report ready in minutes
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <figcaption className="mt-12 text-center text-sm leading-6 text-slate-500">
+                See revenue, open jobs, and team capacity{" "}
+                <strong className="font-semibold text-slate-700">
+                  without waiting for someone to rebuild a spreadsheet.
+                </strong>
+              </figcaption>
+            </figure>
           </div>
-
-          <p className="mt-3 text-xs text-slate-500">
-            {business.ctaNote}
-          </p>
-
-          <p className="mt-6 text-sm font-medium text-slate-600">
-            Fixed-price projects · Works with your software ·{" "}
-            {business.serviceArea}
-          </p>
 
           <a
             href="#client-work"
-            className="mt-9 block rounded-2xl border border-teal-200 bg-white/90 p-5 transition hover:border-blue-400 sm:p-6"
+            className="mt-10 block rounded-2xl border border-teal-200 bg-white/90 p-5 transition hover:border-blue-400 lg:mt-14 sm:p-6"
           >
             <p className="text-xs font-bold uppercase tracking-wider text-teal-700">
               Featured healthcare project · current engagement
@@ -175,7 +367,7 @@ export default function BusinessPage() {
               No consolidated reporting → financial exceptions and
               workflow issues made visible
             </p>
-            <p className="mt-2 text-sm text-slate-600">
+            <p className="mt-2 text-sm leading-6 text-slate-600">
               3,000+ records · 6 workflow stages · approximately 5–10 min
               refresh
               <span className="ml-2 font-semibold text-blue-600">
