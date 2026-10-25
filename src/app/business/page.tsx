@@ -134,11 +134,36 @@ export default function BusinessPage() {
                 Process improvement · automation · reporting
               </p>
 
-              <h1 className="max-w-2xl text-[clamp(2.7rem,4.8vw,4.5rem)] font-extrabold leading-[1.05] tracking-[-.045em]">
-                Stop losing{" "}
-                <span className="text-blue-600">time and money</span>{" "}
-                to inefficient processes.
-              </h1>
+              <h1
+  className={cn(
+    styles.load,
+    "max-w-2xl text-[clamp(2.7rem,4.8vw,4.5rem)] font-extrabold leading-[1.05] tracking-[-.045em]",
+  )}
+  style={{ "--d": "200ms" } as React.CSSProperties}
+>
+  Stop losing{" "}
+  <span className="relative inline-block whitespace-nowrap text-blue-600">
+    time and money
+    <svg
+      className="pointer-events-none absolute -bottom-2 left-0 h-3 w-full"
+      viewBox="0 0 300 10"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M2 7c75-5 192-6 296-3"
+        pathLength={1}
+        fill="none"
+        stroke="#14b8a6"
+        strokeWidth="3"
+        strokeLinecap="round"
+        className={styles.draw}
+        style={{ "--d": "900ms" } as React.CSSProperties}
+      />
+    </svg>
+  </span>{" "}
+  to inefficient processes.
+</h1>
 
               <p className="mt-6 max-w-xl text-lg leading-8 text-slate-700">
                 I help GTA businesses uncover operational bottlenecks,
