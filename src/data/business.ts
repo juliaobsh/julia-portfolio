@@ -12,16 +12,18 @@ export const business = {
   /** Shown beside the photo. */
   bio: [
     "I spent 16 months as a Business Data Analyst at Hydro One, working inside a 27-report enterprise Power BI suite and automating high-volume workflows that people relied on every week.",
-    "Now I bring that same care to local businesses. I handle the first conversation, build the solution, check the numbers against yours, and walk your team through it - no sales hand-off and no junior delivery team.",
+    "Since February 2025, I’ve also supported an independent healthcare practice: organizing hundreds of client files and years of invoices, configuring online booking, and maintaining its existing website and digital tools.",
+    "I’m also contributing to a collaborative business systems project, exploring database design and data quality for matching businesses with relevant growth opportunities. That project is currently in development.",
+    "The best solution is the one that makes running your business easier. Now I bring that same care to local businesses. I handle the first conversation, build the solution, check the numbers against yours, and walk your team through it - no sales hand-off and no junior delivery team.",
   ],
-  role: "Data & automation consultant",
+  role: "Business process improvement & automation consultant",
   firstName: "Yulia",
   serviceArea: "Vaughan, Thornhill & GTA",
   /** Main call to action - framed around what the visitor gets. */
   ctaLabel: "Find out where you're losing time",
   ctaNote: "Free 30-minute conversation · no obligation · no prep needed",
   /** Who the page is for - by situation, not industry. */
-  idealClient: "Built for growing service businesses where reports, follow-ups, and information between systems have become too much to manage by hand.",
+  idealClient: "Built for growing service businesses where disorganized records, recurring administration, reporting, and disconnected systems have become too much to manage by hand.",
 };
 
 /** The one-minute version of the page, shown right after the hero. */
@@ -29,14 +31,14 @@ export const glance = [
   {
     label: "What I solve",
     title: "Time and money slipping through the cracks",
-    body: "Repetitive reports, workflow bottlenecks, missed follow-ups, and information spread across programs.",
+    body: "Disorganized records, repetitive admin, reporting bottlenecks, missed follow-ups, and information spread across programs.",
     href: "#help",
     link: "See the warning signs",
   },
   {
     label: "Why trust me",
     title: "Enterprise experience, local focus",
-    body: "16 months as a Business Data Analyst at Hydro One - and a current healthcare client, shown below.",
+    body: "Enterprise experience at Hydro One, healthcare reporting automation, and hands-on operations support for an independent practice.",
     href: "#about",
     link: "Meet me",
   },
@@ -135,7 +137,7 @@ export const signs: { icon: IconName; title: string; body: string }[] = [
   { icon: "dollar", title: "Revenue slipping through the cracks", body: "Unpaid invoices, missed follow-ups, and overlooked opportunities are hard to keep track of" },
   { icon: "search", title: "Answers take too long", body: "You can't see the numbers you care about without asking someone to pull them" },
   { icon: "clock", title: "Work keeps getting stuck", body: "Jobs, approvals, or customer requests sit waiting, and nobody has a clear picture of why" },
-  { icon: "split", title: "Conflicting numbers", body: "Different reports give different answers to the same question" },
+  { icon: "sheet", title: "Files are hard to find", body: "Client records, invoices, and documents pile up without a consistent place or process" },
 ];
 
 export const beforeAfter = {
@@ -225,8 +227,8 @@ export const customWork = {
   label: "Custom process fix",
   price: "Quoted after the free review",
   title: "Not every problem is a report or a dashboard",
-  body: "Sometimes the fix is a hand-off that keeps getting dropped, a follow-up process that depends on someone's memory, or an approval that sits in an inbox for days. After the free review, I can scope a custom workflow improvement or automation project - with its own fixed price.",
-  examples: ["Follow-up and reminder workflows", "Cleaner hand-offs between teams", "Automating repetitive admin steps", "Tracking that shows where work gets stuck"],
+  body: "Your business has grown, but the processes behind it haven’t kept up. Files are hard to find, admin keeps piling up, or your existing software isn’t working the way you need it to. I help organize information, configure existing tools, and put simpler, repeatable workflows in place. Every project starts with a free review and a clear, fixed-price scope.",
+  examples: ["Document organization and records management", "Administrative workflows and recurring tasks", "Scheduling and business software configuration", "Follow-up and handoff processes", "Spreadsheet cleanup and workflow automation"],
   honesty: "If it's outside what I do well, I'll say so and point you somewhere better.",
 };
 
@@ -407,5 +409,49 @@ export const faqs = [
   {
     question: "How does payment work?",
     answer: "For fixed-price projects, a 40-50% deposit to start, and the rest when you've signed off on the finished work. No hourly billing and no surprise invoices.",
+  },
+];
+
+
+/** Anonymized work; distinguish ongoing support from exploratory team work. */
+export const additionalWork = [
+  {
+    id: "practice-operations",
+    category: "Healthcare operations",
+    client: "Independent Healthcare Practice · GTA, Ontario",
+    status: "Ongoing support · February 2025–Present",
+    title: "From administrative overload to organized operations",
+    summary: "Reorganized hundreds of client records, established consistent administrative workflows, and configured everyday business systems for an independent healthcare practice.",
+    challenge: "Years of physical and digital client records, invoices, consent forms, and administrative documentation had accumulated without a consistent structure. Finding information and keeping records current had become difficult to manage.",
+    contributions: [
+      "Reorganized hundreds of physical client files by year and alphabetically for easier retrieval.",
+      "Organized historical invoices spanning multiple years into a consistent digital filing structure.",
+      "Maintain administrative records and invoice documentation through repeatable processes, under the practitioner’s direction.",
+      "Configured and continue to maintain an online appointment-booking platform around the owner’s operational needs.",
+      "Maintain the existing website and support online advertising activities.",
+    ],
+    outcomeLabel: "What changed",
+    outcome: "An overwhelming administrative backlog became a structured system that is easier to navigate and maintain. Records are organized for easier access, with ongoing support to keep information current.",
+    takeaway: "Sometimes the most useful improvement is organizing existing information, configuring tools properly, and creating processes a business can maintain.",
+    tags: ["Records management", "Process improvement", "Software configuration"],
+  },
+  {
+    id: "opportunity-system",
+    category: "Collaborative business systems project",
+    client: "Business Strategy & Advisory Firm · Canadian Business Services",
+    status: "In development · October–November 2026",
+    title: "Designing a structured system for business growth opportunities",
+    summary: "Contributing to the early design of a reliable data foundation for evaluating funding, procurement, partnership, and growth opportunities as part of a collaborative team.",
+    challenge: "Business opportunities are scattered across sources, with inconsistent eligibility requirements and frequently changing information. The project explores a more structured way to evaluate opportunities and connect businesses with relevant programs.",
+    contributions: [
+      "Exploring database structures for opportunity records, eligibility requirements, and source tracking.",
+      "Defining consistent fields and relationships to support filtering, comparison, and future matching.",
+      "Investigating data quality, duplicate detection, and record verification processes.",
+      "Considering how records can be updated and maintained as programs and requirements change.",
+    ],
+    outcomeLabel: "Intended outcome · work in progress",
+    outcome: "The team aims to produce a testable framework for collecting, organizing, and evaluating business growth opportunities. My focus is the underlying data structure and maintenance approach. Design and prototyping are ongoing.",
+    takeaway: "Useful automation begins with reliable data, clear rules, and a practical plan for keeping information current.",
+    tags: ["Database design", "Data quality", "Systems planning"],
   },
 ];
