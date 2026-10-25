@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { site, socialLinks } from "@/data/site";
 import {
+  additionalWork,
   beforeAfter,
   business,
   casePreview,
@@ -228,7 +229,7 @@ export default function BusinessPage() {
               to inefficient processes.
             </h1>
             <p className={cn(styles.load, "mt-7 max-w-xl text-base leading-7 text-slate-600 sm:text-lg")} style={delay(350)}>
-              I help local businesses find where time and money are slipping away - repetitive reports, workflow bottlenecks, missed follow-ups, information spread across programs - and fix it with the simplest tool that works. Sometimes that&apos;s a dashboard. Often it&apos;s just one spreadsheet that runs itself.
+              I help GTA businesses simplify the work happening behind the scenes — from disorganized records and repetitive administrative tasks to reporting bottlenecks and disconnected software. Whether that means organizing an existing process, configuring your tools, or automating reporting, I focus on the simplest fix that makes a difference.
             </p>
             <p className={cn(styles.load, "mt-4 max-w-xl border-l-2 border-teal-400 pl-4 text-[15px] font-medium leading-6 text-slate-800")} style={delay(420)}>
               {business.idealClient}
@@ -871,6 +872,53 @@ export default function BusinessPage() {
           </div>
 
             </Expandable>
+          </div>
+
+          <div className="mt-20 space-y-8">
+            {additionalWork.map((project) => (
+              <Reveal key={project.id}>
+                <article id={project.id} className="scroll-mt-24 overflow-hidden rounded-[28px] border border-slate-200 bg-[#fbfaf7]">
+                  <div className="p-6 sm:p-10">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <p className="text-xs font-bold uppercase tracking-[.14em] text-teal-700">{project.category}</p>
+                      <span className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-semibold text-teal-800">{project.status}</span>
+                    </div>
+                    <h3 className="mt-5 max-w-3xl text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">{project.title}</h3>
+                    <p className="mt-3 text-sm font-semibold text-slate-500">{project.client}</p>
+                    <p className="mt-5 max-w-3xl text-base leading-7 text-slate-700">{project.summary}</p>
+                    <ul className="mt-5 flex flex-wrap gap-2">
+                      {project.tags.map((tag) => <li key={tag} className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">{tag}</li>)}
+                    </ul>
+                    <div className="mt-7 rounded-2xl border border-teal-100 bg-white p-5">
+                      <h4 className="text-xs font-bold uppercase tracking-[.12em] text-teal-700">{project.outcomeLabel}</h4>
+                      <p className="mt-3 text-base leading-7 text-slate-700">{project.outcome}</p>
+                    </div>
+                    <div className="mt-7">
+                      <Expandable openLabel="See the project details" closeLabel="Hide the project details">
+                        <div className="grid gap-8 pt-8 lg:grid-cols-2">
+                          <div>
+                            <h4 className="text-sm font-bold text-slate-900">The challenge</h4>
+                            <p className="mt-3 text-[15px] leading-7 text-slate-600">{project.challenge}</p>
+                            <h4 className="mt-6 text-sm font-bold text-slate-900">The takeaway</h4>
+                            <p className="mt-3 text-[15px] leading-7 text-slate-600">{project.takeaway}</p>
+                          </div>
+                          <div>
+                            <h4 className="text-sm font-bold text-slate-900">{project.id === "practice-operations" ? "What I did and continue to maintain" : "My focus in the team"}</h4>
+                            <ul className="mt-4 space-y-3">
+                              {project.contributions.map((item) => (
+                                <li key={item} className="flex gap-3 text-[15px] leading-7 text-slate-600">
+                                  <Icon name="check" className="mt-1 h-4 w-4 shrink-0 text-teal-600" />{item}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </Expandable>
+                    </div>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
           </div>
 
           {clientEngagement.screenshot ? (
