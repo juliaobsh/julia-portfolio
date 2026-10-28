@@ -30,14 +30,14 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.role}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} - ${site.role}`,
+    template: `%s - ${site.name}`,
   },
   description: site.description,
   authors: [{ name: site.name }],
   alternates: { canonical: "/" },
   openGraph: {
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} - ${site.role}`,
     description: site.description,
     url: site.url,
     siteName: site.name,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} - ${site.role}`,
     description: site.description,
   },
 };

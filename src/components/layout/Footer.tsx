@@ -17,10 +17,10 @@ export function Footer() {
       </div>
 
       <Container className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-        <p className="text-sm text-ink-soft">
+        <p className="text-sm text-stone-300">
           Designed and built by {site.name}.
         </p>
-        <ul className="flex items-center gap-5 text-xs text-ink-soft">
+        <ul className="flex items-center gap-5 text-xs text-stone-300">
           {socialLinks.map((link) => (
             <li key={link.label}>
               <a

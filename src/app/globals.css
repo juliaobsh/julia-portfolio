@@ -4,19 +4,25 @@
    Warm paper background, near-black ink, deep blue primary accent, with teal /
    violet / ember used only to differentiate the four case studies.            */
 @theme {
+  /* Readable supporting text across portfolio and consulting utilities. */
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-base: 1.125rem;
+  --text-lg: 1.25rem;
+
   --color-paper: #f7f5f0;
   --color-surface: #ffffff;
   --color-ink: #1c1917;
   --color-ink-soft: #57534e;
-  --color-muted: #78716c;
+  --color-muted: #6b635e;
   --color-line: #e3ded5;
 
   --color-accent: #1b48cc;
   --color-accent-strong: #1640b8;
   --color-accent-soft: #eef2ff;
-  --color-teal: #0d9488;
+  --color-teal: #0a625c;
   --color-violet: #7c3aed;
-  --color-ember: #ea580c;
+  --color-ember: #a83e06;
 
   --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;

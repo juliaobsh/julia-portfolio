@@ -96,7 +96,7 @@ export function HeroReconciliation() {
         </table>
 
         <p className="mt-4 font-mono text-[10px] leading-relaxed text-muted">
-          Illustrative — synthetic values. Average handle time differs between
+          Illustrative - synthetic values. Average handle time differs between
           source and report; investigating filter context.
         </p>
       </div>

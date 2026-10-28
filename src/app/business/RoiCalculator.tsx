@@ -107,10 +107,10 @@ export function RoiCalculator({ prices }: { prices: Price[] }) {
 
         <div className="flex flex-col justify-between gap-6 bg-gradient-to-br from-slate-950 to-[#0b1530] p-7 text-white sm:p-9">
           <div>
-            <p className="text-[10px] font-extrabold uppercase tracking-[.16em] text-teal-300">Staff time freed up</p>
+            <p className="text-[14px] font-extrabold uppercase tracking-[.16em] text-teal-300">Staff time freed up</p>
             <p className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl" aria-live="polite">
               {money(valueYear)}
-              <span className="ml-1 text-base font-semibold text-slate-400">/ year</span>
+              <span className="ml-1 text-base font-semibold text-slate-300">/ year</span>
             </p>
             <p className="mt-2 text-sm text-slate-300">
               worth of staff time - about{" "}<strong className="text-white">{hoursYear} hours</strong>{" "}a year back for more valuable work.
@@ -118,7 +118,7 @@ export function RoiCalculator({ prices }: { prices: Price[] }) {
           </div>
 
           <div>
-            <p className="text-[10px] font-extrabold uppercase tracking-[.16em] text-slate-400">That time is worth the project cost after about</p>
+            <p className="text-[14px] font-extrabold uppercase tracking-[.16em] text-slate-300">That time is worth the project cost after about</p>
             <ul className="mt-3 space-y-2">
               {prices.map((price) => {
                 const months = monthly > 0 ? price.amount / monthly : Infinity;
@@ -126,9 +126,9 @@ export function RoiCalculator({ prices }: { prices: Price[] }) {
                 return (
                   <li key={price.name} className="flex items-center justify-between gap-3 rounded-xl bg-white/5 px-4 py-2.5 text-sm">
                     <span className="text-slate-300">
-                      {price.name} <span className="text-slate-500">from {money(price.amount)}</span>
+                      {price.name} <span className="text-slate-300">from {money(price.amount)}</span>
                     </span>
-                    <span className={cn("shrink-0 whitespace-nowrap font-mono font-semibold", good ? "text-teal-300" : "text-slate-400")}>
+                    <span className={cn("shrink-0 whitespace-nowrap font-mono font-semibold", good ? "text-teal-300" : "text-slate-300")}>
                       {Number.isFinite(months) ? (months < 1 ? "< 1 month" : `${months.toFixed(1)} months`) : "-"}
                     </span>
                   </li>
@@ -137,10 +137,10 @@ export function RoiCalculator({ prices }: { prices: Price[] }) {
             </ul>
           </div>
 
-          <p className="text-[11px] leading-5 text-slate-500">
+          <p className="text-[15px] leading-5 text-slate-300">
             An estimate of capacity freed up, based only on the numbers you enter and starting prices. Freeing up staff time
             doesn&apos;t automatically lower payroll - the value depends on how that time gets used. Software subscriptions or
-            ongoing support can also affect payback. The free review is where we work out real figures for your business.
+            ongoing support can also affect payback. The Free Consultation is where we work out real figures for your business.
           </p>
         </div>
       </div>

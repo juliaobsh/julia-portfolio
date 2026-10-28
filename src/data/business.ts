@@ -4,11 +4,11 @@
  * reader: an owner or manager, not a hiring team.
  */
 export const business = {
-  /** Booking page for the free process review. Leave empty to fall back to email. */
+  /** Booking page for the Free Consultation. Leave empty to fall back to email. */
   bookingUrl: "https://calendly.com/yuliaobs/30min",
-  bookingSubject: "30-minute process review",
+  bookingSubject: "Free Consultation",
   initials: "YO",
-  headshot: "/headshot.jpg",
+  headshot: "/headshot.webp",
   /** Shown beside the photo. */
   bio: [
     "I spent 16 months as a Business Data Analyst at Hydro One, working inside a 27-report enterprise Power BI suite and automating high-volume workflows that people relied on every week.",
@@ -21,7 +21,7 @@ export const business = {
   serviceArea: "Vaughan, Thornhill & GTA",
   /** Main call to action - framed around what the visitor gets. */
   ctaLabel: "Find out where you're losing time",
-  ctaNote: "Free 30-minute conversation · no obligation · no prep needed",
+  ctaNote: "Free Consultation · 30 minutes · no obligation · no prep needed",
   /** Who the page is for - by situation, not industry. */
   idealClient: "Built for growing service businesses where disorganized records, recurring administration, reporting, and disconnected systems have become too much to manage by hand.",
 };
@@ -44,7 +44,7 @@ export const glance = [
   },
   {
     label: "How to start",
-    title: "One free conversation",
+    title: "Free Consultation",
     body: "You show me how the work gets done today. I tell you what's worth fixing - and what isn't.",
     href: "",
     link: "",
@@ -55,9 +55,9 @@ export const glance = [
 export const casePreview = {
   label: "Current client · Canadian healthcare clinic",
   columns: [
-    { title: "The problem", body: "Workflow, funding, and billing information was scattered, and reporting meant manual exports and spreadsheets." },
-    { title: "What I built", body: "A connection to the clinic's existing software that cleans and combines six parts of the workflow into one reporting process." },
-    { title: "What's been verified", body: "Checked against the old manual export - record counts, records, and financial totals matched. Automatic checks run before every update." },
+    { title: "The problem", body: "Digital operational records existed, but there was no unified end-to-end analytics and reporting layer." },
+    { title: "What I built", body: "A new cloud processing, BigQuery, and Power BI reporting pipeline built around six workflow stages." },
+    { title: "What's been verified", body: "Reconciled against source exports during development, with checks for counts, records, and financial totals." },
   ],
 };
 
@@ -219,15 +219,15 @@ export const comparison = {
       values: ["Run it when you need it - in minutes", "Add the latest export and refresh", "Updates on its own, on a schedule where possible"],
     },
   ],
-  note: "Not sure which one you need? You don't have to be. Book the free review, show me how you work today, and I'll recommend the simplest option - even if it's smaller than you expected.",
+  note: "Not sure which one you need? You don't have to be. Book a Free Consultation, show me how you work today, and I'll recommend the simplest option - even if it's smaller than you expected.",
 };
 
 /** Shown after the comparison table: work that doesn't fit a package. */
 export const customWork = {
   label: "Custom process fix",
-  price: "Quoted after the free review",
+  price: "Quoted after the Free Consultation",
   title: "Not every problem is a report or a dashboard",
-  body: "Your business has grown, but the processes behind it haven’t kept up. Files are hard to find, admin keeps piling up, or your existing software isn’t working the way you need it to. I help organize information, configure existing tools, and put simpler, repeatable workflows in place. Every project starts with a free review and a clear, fixed-price scope.",
+  body: "Your business has grown, but the processes behind it haven’t kept up. Files are hard to find, admin keeps piling up, or your existing software isn’t working the way you need it to. I help organize information, configure existing tools, and put simpler, repeatable workflows in place. Every project starts with a Free Consultation and a clear, fixed-price scope.",
   examples: ["Document organization and records management", "Administrative workflows and recurring tasks", "Scheduling and business software configuration", "Follow-up and handoff processes", "Spreadsheet cleanup and workflow automation"],
   honesty: "If it's outside what I do well, I'll say so and point you somewhere better.",
 };
@@ -282,72 +282,64 @@ export const useCases = [
   },
 ];
 
-/**
- * Current client engagement, written to be fully anonymous: no client name,
- * specialty, location, software names, internal field names, or figures that
- * could identify the clinic. Only claim what has actually been built.
+/** Anonymous project summary. Delivered work is separate from the original brief.
+ * Stage timings are approximate, reported by Yulia, and are not an SLA.
  */
 export const clientEngagement = {
   eyebrow: "Real-world project · Current client engagement",
   title: "From scattered operational data to automated management reporting",
-  tags: ["Canadian healthcare clinic", "Healthcare operations analytics", "In progress"],
-  challenge:
-    "A growing healthcare clinic was coordinating patient workflows, funding and billing activity, and handoffs between clinical and administrative teams across several systems. The data was valuable, but it was fragmented - turning it into reliable reporting meant manual exports and spreadsheet work.",
+  tags: ["Canadian healthcare organization", "Built from the ground up", "In progress"],
+  challenge: "The organization already used digital tools to coordinate treatment workflows, funding, billing, and team handoffs. What it lacked was an established end-to-end analytics and reporting layer. Leadership needed a centralized way to understand the numbers and investigate the detail behind them.",
   built: [
-    "Connected directly to the clinic's existing software, so staff no longer export data by hand",
-    "Combined information from six parts of the clinic's workflow into one reliable source",
-    "Funding and payment analysis: what's been approved, what's been collected, and who's paying",
-    "Showed where work slows down - how long things sit at each step, and what's piling up",
-    "Automatic checks that flag missing or inconsistent information",
-    "Patient privacy built in: names, contact details, birth dates, and clinical notes never reach the dashboard",
-    "A pass/fail check before every update, so bad data doesn't slip into the reports",
-    "Interactive dashboard prototypes for management",
-    "Written instructions, so the system doesn't depend on one person",
+    "Built the reporting and analytics pipeline from the ground up using existing operational records",
+    "Combined six workflow stages into a consistent reporting structure",
+    "Automated extraction, cleaning, processing, and validation using Python and Google Cloud Run",
+    "Centralized analytical data in Google BigQuery",
+    "Created a Power BI semantic model and interactive reports with filtering, drill-down, and drill-through",
+    "Built checks for missing or inconsistent information, record counts, and financial totals",
+    "Excluded patient names, contact details, birth dates, and clinical notes from management reports",
+    "Documented the reporting workflow and how to use it",
   ],
-  validated:
-    "Before switching over, I checked the new automatic process against the old manual one - the number of records, the records themselves, and the financial totals all had to match.",
-  goal:
-    "Move the clinic from piecing information together by hand to a repeatable reporting system with a clear view of how work is flowing, where funding stands, and where things get stuck.",
-  nextPhase:
-    "Moving everything into secure, clinic-controlled cloud storage, so the dashboards update on their own on a schedule - nobody needs to run anything from their laptop.",
-  /** "Results so far" - only facts the build supports. Replace the weakest with measured time savings once known. */
+  validated: "Record counts, individual records, and financial totals were reconciled against source exports during development. Those exports provided a validation baseline; they were not an established reporting process that this project replaced.",
+  goal: "Give owners a unified analytical view of existing operations and a foundation for investigating workflow, funding, and performance questions.",
+  nextPhase: "Cloud execution and centralized analytical storage are implemented using Google Cloud Run and BigQuery, with interactive reporting in Power BI. The engagement remains ongoing.",
+  refreshTimings: [
+    { value: "~2 minutes", label: "Cloud Run processing job" },
+    { value: "~10–15 minutes", label: "Power BI semantic model and report refresh" },
+  ],
+  timingNote: "Approximate stage timings reported by Yulia from the current setup. They can vary and do not establish a guaranteed end-to-end refresh time or a time-savings comparison.",
   stats: [
-    { value: "3,000+", label: "records brought together into one reporting process" },
-    { value: "6", label: "parts of the clinic's workflow combined" },
-    { value: "1 step", label: "to refresh the reporting, with automatic checks" },
-    { value: "0", label: "patient names, contact details, or clinical notes in the reports" },
+    { value: "3,000+", label: "operational records brought into one reporting structure" },
+    { value: "6", label: "workflow stages combined" },
+    { value: "~2 min", label: "reported Cloud Run processing time" },
+    { value: "~10–15 min", label: "reported Power BI refresh time" },
   ],
-  solution:
-    "One repeatable reporting process that brings the information together and checks it before management uses it.",
-  impact:
-    "Reporting that used to depend on exporting and piecing information together by hand now runs through one repeatable process - with built-in checks before management sees the numbers.",
+  solution: "A new, cloud-based reporting capability connecting operational data processing, centralized analytical storage, and interactive management reports.",
+  impact: "Owners now have a centralized way to explore business numbers, filter specific areas of performance, and drill through to underlying details. The business gain is a reporting capability that did not previously exist, rather than a measured reduction in an old reporting cycle.",
   beforeAfter: {
-    before: "Manual exports, information spread across six parts of the workflow, and spreadsheet preparation every time a report was needed.",
-    after: "One repeatable process that combines the information, checks it automatically, leaves out private patient details, and prepares it for management reporting.",
+    before: "Digital operational workflows were already in place, but there was no established end-to-end analytics and management reporting layer.",
+    after: "A new reporting pipeline combines six workflow stages, validates data, stores it in BigQuery, and supports detailed exploration in Power BI.",
   },
-  /** Shown once the clinic's before/after time has been measured. */
-  measuring: "Next: measuring how much staff time each reporting cycle used to take, so the time saved can be shown here as a real number.",
+  measuring: "Longer-term operational and financial outcomes have not yet been quantified. No time-savings or ROI claim is made against a previous reporting cycle.",
+  strategicContext: "The original brief sought a better understanding of operations before a potential future custom software platform. The new analytical foundation supports that investigation; it does not mean a custom platform has been built.",
+  scopeBoundary: "The original brief also included additional cross-system synthesis, qualitative comment analysis, and a future software requirements blueprint. These are broader project goals and are not presented here as completed deliverables.",
   whyItMatters: [
-    { title: "Fewer gaps slip through", body: "Missing or inconsistent information - the kind that can delay funding or billing follow-up - gets flagged instead of discovered later." },
-    { title: "Faster answers", body: "Questions like \"how many cases are waiting on funding?\" become a dashboard lookup instead of an hour of digging." },
-    { title: "Grows without more admin", body: "More records don't mean more manual reporting work - the same process handles them." },
-    { title: "Groundwork for what's next", body: "Documenting what the clinic's data actually means makes future software decisions faster and cheaper." },
+    { title: "One analytical view", body: "Owners can investigate operational information through a centralized reporting layer." },
+    { title: "Detailed exploration", body: "Filters, drill-down, and drill-through let management move beyond headline numbers." },
+    { title: "Repeatable updates", body: "Cloud processing and a documented refresh workflow provide a foundation for recurring reporting." },
+    { title: "Groundwork for future decisions", body: "Understanding current operations can inform the requirements of a future software platform." },
   ],
-  /** Plain-language title, with the technical name underneath for technical readers. */
   pipeline: [
-    { icon: "layers", title: "The clinic's existing software", detail: "Workflow platform" },
-    { icon: "transfer", title: "Connected automatically", detail: "REST API" },
-    { icon: "code", title: "Cleaned and combined", detail: "Python · pandas" },
-    { icon: "shield", title: "Checked for errors", detail: "Automated validation" },
-    { icon: "database", title: "Personal details left out", detail: "Names, contacts & notes excluded" },
-    { icon: "chart", title: "Dashboard built", detail: "Power BI" },
-    { icon: "search", title: "Management sees the numbers", detail: "Workflow · funding · bottlenecks" },
+    { icon: "layers", title: "Existing operational records", detail: "Six workflow stages" },
+    { icon: "code", title: "Cloud extraction and processing", detail: "Python · Google Cloud Run" },
+    { icon: "shield", title: "Validation checks", detail: "Counts · records · financial totals" },
+    { icon: "database", title: "Centralized analytical data", detail: "Google BigQuery" },
+    { icon: "chart", title: "Interactive management reporting", detail: "Power BI semantic model and reports" },
+    { icon: "search", title: "Owners explore the detail", detail: "Filter · drill down · drill through" },
   ] as { icon: IconName; title: string; detail: string }[],
-  tools: ["Python", "pandas", "REST APIs", "Power BI", "Power Query", "Data modelling", "Git"],
-  /** Optional: a portfolio-safe dashboard screenshot with sample data, e.g. "/client-dashboard-sample.png". */
+  tools: ["Python", "pandas", "REST APIs", "Google Cloud Run", "Google BigQuery", "Power BI", "Power Query", "Data modelling", "Git"],
   screenshot: "",
-  privacyNote:
-    "Client confidentiality: business and patient-identifying information has been removed. Project details are shown at a high level to protect confidential operational data.",
+  privacyNote: "Client confidentiality: the organization is anonymous. Illustrations use neutral labels and fictional sample metrics, with no patient-identifying information.",
 };
 
 /** Real, verifiable work - the evidence behind the offer. */
@@ -367,7 +359,7 @@ export const proof = [
 ];
 
 export const process = [
-  { title: "Free 30-minute process review", body: "Show me the report or workflow. I'll tell you honestly if it's worth automating." },
+  { title: "Free Consultation", body: "Show me the report or workflow. I'll tell you honestly if it's worth automating." },
   { title: "Written plan and fixed price", body: "A short plan covering what I'd build, what stays the same, and one clear price." },
   { title: "Build and check your numbers", body: "I use real exports and reconcile the results against your existing figures." },
   { title: "Handover and support", body: "A team walkthrough, plain-language documentation, and 30 days of fixes." },

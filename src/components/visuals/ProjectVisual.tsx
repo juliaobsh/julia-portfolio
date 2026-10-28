@@ -7,7 +7,7 @@ import type { ProjectVisual as VisualKey } from "@/types/project";
  * figure is explicitly non-sensitive (survey inventory counts).
  */
 
-/** A report table gaining columns — the queue enhancement work. */
+/** A report table gaining columns - the queue enhancement work. */
 function ReportingVisual() {
   const existing = ["Queue", "Offered", "Answered"];
   const added = ["Forecast", "Variance"];
@@ -106,7 +106,7 @@ function InventoryVisual() {
   );
 }
 
-/** Manual-to-automated pipeline — the vulnerability triage work. */
+/** Manual-to-automated pipeline - the vulnerability triage work. */
 function WorkflowVisual() {
   const steps = [
     {
@@ -146,7 +146,7 @@ function WorkflowVisual() {
           <p className="text-xs font-semibold" style={{ color: step.fg }}>
             {step.label}
           </p>
-          <p className="mt-0.5 text-[10px] opacity-70" style={{ color: step.fg }}>
+          <p className="mt-0.5 text-[10px] opacity-90" style={{ color: step.fg }}>
             {step.sub}
           </p>
         </div>
@@ -160,7 +160,7 @@ function WorkflowVisual() {
   );
 }
 
-/** Vehicle spec card — echoes the marketplace's instrument-cluster design language. */
+/** Vehicle spec card - echoes the marketplace's instrument-cluster design language. */
 function ProductVisual() {
   const specs = [
     { label: "Range", value: "512 km" },
@@ -173,7 +173,7 @@ function ProductVisual() {
       <div className="overflow-hidden rounded-2xl border border-line bg-[#12161C] p-4">
         <div className="mb-3 flex items-start justify-between">
           <div>
-            <p className="font-mono text-[9px] uppercase tracking-widest text-white/40">
+            <p className="font-mono text-[9px] uppercase tracking-widest text-white/60">
               Electric · 2026
             </p>
             <p className="mt-0.5 font-display text-sm font-bold text-white">
@@ -185,7 +185,7 @@ function ProductVisual() {
           </span>
         </div>
 
-        {/* Range arc — the prototype's signature gauge motif. */}
+        {/* Range arc - the prototype's signature gauge motif. */}
         <svg viewBox="0 0 120 42" className="mb-3 w-full" aria-hidden="true">
           <path
             d="M10 38 A 50 50 0 0 1 110 38"
@@ -211,7 +211,7 @@ function ProductVisual() {
               key={spec.label}
               className="flex-1 rounded-lg bg-white/5 px-2 py-1.5 text-center"
             >
-              <p className="font-mono text-[8px] uppercase tracking-wider text-white/40">
+              <p className="font-mono text-[8px] uppercase tracking-wider text-white/60">
                 {spec.label}
               </p>
               <p className="mt-0.5 font-mono text-[11px] font-medium text-white">
@@ -222,7 +222,7 @@ function ProductVisual() {
         </div>
       </div>
       <p className="text-center font-mono text-[10px] text-muted">
-        Illustrative — synthetic vehicle
+        Illustrative - synthetic vehicle
       </p>
     </div>
   );

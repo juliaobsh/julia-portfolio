@@ -1,8 +1,8 @@
 /**
  * Inline explanatory diagrams embedded in case-study bodies.
  *
- * These illustrate the *idea* behind a piece of work — why a naive approach
- * fails — rather than reproducing any real interface or data. All figures are
+ * These illustrate the *idea* behind a piece of work - why a naive approach
+ * fails - rather than reproducing any real interface or data. All figures are
  * synthetic and chosen only to make the concept legible. Colours come from the
  * site's CSS variables so the diagrams sit inside the accent-scoped page.
  */
@@ -83,7 +83,7 @@ function DistinctCountDiagram() {
 
       <p className="mt-5 border-t border-line pt-4 text-xs leading-relaxed text-muted">
         Many of the same people work across days and across queues, so a distinct
-        count can&apos;t be summed or stored — the measure has to recompute inside
+        count can&apos;t be summed or stored - the measure has to recompute inside
         whatever period and filter the user is viewing.
       </p>
     </div>
@@ -98,7 +98,7 @@ function DistinctCountDiagram() {
 function FilterVisibilityDiagram() {
   return (
     <div className="grid gap-4 sm:grid-cols-2">
-      {/* Option A — hidden */}
+      {/* Option A - hidden */}
       <div className="rounded-2xl border border-line bg-paper p-5">
         <div className="mb-3 flex items-center gap-2">
           <span className="rounded-md bg-ember/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide text-ember">
@@ -125,7 +125,7 @@ function FilterVisibilityDiagram() {
         </p>
       </div>
 
-      {/* Option B — visible */}
+      {/* Option B - visible */}
       <div className="rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-5">
         <div className="mb-3 flex items-center gap-2">
           <span className="rounded-md bg-[var(--accent)]/15 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide text-[var(--accent)]">
@@ -254,7 +254,7 @@ function TriageFlowDiagram() {
     {
       tier: "Rule",
       label: "Ordered lookup table",
-      sub: "match on plugin, port, or output — in strict order",
+      sub: "match on plugin, port, or output - in strict order",
       tone: "rule",
     },
     {
@@ -295,7 +295,7 @@ function TriageFlowDiagram() {
 
       <div className="rounded-2xl border border-line bg-paper p-5">
         <p className="mb-3 font-mono text-[10px] uppercase tracking-widest text-muted">
-          What&apos;s left — the exception path
+          What&apos;s left - the exception path
         </p>
         <ul className="space-y-2.5">
           {exceptions.map((e) => {
